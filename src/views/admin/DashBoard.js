@@ -3,14 +3,14 @@ import AdminHeader from "../../../src/layouts/admin/AdminHeader";
 import AdminMenuBar from "../../../src/layouts/admin/AdminMenuBar";
 import AdminPageTitle from "../../../src/layouts/admin/AdminPageTitle";
 
-import AdminDichvu from "./AdminDichvu";
+import AdminCongviec from "./Congviec/AdminCongviec";
 
 class DashBoard extends Component {
 	constructor(props) {
 		super(props);
 		this.content = null;
-		if (this.props.content == "dichvu") {
-			this.content = <AdminDichvu />;
+		if (this.props.content === "congviec") {
+			this.content = <AdminCongviec />;
 		} else {
 			this.content = <div>abc</div>;
 		}

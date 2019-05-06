@@ -7,10 +7,12 @@ import DashBoard from "./views/admin/DashBoard";
 function App() {
   return (
     <Router>
-      <Route path="/home" component={() => <DashBoard />} />
-      <Route path="/dichvu" component={() => <DashBoard content="dichvu" />} />
-      <Route path="/login" component={Login} />
-      <Route path="/register" component={Register} />
+      	<div>
+			<Route path="/home" component={() => <DashBoard />} />
+	      	<Route path="/congviec" component={() => <DashBoard content="congviec" />} />
+	      	<Route path="/login" component={Login} />
+	      	<Route path="/register" component={Register} />
+      	</div>
     </Router>
   );
 }

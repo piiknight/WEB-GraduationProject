@@ -13,7 +13,7 @@ function AdminMenuBar() {
 	    	  	<nav>
 	        		<ul className="metismenu" id="menu">
 	          			<li className="active">
-	            			<a href="/login" aria-expanded="true"><i className="ti-dashboard" /><span>dashboard</span></a>
+	            			<a href="/home" aria-expanded="true"><i className="ti-dashboard" /><span>dashboard</span></a>
 	          			</li>
 	          			<li className="active">
 	            			<a href="/dichvu" aria-expanded="true"><span>Dich Vu</span></a>

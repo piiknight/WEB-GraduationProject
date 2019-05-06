@@ -13,4 +13,13 @@ export const CongviecService = {
     return myAxios.delete(url);
   },
 
+  addOne(object) {
+  	console.log("addOne");
+    return myAxios.post(`${CongviecService.congviecAPI}/`, object);
+  },
+
+  updateOne(object) {
+    return myAxios.put(`${CongviecService.congviecAPI}/${object.idCV}`, object);
+  }
+
 };

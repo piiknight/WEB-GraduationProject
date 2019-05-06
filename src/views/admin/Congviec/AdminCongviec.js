@@ -1,15 +1,19 @@
 import React, {Component} from "react";
+import * as EventBus from "eventing-bus";
 import PropTypes from "prop-types";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import TextField from "@material-ui/core/TextField/TextField";
 import { DeleteConfirmDialog } from "components/DeleteConfirmDialog/DeleteConfirmDialog";
+import Button from "@material-ui/core/Button";
+import AddIcon from "@material-ui/icons/Add";
 // @material-ui icon
 import Search from "@material-ui/icons/Search";
 
 // core components
 import EnhancedTable from "components/Table/EnhancedTable";
+import CongviecDialog from "./CongviecDialog";
 
 // services or utilities
 import { search } from "utilities/Searching";
@@ -19,10 +23,11 @@ class AdminCongviec extends Component {
 	constructor(props) {
 	    super(props);
 	    this.state = {
+	    	openObjectDialog: false,
 	    	keyWords: "",
-	      	openAddDialog: false,
 	      	openDeleteConfirmDialog: false,
 	      	objectToDelete: null,
+	      	objectToEdit: null,
 	      	projectTemplates: [],
 	      	displayedColumns: [
 	      		{
@@ -52,6 +57,7 @@ class AdminCongviec extends Component {
 		    ],
 		    listCongviec: []
 	    };
+	    this.subscription = EventBus.on("updateDataList", this.loadDataList);
 	};
 
 	loadDataList = () => {
@@ -70,6 +76,10 @@ class AdminCongviec extends Component {
 	    this.setState({
 	      	keyWords: event.target.value
 	    });
+	};
+
+	handleEdit = item => {
+	    this.setState({ objectToEdit: item, openObjectDialog: true });
 	};
 
 	handleDelete = item => {
@@ -95,8 +105,28 @@ class AdminCongviec extends Component {
 	    });
 	};
 
+	newObject = () => {
+		var congviec: {
+      		idCV: "",
+      		name: "",
+      		salary: "",
+      		workTime: ""
+      	};
+		return congviec; 
+	};
+	addNewObject = () => {
+	    this.setState({ objectToEdit: this.newObject, openObjectDialog: true });
+	};
+
+	closeAddObjectDialog = () => {
+	    this.setState({ openObjectDialog: false });
+	};
+
   	render(){
+  		const { classes } = this.props;
   		const { 
+  			openObjectDialog,
+  			objectToEdit,
   			openDeleteConfirmDialog,
   			projectTemplates,
   			displayedColumns,
@@ -105,6 +135,13 @@ class AdminCongviec extends Component {
   		} = this.state;
   		return (
     	<div>
+	    	<Button
+	          onClick={this.addNewObject}
+	          variant="fab"
+	          color={"primary"}
+	        >
+	          <AddIcon />
+	        </Button>
 	    	<TextField
 	            label="Search Account"
 	            placeholder="Search"
@@ -125,10 +162,15 @@ class AdminCongviec extends Component {
 	        <EnhancedTable
 	          	name={"Guiding Info"}
 	         	head={displayedColumns}
-	         	onEdit={this.handleEdit}
+	         	onEdit={item => this.handleEdit(item)}
 				onDelete={item => this.handleDelete(item)}
 	          	data={listCongviec}
 	          	// data={data.filter(item => this.filterByFullName(item))}
+	        />
+	        <CongviecDialog
+	            congviec={objectToEdit}
+	            open={openObjectDialog}
+	            onClose={this.closeAddObjectDialog}
 	        />
 	        <DeleteConfirmDialog
 	            open={openDeleteConfirmDialog}

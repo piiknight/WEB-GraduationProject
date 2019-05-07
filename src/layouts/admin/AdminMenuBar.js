@@ -16,7 +16,16 @@ function AdminMenuBar() {
 	            			<a href="/home" aria-expanded="true"><i className="ti-dashboard" /><span>dashboard</span></a>
 	          			</li>
 	          			<li className="active">
-	            			<a href="/dichvu" aria-expanded="true"><span>Dich Vu</span></a>
+	            			<a href="/congviec" aria-expanded="true"><span>Công việc</span></a>
+	          			</li>
+	          			<li className="active">
+	            			<a href="/dichvu" aria-expanded="true"><span>Dịch vụ</span></a>
+	          			</li>
+	          			<li className="active">
+	            			<a href="/menu" aria-expanded="true"><span>Menu</span></a>
+	          			</li>
+	          			<li className="active">
+	            			<a href="/mon" aria-expanded="true"><span>Món ăn</span></a>
 	          			</li>
 	        		</ul>
 	      		</nav>

@@ -28,7 +28,6 @@ class AdminCongviec extends Component {
 	      	openDeleteConfirmDialog: false,
 	      	objectToDelete: null,
 	      	objectToEdit: null,
-	      	projectTemplates: [],
 	      	displayedColumns: [
 	      		{
 		          id: "idCV",
@@ -72,6 +71,10 @@ class AdminCongviec extends Component {
 	    this.loadDataList();
 	};
 
+	componentWillUnmount = () => {
+    	this.subscription();
+  	};
+
 	onKeyWordsChange = event => {
 	    this.setState({
 	      	keyWords: event.target.value
@@ -92,7 +95,7 @@ class AdminCongviec extends Component {
 
 	filterByFullName = item => {
 	    const { keyWords } = this.state;
-	    return search(item.fullName, keyWords) || search(item.username, keyWords);
+	    return search(item.name, keyWords);
 	};
 
 	deleteOne = () => {
@@ -133,6 +136,7 @@ class AdminCongviec extends Component {
   			keyWords, 
   			listCongviec 
   		} = this.state;
+
   		return (
     	<div>
 	    	<Button
@@ -143,8 +147,8 @@ class AdminCongviec extends Component {
 	          <AddIcon />
 	        </Button>
 	    	<TextField
-	            label="Search Account"
-	            placeholder="Search"
+	            label="Tìm kiếm công việc"
+	            placeholder="Tìm kiếm"
 	            fullWidth
 	            margin="normal"
 	            name={"keyWords"}
@@ -160,12 +164,11 @@ class AdminCongviec extends Component {
 	            onChange={this.onKeyWordsChange}
             />
 	        <EnhancedTable
-	          	name={"Guiding Info"}
+	          	name={"Thông tin công việc"}
 	         	head={displayedColumns}
 	         	onEdit={item => this.handleEdit(item)}
 				onDelete={item => this.handleDelete(item)}
-	          	data={listCongviec}
-	          	// data={data.filter(item => this.filterByFullName(item))}
+	          	data={listCongviec.filter(item => this.filterByFullName(item))}
 	        />
 	        <CongviecDialog
 	            congviec={objectToEdit}
@@ -175,8 +178,8 @@ class AdminCongviec extends Component {
 	        <DeleteConfirmDialog
 	            open={openDeleteConfirmDialog}
 	            onClose={this.handleCloseConfirmDeleteDialog}
-	            title="Delete Account?"
-	            message="Are you sure want to delete?"
+	            title="Xóa công việc này?"
+	            message="Bạn có thật sự muốn xóa?"
 	            onYes={this.deleteOne}
 	        />
         </div>

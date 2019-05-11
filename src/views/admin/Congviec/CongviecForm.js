@@ -48,6 +48,7 @@ const CongviecForm = props => {
         value={values.salary}
         error={errors.salary && touched.salary}
         helperText={errors.salary}
+        type="number"
       />
 
       {/*Work Time*/}
@@ -61,6 +62,7 @@ const CongviecForm = props => {
         value={values.workTime}
         error={errors.workTime && touched.workTime}
         helperText={errors.workTime}
+        type="number"
       />
 
       {errors.responseError && (
@@ -100,7 +102,6 @@ const mapPropsObjectToValues = object => {
 
 export const CongviecValidatedForm = withFormik({
   mapPropsToValues: props => {
-    console.log("Tadaskd: " + JSON.stringify(props.congviec));
     return {
       ...mapPropsObjectToValues(props.congviec),
       onClose: props.onClose,
@@ -166,13 +167,11 @@ export const CongviecValidatedForm = withFormik({
     };
 
     if (object.idCV) {
-      console.log("Update: " + JSON.stringify(object));
       CongviecService.updateOne(object).then(res => {
         snack.message = "Update";
         handleResponse(res);
       });
     } else {
-      console.log("Create: " + JSON.stringify(object));
       CongviecService.addOne(object).then(res => {
         snack.message = "Create";
         handleResponse(res);

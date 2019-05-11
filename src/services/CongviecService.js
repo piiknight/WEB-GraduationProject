@@ -14,7 +14,6 @@ export const CongviecService = {
   },
 
   addOne(object) {
-  	console.log("addOne");
     return myAxios.post(`${CongviecService.congviecAPI}/`, object);
   },
 

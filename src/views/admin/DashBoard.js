@@ -4,16 +4,23 @@ import AdminMenuBar from "../../../src/layouts/admin/AdminMenuBar";
 import AdminPageTitle from "../../../src/layouts/admin/AdminPageTitle";
 
 import AdminCongviec from "./Congviec/AdminCongviec";
+import AdminDichvu from "./Dichvu/AdminDichvu";
 
 class DashBoard extends Component {
 	constructor(props) {
 		super(props);
 		this.content = null;
-		if (this.props.content === "congviec") {
-			this.content = <AdminCongviec />;
-		} else {
-			this.content = <div>abc</div>;
-		}
+		switch (this.props.content) {
+			case "congviec":
+                this.content = <AdminCongviec />;
+                break;
+			case "dichvu":
+                this.content = <AdminDichvu />;
+                break;
+			default:
+                this.content = <div>Default</div>;
+				break;
+        }
 	};
 
 	render() {

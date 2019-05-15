@@ -5,10 +5,10 @@ import * as EventBus from "eventing-bus";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button/Button";
 // Services or Utilities
-import {CongviecService} from "services/CongviecService";
+import {DichvuService} from "services/DichvuService";
 import {ResponseHandling} from "utilities/ResponseHandling";
 
-const CongviecForm = props => {
+const DichvuForm = props => {
     const {
         values,
         touched,
@@ -34,31 +34,17 @@ const CongviecForm = props => {
                 helperText={errors.name}
             />
 
-            {/*Salary*/}
+            {/*Price*/}
             <TextField
                 required
                 margin="normal"
-                id="salary"
+                id="price"
                 onChange={handleChange}
-                label="Salary"
+                label="Price"
                 fullWidth
-                value={values.salary}
-                error={errors.salary && touched.salary}
-                helperText={errors.salary}
-                type="number"
-            />
-
-            {/*Work Time*/}
-            <TextField
-                required
-                margin="normal"
-                id="workTime"
-                onChange={handleChange}
-                label="Work Time"
-                fullWidth
-                value={values.workTime}
-                error={errors.workTime && touched.workTime}
-                helperText={errors.workTime}
+                value={values.price}
+                error={errors.price && touched.price}
+                helperText={errors.price}
                 type="number"
             />
 
@@ -77,10 +63,9 @@ const CongviecForm = props => {
 
 const convertToObject = values => {
     let object = {
-        idCV: values.idCV,
+        idDV: values.idDV,
         name: values.name,
-        salary: values.salary,
-        workTime: values.workTime
+        price: values.price
     };
 
     return object;
@@ -88,19 +73,18 @@ const convertToObject = values => {
 
 const mapPropsObjectToValues = object => {
     let values = {
-        idCV: object.idCV,
+        idDV: object.idDV,
         name: object.name,
-        salary: object.salary,
-        workTime: object.workTime
+        price: object.price
     };
 
     return values;
 };
 
-export const CongviecValidatedForm = withFormik({
+export const DichvuValidatedForm = withFormik({
     mapPropsToValues: props => {
         return {
-            ...mapPropsObjectToValues(props.congviec),
+            ...mapPropsObjectToValues(props.dichvu),
             onClose: props.onClose,
             responseError: ""
         };
@@ -109,25 +93,21 @@ export const CongviecValidatedForm = withFormik({
     // Custom sync validation
     validate: values => {
         const errors = {};
-
+        console.log("values: " + JSON.stringify(values));
         if (!values.name) {
-            errors.name = "Required";
+            errors.name = "Name is Required";
         }
 
-        if (!values.salary) {
-            errors.salary = "Salary is required";
-        }
-
-        if (!values.workTime) {
-            errors.workTime = "WorkTime is required";
+        if (!values.price) {
+            errors.price = "Price is required";
         }
 
         return errors;
     },
 
     handleSubmit: (values, {setErrors, setSubmitting}) => {
+        console.log("handleSubmit");
         const object = convertToObject(values);
-
         const snack = {
             open: true,
             place: "bc",
@@ -163,16 +143,16 @@ export const CongviecValidatedForm = withFormik({
             values.onClose();
         };
 
-        if (object.idCV) {
-            CongviecService.updateOne(object).then(res => {
+        if (object.idDV) {
+            DichvuService.updateOne(object).then(res => {
                 snack.message = "Update";
                 handleResponse(res);
             });
         } else {
-            CongviecService.addOne(object).then(res => {
+            DichvuService.addOne(object).then(res => {
                 snack.message = "Create";
                 handleResponse(res);
             });
         }
     }
-})(CongviecForm);
+})(DichvuForm);

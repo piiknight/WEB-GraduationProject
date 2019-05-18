@@ -28,51 +28,51 @@ function AdminHeader() {
 	              <span>2</span>
 	            </i>
 	            <div className="dropdown-menu bell-notify-box notify-box">
-	              <span className="notify-title">You have 3 new notifications <a href="#">view all</a></span>
+	              <span className="notify-title">You have 3 new notifications <a href={null}>view all</a></span>
 	              <div className="nofity-list">
-	                <a href="#" className="notify-item">
+	                <a href={null} className="notify-item">
 	                  <div className="notify-thumb"><i className="ti-key btn-danger" /></div>
 	                  <div className="notify-text">
 	                    <p>You have Changed Your Password</p>
 	                    <span>Just Now</span>
 	                  </div>
 	                </a>
-	                <a href="#" className="notify-item">
+	                <a href={null} className="notify-item">
 	                  <div className="notify-thumb"><i className="ti-comments-smiley btn-info" /></div>
 	                  <div className="notify-text">
 	                    <p>New Commetns On Post</p>
 	                    <span>30 Seconds ago</span>
 	                  </div>
 	                </a>
-	                <a href="#" className="notify-item">
+	                <a href={null} className="notify-item">
 	                  <div className="notify-thumb"><i className="ti-key btn-primary" /></div>
 	                  <div className="notify-text">
 	                    <p>Some special like you</p>
 	                    <span>Just Now</span>
 	                  </div>
 	                </a>
-	                <a href="#" className="notify-item">
+	                <a href={null} className="notify-item">
 	                  <div className="notify-thumb"><i className="ti-comments-smiley btn-info" /></div>
 	                  <div className="notify-text">
 	                    <p>New Commetns On Post</p>
 	                    <span>30 Seconds ago</span>
 	                  </div>
 	                </a>
-	                <a href="#" className="notify-item">
+	                <a href={null} className="notify-item">
 	                  <div className="notify-thumb"><i className="ti-key btn-primary" /></div>
 	                  <div className="notify-text">
 	                    <p>Some special like you</p>
 	                    <span>Just Now</span>
 	                  </div>
 	                </a>
-	                <a href="#" className="notify-item">
+	                <a href={null} className="notify-item">
 	                  <div className="notify-thumb"><i className="ti-key btn-danger" /></div>
 	                  <div className="notify-text">
 	                    <p>You have Changed Your Password</p>
 	                    <span>Just Now</span>
 	                  </div>
 	                </a>
-	                <a href="#" className="notify-item">
+	                <a href={null} className="notify-item">
 	                  <div className="notify-thumb"><i className="ti-key btn-danger" /></div>
 	                  <div className="notify-text">
 	                    <p>You have Changed Your Password</p>
@@ -85,9 +85,9 @@ function AdminHeader() {
 	          <li className="dropdown">
 	            <i className="fa fa-envelope-o dropdown-toggle" data-toggle="dropdown"><span>3</span></i>
 	            <div className="dropdown-menu notify-box nt-enveloper-box">
-	              <span className="notify-title">You have 3 new notifications <a href="#">view all</a></span>
+	              <span className="notify-title">You have 3 new notifications <a href={null}>view all</a></span>
 	              <div className="nofity-list">
-	                <a href="#" className="notify-item">
+	                <a href={null} className="notify-item">
 	                  <div className="notify-thumb">
 	                    <img src="assets/images/author/author-img1.jpg" alt="image" />
 	                  </div>
@@ -97,7 +97,7 @@ function AdminHeader() {
 	                    <span>3:15 PM</span>
 	                  </div>
 	                </a>
-	                <a href="#" className="notify-item">
+	                <a href={null} className="notify-item">
 	                  <div className="notify-thumb">
 	                    <img src="assets/images/author/author-img2.jpg" alt="image" />
 	                  </div>
@@ -107,7 +107,7 @@ function AdminHeader() {
 	                    <span>3:15 PM</span>
 	                  </div>
 	                </a>
-	                <a href="#" className="notify-item">
+	                <a href={null} className="notify-item">
 	                  <div className="notify-thumb">
 	                    <img src="assets/images/author/author-img3.jpg" alt="image" />
 	                  </div>
@@ -117,7 +117,7 @@ function AdminHeader() {
 	                    <span>3:15 PM</span>
 	                  </div>
 	                </a>
-	                <a href="#" className="notify-item">
+	                <a href={null} className="notify-item">
 	                  <div className="notify-thumb">
 	                    <img src="assets/images/author/author-img4.jpg" alt="image" />
 	                  </div>
@@ -127,7 +127,7 @@ function AdminHeader() {
 	                    <span>3:15 PM</span>
 	                  </div>
 	                </a>
-	                <a href="#" className="notify-item">
+	                <a href={null} className="notify-item">
 	                  <div className="notify-thumb">
 	                    <img src="assets/images/author/author-img2.jpg" alt="image" />
 	                  </div>
@@ -137,7 +137,7 @@ function AdminHeader() {
 	                    <span>3:15 PM</span>
 	                  </div>
 	                </a>
-	                <a href="#" className="notify-item">
+	                <a href={null} className="notify-item">
 	                  <div className="notify-thumb">
 	                    <img src="assets/images/author/author-img1.jpg" alt="image" />
 	                  </div>
@@ -147,7 +147,7 @@ function AdminHeader() {
 	                    <span>3:15 PM</span>
 	                  </div>
 	                </a>
-	                <a href="#" className="notify-item">
+	                <a href={null} className="notify-item">
 	                  <div className="notify-thumb">
 	                    <img src="assets/images/author/author-img3.jpg" alt="image" />
 	                  </div>

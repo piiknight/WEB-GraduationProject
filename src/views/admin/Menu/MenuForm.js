@@ -6,7 +6,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button/Button";
 
 // Components
-import GridListTileBar from "components/Grid/TitlebarGridList";
+import {GridListTileBar} from "components/Grid/TitlebarGridList";
 
 // Services or Utilities
 import {ResponseHandling} from "utilities/ResponseHandling";

@@ -123,9 +123,9 @@ class EnhancedTable extends React.Component {
             <TableBody>
               {stableSort(data, getSorting(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map(item => {
+                .map((item, index) => {
                   return (
-                    <TableRow key={item.id}>
+                    <TableRow key={index}>
                       {head.map((h, key) => {
                         let cellContent = "";
                         if (h.id === "role") {

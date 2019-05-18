@@ -18,9 +18,9 @@ function AdminPageTitle() {
 	          	<img className="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar" />
 	          	<h4 className="user-name dropdown-toggle" data-toggle="dropdown">Kumkum Rai <i className="fa fa-angle-down" /></h4>
 	          	<div className="dropdown-menu">
-	           	 <a className="dropdown-item" href="#">Message</a>
-	           	 <a className="dropdown-item" href="#">Settings</a>
-	           	 <a className="dropdown-item" href="#">Log Out</a>
+	           	 <a className="dropdown-item" href={null}>Message</a>
+	           	 <a className="dropdown-item" href={null}>Settings</a>
+	           	 <a className="dropdown-item" href={null}>Log Out</a>
 	          	</div>
 	       	 </div>
 	      	</div>

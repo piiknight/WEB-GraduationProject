@@ -50,25 +50,27 @@ function TitlebarGridList(props) {
     }];
 
     return (
-        <GridList cellHeight={180} className="abc">
-            <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-                <ListSubheader component="div">December</ListSubheader>
-            </GridListTile>
-            {tileData.map(tile => (
-                <GridListTile key={tile.img}>
-                    {/*<img src={tile.img} alt={tile.title} />*/}
-                    <GridListTileBar
-                        title={tile.title}
-                        // subtitle={<span>by: {tile.author}</span>}
-                        actionIcon={
-                            <IconButton className={classes.icon}>
-                                <InfoIcon />
-                            </IconButton>
-                        }
-                    />
+        <div className={classes.root}>
+            <GridList cellHeight={180} className="abc">
+                <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
+                    <ListSubheader component="div">December</ListSubheader>
                 </GridListTile>
-            ))}
-        </GridList>
+                {tileData.map(tile => (
+                    <GridListTile key={tile.img}>
+                        {/*<img src={tile.img} alt={tile.title} />*/}
+                        <GridListTileBar
+                            title={tile.title}
+                            // subtitle={<span>by: {tile.author}</span>}
+                            actionIcon={
+                                <IconButton className={classes.icon}>
+                                    <InfoIcon />
+                                </IconButton>
+                            }
+                        />
+                    </GridListTile>
+                ))}
+            </GridList>
+        </div>
     );
 }
 

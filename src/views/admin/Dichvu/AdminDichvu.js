@@ -1,8 +1,6 @@
 import React, {Component} from "react";
 import * as EventBus from "eventing-bus";
-import PropTypes from "prop-types";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import TextField from "@material-ui/core/TextField/TextField";
 import {DeleteConfirmDialog} from "components/DeleteConfirmDialog/DeleteConfirmDialog";
@@ -119,12 +117,10 @@ class AdminDichvu extends Component {
     };
 
     render() {
-        const {classes} = this.props;
         const {
             openObjectDialog,
             objectToEdit,
             openDeleteConfirmDialog,
-            projectTemplates,
             displayedColumns,
             keyWords,
             listDichvu

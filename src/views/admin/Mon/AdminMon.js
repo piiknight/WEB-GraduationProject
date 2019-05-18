@@ -11,13 +11,13 @@ import Search from "@material-ui/icons/Search";
 
 // core components
 import EnhancedTable from "components/Table/EnhancedTable";
-import CongviecDialog from "./CongviecDialog";
+import MonDialog from "./MonDialog";
 
 // services or utilities
 import { search } from "utilities/Searching";
-import { CongviecService } from "services/CongviecService";
+import { MonService } from "services/MonService";
 
-class AdminCongviec extends Component {
+class AdminMon extends Component {
 	constructor(props) {
 	    super(props);
 	    this.state = {
@@ -28,7 +28,7 @@ class AdminCongviec extends Component {
 	      	objectToEdit: null,
 	      	displayedColumns: [
 	      		{
-		          id: "idCV",
+		          id: "idMon",
 		          numeric: false,
 		          disablePadding: true,
 		          label: "ID"
@@ -37,30 +37,30 @@ class AdminCongviec extends Component {
 		          id: "name",
 		          numeric: false,
 		          disablePadding: true,
-		          label: "Name"
+		          label: "Tên"
 		        },
 		        {
-		          id: "salary",
+		          id: "price",
 		          numeric: false,
 		          disablePadding: true,
-		          label: "Salary"
+		          label: "Giá"
 		        },
 		        {
-		          id: "workTime",
+		          id: "point",
 		          numeric: false,
 		          disablePadding: true,
-		          label: "WorkTime"
+		          label: "Điểm đánh giá"
 		        }
 		    ],
-		    listCongviec: []
+		    listMon: []
 	    };
 	    this.subscription = EventBus.on("updateDataList", this.loadDataList);
 	};
 
 	loadDataList = () => {
-	    CongviecService.getAll().then(res => {
+        MonService.getAll().then(res => {
 	      if (!res.error) {
-	        this.setState({ listCongviec: res.data });
+	        this.setState({ listMon: res.data });
 	      }
 	    });
 	};
@@ -98,7 +98,7 @@ class AdminCongviec extends Component {
 
 	deleteOne = () => {
 	    const { objectToDelete } = this.state;
-	    CongviecService.deleteOne(objectToDelete.idCV).then(res => {
+	    MonService.deleteOne(objectToDelete.idMon).then(res => {
 	      if (!res.error) {
 	        this.setState({ openDeleteConfirmDialog: false });
 	        this.loadDataList();
@@ -107,13 +107,13 @@ class AdminCongviec extends Component {
 	};
 
 	newObject = () => {
-		var congviec: {
-      		idCV: "",
+		var mon: {
+      		idMon: "",
       		name: "",
-      		salary: "",
-      		workTime: ""
+      		price: "",
+      		point: ""
       	};
-		return congviec; 
+		return mon;
 	};
 	addNewObject = () => {
 	    this.setState({ objectToEdit: this.newObject, openObjectDialog: true });
@@ -130,7 +130,7 @@ class AdminCongviec extends Component {
   			openDeleteConfirmDialog,
   			displayedColumns,
   			keyWords, 
-  			listCongviec 
+  			listMon
   		} = this.state;
 
   		return (
@@ -143,7 +143,7 @@ class AdminCongviec extends Component {
 	          <AddIcon />
 	        </Button>
 	    	<TextField
-	            label="Tìm kiếm công việc"
+	            label="Tìm kiếm món ăn"
 	            placeholder="Tìm kiếm"
 	            fullWidth
 	            margin="normal"
@@ -160,21 +160,21 @@ class AdminCongviec extends Component {
 	            onChange={this.onKeyWordsChange}
             />
 	        <EnhancedTable
-	          	name={"Thông tin công việc"}
+	          	name={"Thông tin món ăn"}
 	         	head={displayedColumns}
 	         	onEdit={item => this.handleEdit(item)}
 				onDelete={item => this.handleDelete(item)}
-	          	data={listCongviec.filter(item => this.filterByFullName(item))}
+	          	data={listMon.filter(item => this.filterByFullName(item))}
 	        />
-	        <CongviecDialog
-	            congviec={objectToEdit}
+	        <MonDialog
+	            mon={objectToEdit}
 	            open={openObjectDialog}
 	            onClose={this.closeAddObjectDialog}
 	        />
 	        <DeleteConfirmDialog
 	            open={openDeleteConfirmDialog}
 	            onClose={this.handleCloseConfirmDeleteDialog}
-	            title="Xóa công việc này?"
+	            title="Xóa món ăn này?"
 	            message="Bạn có thật sự muốn xóa?"
 	            onYes={this.deleteOne}
 	        />
@@ -183,4 +183,4 @@ class AdminCongviec extends Component {
   	}
 }
 
-export default AdminCongviec;
+export default AdminMon;

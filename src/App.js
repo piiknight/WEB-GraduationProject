@@ -11,6 +11,7 @@ function App() {
 			<Route path="/home" component={() => <DashBoard />} />
 	      	<Route path="/congviec" component={() => <DashBoard content="congviec" />} />
 	      	<Route path="/dichvu" component={() => <DashBoard content="dichvu" />} />
+	      	<Route path="/mon" component={() => <DashBoard content="mon" />} />
 	      	<Route path="/login" component={Login} />
 	      	<Route path="/register" component={Register} />
       	</div>

@@ -107,7 +107,7 @@ class AdminCongviec extends Component {
 	};
 
 	newObject = () => {
-		var congviec: {
+		let congviec: {
       		idCV: "",
       		name: "",
       		salary: "",

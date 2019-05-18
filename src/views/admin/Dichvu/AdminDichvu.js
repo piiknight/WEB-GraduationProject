@@ -101,7 +101,7 @@ class AdminDichvu extends Component {
     };
 
     newObject = () => {
-        var dichvu: {
+        let dichvu: {
             idDV: "",
             name: "",
             price: ""

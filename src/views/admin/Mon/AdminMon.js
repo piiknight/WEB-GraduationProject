@@ -107,7 +107,7 @@ class AdminMon extends Component {
 	};
 
 	newObject = () => {
-		var mon: {
+		let mon: {
       		idMon: "",
       		name: "",
       		price: "",

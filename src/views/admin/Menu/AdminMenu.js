@@ -112,6 +112,7 @@ class AdminMenu extends Component {
         };
         return menu;
     };
+
     addNewObject = () => {
         this.setState({objectToEdit: this.newObject, openObjectDialog: true});
     };

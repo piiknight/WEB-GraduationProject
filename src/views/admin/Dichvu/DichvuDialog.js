@@ -14,7 +14,6 @@ class DichvuDialog extends Component {
 
     render() {
         const {open, onClose, dichvu} = this.props;
-        const {roles, majors} = this.state;
         return (
             <Dialog open={open} onClose={onClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Thông tin dịch vụ</DialogTitle>

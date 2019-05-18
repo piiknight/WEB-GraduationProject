@@ -6,6 +6,7 @@ import AdminPageTitle from "../../../src/layouts/admin/AdminPageTitle";
 import AdminCongviec from "./Congviec/AdminCongviec";
 import AdminDichvu from "./Dichvu/AdminDichvu";
 import AdminMon from "./Mon/AdminMon";
+import AdminMenu from "./Menu/AdminMenu";
 
 class DashBoard extends Component {
 	constructor(props) {
@@ -20,6 +21,9 @@ class DashBoard extends Component {
                 break;
             case "mon":
                 this.content = <AdminMon />;
+                break;
+            case "menu":
+                this.content = <AdminMenu />;
                 break;
 			default:
                 this.content = <div>Default</div>;

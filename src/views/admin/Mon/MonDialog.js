@@ -13,7 +13,6 @@ class MonDialog extends Component {
   };
   render() {
     const { open, onClose, mon } = this.props;
-    const { roles, majors } = this.state;
     return (
       <Dialog open={open} onClose={onClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Thông tin món ăn</DialogTitle>

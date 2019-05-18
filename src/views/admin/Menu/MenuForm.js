@@ -4,11 +4,15 @@ import * as EventBus from "eventing-bus";
 // @material-ui/core components
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button/Button";
-// Services or Utilities
-import {MonService} from "services/MonService";
-import {ResponseHandling} from "utilities/ResponseHandling";
 
-const MonForm = props => {
+// Components
+import GridListTileBar from "components/Grid/TitlebarGridList";
+
+// Services or Utilities
+import {ResponseHandling} from "utilities/ResponseHandling";
+import {MenuService} from "../../../services/MenuService";
+
+const MenuForm = props => {
     const {
         values,
         touched,
@@ -34,33 +38,21 @@ const MonForm = props => {
                 helperText={errors.name}
             />
 
-            {/*Price*/}
+            {/*Quantity*/}
             <TextField
                 required
                 margin="normal"
-                id="price"
+                id="quantity"
                 onChange={handleChange}
-                label="Price"
+                label="Quantity"
                 fullWidth
-                value={values.price}
-                error={errors.price && touched.price}
-                helperText={errors.price}
+                value={values.quantity}
+                error={errors.quantity && touched.quantity}
+                helperText={errors.quantity}
                 type="number"
             />
 
-            {/*Point*/}
-            <TextField
-                required
-                margin="normal"
-                id="point"
-                onChange={handleChange}
-                label="Point"
-                fullWidth
-                value={values.point}
-                error={errors.point && touched.point}
-                helperText={errors.point}
-                type="number"
-            />
+            <GridListTileBar />
 
             {errors.responseError && (
                 <p style={{color: "red"}}>{errors.responseError}</p>
@@ -77,31 +69,28 @@ const MonForm = props => {
 
 const convertToObject = values => {
     let object = {
-        idMon: values.idMon,
+        idMenu: values.idMenu,
         name: values.name,
-        price: values.price,
-        point: values.point
+        quantity: values.quantity
     };
 
     return object;
 };
 
 const mapPropsObjectToValues = object => {
-    console.log("mapPropsObjectToValues: " + JSON.stringify(object));
     let values = {
-        idMon: object.idMon,
+        idMenu: object.idMenu,
         name: object.name,
-        price: object.price,
-        point: object.point
+        quantity: object.quantity
     };
 
     return values;
 };
 
-export const MonValidatedForm = withFormik({
+export const MenuValidatedForm = withFormik({
     mapPropsToValues: props => {
         return {
-            ...mapPropsObjectToValues(props.mon),
+            ...mapPropsObjectToValues(props.menu),
             onClose: props.onClose,
             responseError: ""
         };
@@ -115,12 +104,8 @@ export const MonValidatedForm = withFormik({
             errors.name = "Required";
         }
 
-        if (!values.price) {
-            errors.price = "Price is required";
-        }
-
-        if (!values.point) {
-            errors.point = "Point is required";
+        if (!values.quantity) {
+            errors.quantity = "Quantity is required";
         }
 
         return errors;
@@ -164,16 +149,16 @@ export const MonValidatedForm = withFormik({
             values.onClose();
         };
 
-        if (object.idMon) {
-            MonService.updateOne(object).then(res => {
+        if (object.idMenu) {
+            MenuService.updateOne(object).then(res => {
                 snack.message = "Update";
                 handleResponse(res);
             });
         } else {
-            MonService.addOne(object).then(res => {
+            MenuService.addOne(object).then(res => {
                 snack.message = "Create";
                 handleResponse(res);
             });
         }
     }
-})(MonForm);
+})(MenuForm);

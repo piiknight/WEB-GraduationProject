@@ -12,6 +12,7 @@ function App() {
 	      	<Route path="/congviec" component={() => <DashBoard content="congviec" />} />
 	      	<Route path="/dichvu" component={() => <DashBoard content="dichvu" />} />
 	      	<Route path="/mon" component={() => <DashBoard content="mon" />} />
+	      	<Route path="/menu" component={() => <DashBoard content="menu" />} />
 	      	<Route path="/login" component={Login} />
 	      	<Route path="/register" component={Register} />
       	</div>

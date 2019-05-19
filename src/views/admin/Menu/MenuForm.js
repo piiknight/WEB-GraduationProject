@@ -26,7 +26,7 @@ class MenuForm extends Component {
 
     loadDataList = () => {
         const {
-            values,
+            values
         } = this.props;
         if (values.idMenu === undefined) {
             this.setState({tileData: []});
@@ -34,6 +34,11 @@ class MenuForm extends Component {
         }
         MenuMonService.getAllByIdMenu(values.idMenu).then(res => {
             if (!res.error) {
+                let temp = [];
+                res.data.map(child => (
+                    temp.push(child.idMon)
+                ));
+                values.mon = temp;
                 this.setState({tileData: res.data});
             }
         });
@@ -53,27 +58,62 @@ class MenuForm extends Component {
     };
 
     removeOne = (item) => {
-        console.log("removeOne");
-        this.setState({tileData: []})
-    };
-
-    addOne = (id) => {
+        console.log("removeOne: " + JSON.stringify(item));
+        // this.setState({tileData: []})
         const {
-            values
+            values,
+            isAdd
         } = this.props;
         const {
             tileData,
         } = this.state;
-        MonService.getById(id).then(res => {
-            if (!res.error) {
-                let firstElement = res.data[0];
-                tileData.push(firstElement);
-                if (!values.mon) values.mon = [];
-                values.mon.push(firstElement.idMon);
+        if (isAdd) {
+            values.mon = values.mon.filter(function(child){
+                return child !== item.idMon;
+            })
+            let temp = tileData.filter(function(child){
+                return child !== item;
+            })
+            this.setState({tileData: temp});
+        } else {
+            MenuMonService.deleteOne(item.idMM).then(res => {
+                if (!res.error) {
+                    this.loadDataList();
+                }
+            });
+        }
+    };
 
-                this.setState({tileData: tileData});
-            }
-        });
+    addOne = (id) => {
+        const {
+            values,
+            isAdd
+        } = this.props;
+        const {
+            tileData,
+        } = this.state;
+        if (isAdd) {
+            MonService.getById(id).then(res => {
+                if (!res.error) {
+                    let firstElement = res.data[0];
+                    tileData.push(firstElement);
+                    if (!values.mon) values.mon = [];
+                    values.mon.push(firstElement.idMon);
+
+                    this.setState({tileData: tileData});
+                }
+            });
+        } else {
+            let object = {
+                idMenu: values.idMenu,
+                idMon: id
+            };
+            MenuMonService.addOne(object).then(res => {
+                if (!res.error) {
+                    this.loadDataList();
+                }
+            });
+        }
     };
 
     render() {
@@ -232,6 +272,7 @@ export const MenuValidatedForm = withFormik({
         };
 
         if (object.idMenu) {
+            console.log("updateOne: " + JSON.stringify(object));
             MenuService.updateOne(object).then(res => {
                 snack.message = "Update";
                 handleResponse(res);

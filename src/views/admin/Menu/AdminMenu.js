@@ -31,7 +31,6 @@ class AdminMenu extends Component {
                     id: "idMenu",
                     numeric: false,
                     disablePadding: true,
-                    disablePadding: true,
                     label: "ID"
                 },
                 {
@@ -47,7 +46,8 @@ class AdminMenu extends Component {
                     label: "Số lượng đã đặt"
                 }
             ],
-            listMenu: []
+            listMenu: [],
+            isAdd: true
         };
         this.subscription = EventBus.on("updateDataList", this.loadDataList);
     };
@@ -75,7 +75,7 @@ class AdminMenu extends Component {
     };
 
     handleEdit = item => {
-        this.setState({objectToEdit: item, openObjectDialog: true});
+        this.setState({objectToEdit: item, openObjectDialog: true, isAdd: false});
     };
 
     handleDelete = item => {
@@ -116,7 +116,7 @@ class AdminMenu extends Component {
     };
 
     addNewObject = () => {
-        this.setState({objectToEdit: this.newObject, openObjectDialog: true});
+        this.setState({objectToEdit: this.newObject, openObjectDialog: true, isAdd: true});
     };
 
     closeAddObjectDialog = () => {
@@ -130,7 +130,8 @@ class AdminMenu extends Component {
             openDeleteConfirmDialog,
             displayedColumns,
             keyWords,
-            listMenu
+            listMenu,
+            isAdd
         } = this.state;
 
         return (
@@ -168,6 +169,7 @@ class AdminMenu extends Component {
                     data={listMenu.filter(item => this.filterByFullName(item))}
                 />
                 <MenuDialog
+                    isAdd={isAdd}
                     menu={objectToEdit}
                     open={openObjectDialog}
                     onClose={this.closeAddObjectDialog}

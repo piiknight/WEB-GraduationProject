@@ -12,12 +12,15 @@ import TitlebarGridList from "components/Grid/TitlebarGridList";
 import {ResponseHandling} from "utilities/ResponseHandling";
 import {MenuService} from "../../../services/MenuService";
 import {MenuMonService} from "../../../services/MenuMonService";
+import {MonService} from "../../../services/MonService";
+
 
 class MenuForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tileData: []
+            tileData: [],
+            listMon: []
         };
     };
 
@@ -30,23 +33,47 @@ class MenuForm extends Component {
             return;
         }
         MenuMonService.getAllByIdMenu(values.idMenu).then(res => {
-            console.log("loadDataList: " + JSON.stringify(res.data));
             if (!res.error) {
                 this.setState({tileData: res.data});
             }
         });
     };
 
+    loadDataSelectMon() {
+        MonService.getAll().then(res => {
+            if (!res.error) {
+                this.setState({listMon: res.data});
+            }
+        });
+    };
+
     componentDidMount() {
         this.loadDataList();
+        this.loadDataSelectMon();
     };
 
     removeOne = (item) => {
+        console.log("removeOne");
         this.setState({tileData: []})
     };
 
-    addNewObject = () => {
-        console.log("Thêm mới món ăn");
+    addOne = (id) => {
+        const {
+            values
+        } = this.props;
+        const {
+            tileData,
+        } = this.state;
+        MonService.getById(id).then(res => {
+            if (!res.error) {
+                let firstElement = res.data[0];
+                tileData.push(firstElement);
+                if (!values.mon) values.mon = [];
+                values.mon.push(firstElement.idMon);
+
+                this.setState({tileData: tileData});
+            }
+        });
     };
 
     render() {
@@ -60,7 +87,8 @@ class MenuForm extends Component {
         } = this.props;
 
         const {
-            tileData
+            tileData,
+            listMon
         } = this.state;
 
         return (
@@ -94,7 +122,15 @@ class MenuForm extends Component {
                     type="number"
                 />
 
-                <TitlebarGridList tileData={tileData} addNew={this.addNewObject} removeOne={this.removeOne}/>
+                <TextField
+                    margin="normal"
+                    id="mon"
+                    label="Danh sách món"
+                    fullWidth
+                    disabled={true}
+                />
+
+                <TitlebarGridList selectData={listMon} tileData={tileData} addOne={this.addOne} removeOne={this.removeOne}/>
 
                 {errors.responseError && (
                     <p style={{color: "red"}}>{errors.responseError}</p>
@@ -111,10 +147,12 @@ class MenuForm extends Component {
 };
 
 const convertToObject = values => {
+    console.log("convertToObject: " + JSON.stringify(values));
     let object = {
         idMenu: values.idMenu,
         name: values.name,
-        quantity: values.quantity
+        quantity: values.quantity,
+        mon: values.mon,
     };
 
     return object;
@@ -124,7 +162,8 @@ const mapPropsObjectToValues = object => {
     let values = {
         idMenu: object.idMenu,
         name: object.name,
-        quantity: object.quantity
+        quantity: object.quantity,
+        mon: object.mon
     };
 
     return values;

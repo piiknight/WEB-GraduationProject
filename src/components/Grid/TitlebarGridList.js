@@ -71,17 +71,18 @@ class TitlebarGridList extends React.Component {
     };
 
     handleButtonAdd = () => {
-        const { addNew } = this.props;
+        // const { addNew } = this.props;
+        // addNew();
         const { showButtonAdd } = this.state;
-        addNew();
         this.setState({
             showButtonAdd: !showButtonAdd
         });
     };
 
     handleButtonDone = () => {
-        const { removeOne } = this.props;
-        removeOne();
+        const { addOne } = this.props;
+        const { mon } = this.state;
+        addOne(mon);
         this.setState({
             showButtonAdd: true,
             mon: ''
@@ -89,20 +90,16 @@ class TitlebarGridList extends React.Component {
     };
 
     handleChange = event  => {
-        console.log("dasdsa: " + JSON.stringify(event.target));
         this.setState({ [event.target.name]: event.target.value });
     };
 
     render() {
-        const { classes, addNew, removeOne, tileData } = this.props;
+        const { classes, addOne, removeOne, tileData, selectData } = this.props;
         const { showButtonAdd, mon } = this.state;
         return (
             <div className={classes.root}>
                 <GridList cellHeight={180} className="list-group-flush">
-                    <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-                        <ListSubheader component="div">
-                            <Chip label="Món ăn" className={classes.chip} variant="outlined" />
-                        </ListSubheader>
+                    <GridListTile key="Subheader" cols={2} style={{ height: 'auto', width: "300px" }}>
                     </GridListTile>
                     {tileData.map(tile => (
                         <GridListTile key={tile.id}>
@@ -147,9 +144,9 @@ class TitlebarGridList extends React.Component {
                                         <MenuItem value="" disabled>
                                             Placeholder
                                         </MenuItem>
-                                        <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>Twenty</MenuItem>
-                                        <MenuItem value={30}>Thirty</MenuItem>
+                                        {selectData.map(select => (
+                                            <MenuItem value={select.idMon}>{select.name}</MenuItem>
+                                        ))}
                                     </Select>
                                 </div>
                             )

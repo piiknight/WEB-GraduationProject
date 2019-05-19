@@ -31,6 +31,7 @@ class AdminMenu extends Component {
                     id: "idMenu",
                     numeric: false,
                     disablePadding: true,
+                    disablePadding: true,
                     label: "ID"
                 },
                 {
@@ -108,7 +109,8 @@ class AdminMenu extends Component {
         let menu: {
             idMenu: "",
             name: "",
-            quantity: ""
+            quantity: "",
+            mon: ""
         };
         return menu;
     };

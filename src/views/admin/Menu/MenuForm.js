@@ -11,39 +11,37 @@ import TitlebarGridList from "components/Grid/TitlebarGridList";
 // Services or Utilities
 import {ResponseHandling} from "utilities/ResponseHandling";
 import {MenuService} from "../../../services/MenuService";
+import {MenuMonService} from "../../../services/MenuMonService";
 
 class MenuForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tileData: [
-                {
-                    id: 1,
-                    img: "123",
-                    title: "this is title"
-                },
-                {
-                    id: 2,
-                    img: "123",
-                    title: "this is title"
-                },
-                {
-                    id: 3,
-                    img: "123",
-                    title: "this is title"
-                },
-                {
-                    id: 4,
-                    img: "123",
-                    title: "this is title"
-                }
-
-            ]
+            tileData: []
         };
     };
 
+    loadDataList = () => {
+        const {
+            values,
+        } = this.props;
+        if (values.idMenu === undefined) {
+            this.setState({tileData: []});
+            return;
+        }
+        MenuMonService.getAllByIdMenu(values.idMenu).then(res => {
+            console.log("loadDataList: " + JSON.stringify(res.data));
+            if (!res.error) {
+                this.setState({tileData: res.data});
+            }
+        });
+    };
+
+    componentDidMount() {
+        this.loadDataList();
+    };
+
     removeOne = (item) => {
-        console.log("Xóa món ăn: " + item.id);
         this.setState({tileData: []})
     };
 

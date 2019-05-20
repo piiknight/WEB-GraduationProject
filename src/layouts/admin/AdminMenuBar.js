@@ -27,6 +27,9 @@ function AdminMenuBar() {
 	          			<li className="active">
 	            			<a href="/mon" aria-expanded="true"><span>Món ăn</span></a>
 	          			</li>
+                        <li className="active">
+                            <a href="/vatdung" aria-expanded="true"><span>Vật dụng</span></a>
+                        </li>
 	        		</ul>
 	      		</nav>
 	    	</div>

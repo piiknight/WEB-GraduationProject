@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bdf40c8-49db-4625-9b96-b5586ab4f49c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/services/VatdungService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/admin/Vatdung/AdminVatdung.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/admin/Vatdung/VatdungDialog.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/admin/Vatdung/VatdungForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/admin/Mon/MonDialogSetQuantity.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/admin/AdminMenuBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/admin/AdminMenuBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/DashBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/DashBoard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/Mon/AdminMon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/Mon/AdminMon.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,12 +32,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="4125" />
+          <entry key="js" value="4612" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="4125" />
+          <entry key="JavaScript" value="4612" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -53,13 +48,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="94" />
+          <entry key="js" value="102" />
           <entry key="ts" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="94" />
+          <entry key="JavaScript" value="102" />
           <entry key="TypeScript" value="8" />
         </counts>
       </usages-collector>
@@ -67,30 +62,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/views/admin/Vatdung/VatdungForm.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/admin/Mon/AdminMon.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="81" selection-start-line="81" selection-end-line="81" />
+            <state relative-caret-position="-374">
+              <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#136#188#0" expanded="true" />
-                <element signature="e#281#336#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#114#176#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/admin/Mon/MonDialogSetQuantity.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-323">
+              <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#197#243#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/admin/Vatdung/AdminVatdung.js">
+        <entry file="file://$PROJECT_DIR$/src/components/Grid/TitlebarGridList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="176" column="39" selection-start-line="176" selection-start-column="39" selection-end-line="176" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#114#176#0" expanded="true" />
-                <element signature="e#510#569#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -99,11 +101,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>listMenu</find>
-      <find>EnhancedTable</find>
-      <find>onDelete</find>
-      <find>tableActionButtonIcon</find>
-      <find>handleExtend</find>
       <find>close</find>
       <find>Edit</find>
       <find>height</find>
@@ -129,6 +126,11 @@
       <find>convertToObject</find>
       <find>classes</find>
       <find>handleSubmit</find>
+      <find>element</find>
+      <find>dense</find>
+      <find>selectEmpty</find>
+      <find>closeDialogSetQuantity</find>
+      <find>formControl</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -144,7 +146,6 @@
         <option value="$PROJECT_DIR$/src/views/admin/Congviec/CongviecForm.js" />
         <option value="$PROJECT_DIR$/src/views/admin/Dichvu/DichvuForm.js" />
         <option value="$PROJECT_DIR$/src/views/admin/Mon/MonDialog.js" />
-        <option value="$PROJECT_DIR$/src/views/admin/Mon/AdminMon.js" />
         <option value="$PROJECT_DIR$/src/views/admin/Congviec/AdminCongviec.js" />
         <option value="$PROJECT_DIR$/src/views/admin/Dichvu/AdminDichvu.js" />
         <option value="$PROJECT_DIR$/src/views/admin/Menu/MonForm.js" />
@@ -153,7 +154,6 @@
         <option value="$PROJECT_DIR$/src/components/Table/EnhancedTableExtend.js" />
         <option value="$PROJECT_DIR$/src/services/MenuMonService.js" />
         <option value="$PROJECT_DIR$/src/services/MonService.js" />
-        <option value="$PROJECT_DIR$/src/components/Grid/TitlebarGridList.js" />
         <option value="$PROJECT_DIR$/src/services/MenuService.js" />
         <option value="$PROJECT_DIR$/src/views/admin/Menu/MenuDialog.js" />
         <option value="$PROJECT_DIR$/src/views/admin/Menu/MenuForm.js" />
@@ -167,6 +167,9 @@
         <option value="$PROJECT_DIR$/src/services/VatdungService.js" />
         <option value="$PROJECT_DIR$/src/views/admin/Vatdung/AdminVatdung.js" />
         <option value="$PROJECT_DIR$/src/views/admin/Vatdung/VatdungForm.js" />
+        <option value="$PROJECT_DIR$/src/views/admin/Mon/AdminMon.js" />
+        <option value="$PROJECT_DIR$/src/components/Grid/TitlebarGridList.js" />
+        <option value="$PROJECT_DIR$/src/views/admin/Mon/MonDialogSetQuantity.js" />
       </list>
     </option>
   </component>
@@ -184,7 +187,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -227,6 +230,13 @@
               <item name="web" type="b2602c69:ProjectViewProjectNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Table" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -256,7 +266,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="Vatdung" type="462c0819:PsiDirectoryNode" />
+              <item name="Mon" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -271,7 +281,7 @@
     <property name="SearchEverywhereHistoryKey" value="MenuFor&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Menu/MenuForm.js&#10;AdminCong&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Congviec/AdminCongviec.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558363196890" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558368179162" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -285,6 +295,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\DO-AN\react\web\src\views\admin\Mon" />
       <recent name="E:\DO-AN\react\web\src\services" />
       <recent name="E:\DO-AN\react\web\src\views\admin" />
       <recent name="E:\DO-AN\react\web\src\components\Table" />
@@ -318,12 +329,12 @@
       <workItem from="1558186338837" duration="3260000" />
       <workItem from="1558234070787" duration="10642000" />
       <workItem from="1558270845118" duration="13528000" />
-      <workItem from="1558355014794" duration="6887000" />
+      <workItem from="1558355014794" duration="11180000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42002000" />
+    <option name="totallyTimeSpent" value="46295000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -465,18 +476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/admin/Mon/AdminMon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="109" column="11" selection-start-line="109" selection-start-column="11" selection-end-line="109" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#114#176#0" expanded="true" />
-            <element signature="e#610#669#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/admin/Congviec/AdminCongviec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -506,17 +505,6 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#150#212#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/admin/Mon/MonForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1955">
-          <caret line="122" column="33" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#136#188#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -673,16 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Grid/TitlebarGridList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="162" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/admin/Vatdung/AdminVatdung.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -695,17 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/admin/Menu/MenuForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="164" column="16" selection-start-line="164" selection-start-column="16" selection-end-line="170" selection-end-column="18" />
-          <folding>
-            <element signature="e#149#201#0" expanded="true" />
-            <element signature="e#362#422#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/admin/Vatdung/VatdungForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -714,6 +681,57 @@
             <element signature="e#0#26#0" expanded="true" />
             <element signature="e#136#188#0" expanded="true" />
             <element signature="e#281#336#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/admin/Mon/AdminMon.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-374">
+          <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#114#176#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/admin/Mon/MonForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="100" column="13" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#136#188#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/admin/Menu/MenuForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="168" column="29" lean-forward="true" selection-start-line="168" selection-start-column="29" selection-end-line="168" selection-end-column="29" />
+          <folding>
+            <element signature="e#149#201#0" expanded="true" />
+            <element signature="e#362#422#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Grid/TitlebarGridList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/admin/Mon/MonDialogSetQuantity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-323">
+          <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#197#243#0" expanded="true" />
           </folding>
         </state>
       </provider>

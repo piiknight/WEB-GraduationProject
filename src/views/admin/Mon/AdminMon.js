@@ -10,8 +10,9 @@ import AddIcon from "@material-ui/icons/Add";
 import Search from "@material-ui/icons/Search";
 
 // core components
-import EnhancedTable from "components/Table/EnhancedTable";
+import EnhancedTableExtend from "components/Table/EnhancedTableExtend";
 import MonDialog from "./MonDialog";
+import MonDialogSetQuantity from "./MonDialogSetQuantity";
 
 // services or utilities
 import { search } from "utilities/Searching";
@@ -22,6 +23,7 @@ class AdminMon extends Component {
 	    super(props);
 	    this.state = {
 	    	openObjectDialog: false,
+	    	openDialogSetQuantity: false,
 	    	keyWords: "",
 	      	openDeleteConfirmDialog: false,
 	      	objectToDelete: null,
@@ -83,6 +85,11 @@ class AdminMon extends Component {
 	    this.setState({ objectToEdit: item, openObjectDialog: true });
 	};
 
+    handleExtend = item => {
+        console.log("handleExtend: " + JSON.stringify(item));
+        this.setState({ objectToEdit: item, openDialogSetQuantity: true });
+    };
+
 	handleDelete = item => {
 	    this.setState({ objectToDelete: item, openDeleteConfirmDialog: true });
     };
@@ -123,8 +130,13 @@ class AdminMon extends Component {
 	    this.setState({ openObjectDialog: false });
 	};
 
+    closeDialogSetQuantity = () => {
+        this.setState({ openDialogSetQuantity: false });
+    };
+
   	render(){
   		const {
+            openDialogSetQuantity,
   			openObjectDialog,
   			objectToEdit,
   			openDeleteConfirmDialog,
@@ -159,10 +171,11 @@ class AdminMon extends Component {
 	            }}
 	            onChange={this.onKeyWordsChange}
             />
-	        <EnhancedTable
+	        <EnhancedTableExtend
 	          	name={"Thông tin món ăn"}
 	         	head={displayedColumns}
 	         	onEdit={item => this.handleEdit(item)}
+	         	onExtend={item => this.handleExtend(item)}
 				onDelete={item => this.handleDelete(item)}
 	          	data={listMon.filter(item => this.filterByFullName(item))}
 	        />
@@ -171,6 +184,11 @@ class AdminMon extends Component {
 	            open={openObjectDialog}
 	            onClose={this.closeAddObjectDialog}
 	        />
+            <MonDialogSetQuantity
+                mon={objectToEdit}
+                open={openDialogSetQuantity}
+                onClose={this.closeDialogSetQuantity}
+            />
 	        <DeleteConfirmDialog
 	            open={openDeleteConfirmDialog}
 	            onClose={this.handleCloseConfirmDeleteDialog}

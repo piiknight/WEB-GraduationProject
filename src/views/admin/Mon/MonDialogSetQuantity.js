@@ -12,7 +12,12 @@ import TextField from '@material-ui/core/TextField';
 import Button from "@material-ui/core/Button/Button";
 import AddIcon from '@material-ui/icons/Add';
 import DoneIcon from '@material-ui/icons/Done';
+
 // core components
+
+// services or utilities
+import { VatdungService } from "services/VatdungService";
+import { MonVatdungService } from "../../../services/MonVatdungService";
 
 const styles = theme => ({
     root: {
@@ -36,7 +41,7 @@ const styles = theme => ({
     },
     button1: {
         fontFamily: "arial",
-        width: 280,
+        width: 200,
         textAlign: "center"
     },
     button2: {
@@ -51,9 +56,22 @@ class MonDialogSetQuantity extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            age: "",
-            showButtonAdd: true
+            showButtonAdd: true,
+            listSelect: []
         };
+    };
+
+    loadSelectList() {
+        VatdungService.getAllByIdType(1).then(res => {
+            if (!res.error) {
+                // console.log("hanldeAbc: " + JSON.stringify(res.data));
+                this.setState({ listSelect: res.data });
+            }
+        });
+    };
+
+    componentDidMount() {
+        this.loadSelectList();
     };
 
     handleButtonAdd = () => {
@@ -63,21 +81,81 @@ class MonDialogSetQuantity extends Component {
         });
     };
 
-    handleButtonDone = () => {
-        const {showButtonAdd} = this.state;
-        this.setState({
-            showButtonAdd: true
-        });
+    handleChangeSelect = (event) => {
+        let attr = event.target.name;
+        this.state[attr] = event.target.value;
+        this.setState({});
+    };
+
+    handleChangeText = (event) => {
+        let attr = event.target.name;
+        this.state[attr] = event.target.value;
+        this.setState({});
+    };
+
+    handleButtonDone = (vatdung) => {
+        let idMVD = vatdung.idMVD;
+        vatdung.quantityNew = parseInt(this.state["text" + idMVD]) || vatdung.quantity;
+        vatdung.idVDNew = this.state["select" + idMVD] || vatdung.idVD;
+
+        if (vatdung.idVDNew != vatdung.idVD || vatdung.quantityNew != vatdung.quantity) {
+            vatdung.idVD = vatdung.idVDNew;
+            vatdung.quantity = vatdung.quantityNew;
+            MonVatdungService.updateOne(vatdung).then(res => {
+                if (!res.error) {
+                    console.log("susccess: " + JSON.stringify(res.data));
+                    // this.setState({ listSelect: res.data });
+                }
+            });
+        }
     };
 
     render() {
-        const {open, onClose, mon, classes} = this.props;
-        const {showButtonAdd} = this.state;
+        const {open, onClose, mon, listVatdung, classes} = this.props;
+        const {
+            showButtonAdd,
+            listSelect
+        } = this.state;
         return (
             <Dialog open={open} onClose={onClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">Cài đặt số lượng vật dụng cho món ăn</DialogTitle>
+                <DialogTitle id="form-dialog-title">Cài đặt số lượng vật dụng cho {mon ? mon.name : ""}</DialogTitle>
                 <DialogContent>
-                    <form className={classes.root} autoComplete="off" style={{width: 500}}>
+                    <form className={classes.root} autoComplete="off" style={{width: 650}}>
+                        {listVatdung.map((vatdung, index) => (
+                            <div key={index}>
+                                <Select
+                                    className={classes.select}
+                                    value={this.state["select" + vatdung.idMVD] || vatdung.idVD}
+                                    onChange={this.handleChangeSelect}
+                                    inputProps={{
+                                        name: "select" + vatdung.idMVD,
+                                        id: vatdung.idMVD,
+                                    }}
+                                >
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    {listSelect.map((select, index) => (
+                                        <MenuItem key={index} value={select.idVD}>{select.name}</MenuItem>
+                                    ))}
+                                </Select>
+                                <TextField
+                                    id={"text" + vatdung.idMVD}
+                                    name={"text" + vatdung.idMVD}
+                                    value={this.state["text" + vatdung.idMVD] || vatdung.quantity}
+                                    label="Số lượng"
+                                    className={classNames(classes.textField, classes.dense)}
+                                    margin="dense"
+                                    type="number"
+                                    onChange={this.handleChangeText}
+                                />
+                                <Button variant="contained" color="primary" className={classes.button2}
+                                        onClick={() => this.handleButtonDone(vatdung)}
+                                >
+                                    <DoneIcon/>
+                                </Button>
+                            </div>
+                        ))}
                         {showButtonAdd ?
                             (
                                 <div>

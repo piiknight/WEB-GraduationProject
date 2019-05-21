@@ -3,6 +3,12 @@ import {myAxios} from "config/myAxios";
 export const VatdungService = {
     congviecAPI: `${process.env.REACT_APP_API_URL}vatdung`,
 
+    getAllByIdType(id) {
+        console.log("getAllByIdType: " + id);
+        const url = `${VatdungService.congviecAPI}/type/${id}`;
+        return myAxios.get(url);
+    },
+
     getAllType() {
         const url = `${VatdungService.congviecAPI}/type`;
         return myAxios.get(url);

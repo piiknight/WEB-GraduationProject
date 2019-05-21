@@ -17,6 +17,7 @@ import MonDialogSetQuantity from "./MonDialogSetQuantity";
 // services or utilities
 import { search } from "utilities/Searching";
 import { MonService } from "services/MonService";
+import { MonVatdungService } from "services/MonVatdungService";
 
 class AdminMon extends Component {
 	constructor(props) {
@@ -54,7 +55,8 @@ class AdminMon extends Component {
 		          label: "Điểm đánh giá"
 		        }
 		    ],
-		    listMon: []
+		    listMon: [],
+			listVatdung: []
 	    };
 	    this.subscription = EventBus.on("updateDataList", this.loadDataList);
 	};
@@ -87,6 +89,12 @@ class AdminMon extends Component {
 
     handleExtend = item => {
         console.log("handleExtend: " + JSON.stringify(item));
+        MonVatdungService.getAllByIdMon(item.idMon).then(res => {
+            if (!res.error) {
+                console.log("res: " + JSON.stringify(res.data));
+                this.setState({ listVatdung: res.data });
+            }
+        });
         this.setState({ objectToEdit: item, openDialogSetQuantity: true });
     };
 
@@ -142,7 +150,8 @@ class AdminMon extends Component {
   			openDeleteConfirmDialog,
   			displayedColumns,
   			keyWords, 
-  			listMon
+  			listMon,
+            listVatdung
   		} = this.state;
 
   		return (
@@ -186,6 +195,7 @@ class AdminMon extends Component {
 	        />
             <MonDialogSetQuantity
                 mon={objectToEdit}
+                listVatdung={listVatdung}
                 open={openDialogSetQuantity}
                 onClose={this.closeDialogSetQuantity}
             />

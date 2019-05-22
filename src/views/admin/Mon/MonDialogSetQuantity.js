@@ -11,6 +11,7 @@ import Select from '@material-ui/core/Select';
 import TextField from '@material-ui/core/TextField';
 import Button from "@material-ui/core/Button/Button";
 import AddIcon from '@material-ui/icons/Add';
+import CloseIcon from '@material-ui/icons/Close';
 import DoneIcon from '@material-ui/icons/Done';
 
 // core components
@@ -29,14 +30,14 @@ const styles = theme => ({
     textField: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-        width: 200,
+        width: 180,
     },
     dense: {
         marginTop: 0,
         marginRight: 50,
     },
     select: {
-        width: 200,
+        width: 180,
         marginTop: 12
     },
     button1: {
@@ -57,7 +58,9 @@ class MonDialogSetQuantity extends Component {
         super(props);
         this.state = {
             showButtonAdd: true,
-            listSelect: []
+            listSelect: [],
+            textAdd: "",
+            selectAdd: ""
         };
     };
 
@@ -98,26 +101,98 @@ class MonDialogSetQuantity extends Component {
         vatdung.quantityNew = parseInt(this.state["text" + idMVD]) || vatdung.quantity;
         vatdung.idVDNew = this.state["select" + idMVD] || vatdung.idVD;
 
+        if (vatdung.quantityNew < 1) {
+            alert("Hãy nhập số dương");
+            return;
+        }
+
         if (vatdung.idVDNew != vatdung.idVD || vatdung.quantityNew != vatdung.quantity) {
             vatdung.idVD = vatdung.idVDNew;
             vatdung.quantity = vatdung.quantityNew;
             MonVatdungService.updateOne(vatdung).then(res => {
                 if (!res.error) {
+                    alert("Lưu thông tin thành công");
                     console.log("susccess: " + JSON.stringify(res.data));
                     // this.setState({ listSelect: res.data });
                 }
             });
+        } else {
+            alert("Giá trị không thay đổi, không thể lưu");
         }
     };
 
+    handleAddDone = () => {
+        const { listVatdung } = this.props;
+        const { textAdd, selectAdd } = this.state;
+        const { mon } = this.props;
+        let object = {
+            idMon: mon.idMon,
+            quantity: parseInt(textAdd) || "",
+            idVD: selectAdd
+        }
+
+        if (object.quantity == "" || object.quantity < 1 || object.idVD == "") {
+            alert("Hãy nhập nhập đúng giá trị");
+            return;
+        }
+
+        for(let i = 0; i < listVatdung.length; i++){
+            if ( listVatdung[i].idVD === object.idVD) {
+                alert("Vật dụng đã tồn tại");
+                return;
+            }
+        }
+
+        MonVatdungService.addOne(object).then(res => {
+            if (!res.error) {
+                alert("Thêm thành công");
+                this.cleanUpBtnAdd();
+                listVatdung.push(object);
+                this.setState({});
+            }
+        });
+    };
+
+    handleButtonClose = (id) => {
+        const { listVatdung } = this.props;
+        MonVatdungService.deleteOne(id).then(res => {
+            if (!res.error) {
+                alert("Xóa thành công thành công");
+
+                for(let i = 0; i < listVatdung.length; i++){
+                    if ( listVatdung[i].idMVD === id) {
+                        listVatdung.splice(i, 1);
+                        break;
+                    }
+                }
+                this.setState({});
+            }
+        });
+    };
+
+    cleanUpBtnAdd = () => {
+        this.setState({
+            showButtonAdd: true,
+            textAdd: "",
+            selectAdd: ""
+        })
+    };
+
+    handleClose = () => {
+        const { onClose } = this.props;
+        onClose();
+        this.cleanUpBtnAdd();
+    };
+
     render() {
-        const {open, onClose, mon, listVatdung, classes} = this.props;
+        const { open, onClose, mon, listVatdung, classes } = this.props;
+        const { textAdd, selectAdd } = this.state;
         const {
             showButtonAdd,
             listSelect
         } = this.state;
         return (
-            <Dialog open={open} onClose={onClose} aria-labelledby="form-dialog-title">
+            <Dialog open={open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Cài đặt số lượng vật dụng cho {mon ? mon.name : ""}</DialogTitle>
                 <DialogContent>
                     <form className={classes.root} autoComplete="off" style={{width: 650}}>
@@ -149,10 +224,15 @@ class MonDialogSetQuantity extends Component {
                                     type="number"
                                     onChange={this.handleChangeText}
                                 />
-                                <Button variant="contained" color="primary" className={classes.button2}
+                                <Button variant="contained" color="inherit" className={classes.button2}
                                         onClick={() => this.handleButtonDone(vatdung)}
                                 >
                                     <DoneIcon/>
+                                </Button>
+                                <Button variant="contained" color="secondary" className={classes.button2}
+                                        onClick={() => this.handleButtonClose(vatdung.idMVD)}
+                                >
+                                    <CloseIcon/>
                                 </Button>
                             </div>
                         ))}
@@ -170,29 +250,31 @@ class MonDialogSetQuantity extends Component {
                                 <div>
                                     <Select
                                         className={classes.select}
-                                        value={this.state.age}
-                                        onChange={this.handleChange}
+                                        value={selectAdd}
+                                        onChange={this.handleChangeSelect}
                                         inputProps={{
-                                            name: 'age',
-                                            id: 'age-simple',
+                                            name: 'selectAdd'
                                         }}
                                     >
                                         <MenuItem value="">
                                             <em>None</em>
                                         </MenuItem>
-                                        <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>Twenty</MenuItem>
-                                        <MenuItem value={30}>Thirty</MenuItem>
+                                        {listSelect.map((select, index) => (
+                                            <MenuItem key={index} value={select.idVD}>{select.name}</MenuItem>
+                                        ))}
                                     </Select>
                                     <TextField
-                                        id="standard-dense"
+                                        id="textAdd"
+                                        name={"textAdd"}
+                                        value={textAdd}
+                                        onChange={this.handleChangeText}
                                         label="Số lượng"
                                         className={classNames(classes.textField, classes.dense)}
                                         margin="dense"
                                         type="number"
                                     />
                                     <Button variant="contained" color="primary" className={classes.button2}
-                                            onClick={this.handleButtonDone}
+                                            onClick={this.handleAddDone}
                                     >
                                         <DoneIcon/>
                                     </Button>

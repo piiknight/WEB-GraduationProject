@@ -50,6 +50,12 @@ class AdminVatdung extends Component {
                     numeric: false,
                     disablePadding: true,
                     label: "Loại vật dụng"
+                },
+                {
+                    id: "quantity",
+                    numeric: false,
+                    disablePadding: true,
+                    label: "Số lượng"
                 }
             ],
             listVatdung: []
@@ -111,7 +117,8 @@ class AdminVatdung extends Component {
             idVD: "",
             name: "",
             description: "",
-            idLVD: ""
+            idLVD: "",
+            quantity: ""
         };
         return vatdung;
     };

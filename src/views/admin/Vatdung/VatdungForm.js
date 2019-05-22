@@ -94,6 +94,19 @@ class VatdungForm extends Component {
                     ))}
                 </Select>
 
+                {/*Quantity*/}
+                <TextField
+                    margin="normal"
+                    id="quantity"
+                    onChange={handleChange}
+                    label="Số lượng"
+                    fullWidth
+                    value={values.quantity}
+                    error={errors.quantity && touched.quantity}
+                    helperText={errors.quantity}
+                    type={"number"}
+                />
+
                 {errors.responseError && (
                     <p style={{color: "red"}}>{errors.responseError}</p>
                 )}
@@ -111,11 +124,13 @@ class VatdungForm extends Component {
 };
 
 const convertToObject = values => {
+    console.log("convertToObject: " + JSON.stringify(values));
     let object = {
         idVD: values.idVD,
         name: values.name,
         description: values.description || "",
-        idLVD: values.idLVD
+        idLVD: values.idLVD,
+        quantity: values.quantity,
     };
 
     return object;
@@ -127,7 +142,8 @@ const mapPropsObjectToValues = object => {
         idVD: object.idVD,
         name: object.name,
         description: object.description,
-        idLVD: object.idLVD
+        idLVD: object.idLVD,
+        quantity: object.quantity,
     };
 
     return values;

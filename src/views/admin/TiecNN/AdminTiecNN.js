@@ -11,7 +11,7 @@ import Search from "@material-ui/icons/Search";
 
 // core components
 import EnhancedTable from "components/Table/EnhancedTable";
-import CongviecDialog from "./CongviecDialog";
+import CheckQuantityVDDialog from "./CheckQuantityVDDialog";
 
 // services or utilities
 import { search } from "utilities/Searching";
@@ -145,19 +145,6 @@ class AdminTiecNN extends Component {
 	    });
 	};
 
-	newObject = () => {
-		let congviec: {
-      		idTiec: "",
-      		name: "",
-      		salary: "",
-      		workTime: ""
-      	};
-		return congviec; 
-	};
-	addNewObject = () => {
-	    this.setState({ objectToEdit: this.newObject, openObjectDialog: true });
-	};
-
 	closeAddObjectDialog = () => {
 	    this.setState({ openObjectDialog: false });
 	};
@@ -174,13 +161,6 @@ class AdminTiecNN extends Component {
 
   		return (
     	<div>
-	    	<Button
-	          onClick={this.addNewObject}
-	          variant="fab"
-	          color={"primary"}
-	        >
-	          <AddIcon />
-	        </Button>
 	    	<TextField
 	            label="Tìm kiếm tiệc"
 	            placeholder="Tìm kiếm"
@@ -206,17 +186,10 @@ class AdminTiecNN extends Component {
 	          	data={listTiec.filter(item => this.filterByFullName(item))}
                 numCustom={1}
             />
-	        {/*<CongviecDialog*/}
-	            {/*congviec={objectToEdit}*/}
-	            {/*open={openObjectDialog}*/}
-	            {/*onClose={this.closeAddObjectDialog}*/}
-	        {/*/>*/}
-	        <DeleteConfirmDialog
-	            open={openDeleteConfirmDialog}
-	            onClose={this.handleCloseConfirmDeleteDialog}
-	            title="Xóa công việc này?"
-	            message="Bạn có thật sự muốn xóa?"
-	            onYes={this.deleteOne}
+	        <CheckQuantityVDDialog
+	            tiec={objectToEdit}
+	            open={openObjectDialog}
+	            onClose={this.closeAddObjectDialog}
 	        />
         </div>
   	);

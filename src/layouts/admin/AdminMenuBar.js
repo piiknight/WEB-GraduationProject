@@ -30,6 +30,9 @@ function AdminMenuBar() {
                         <li className="active">
                             <a href="/vatdung" aria-expanded="true"><span>Vật dụng</span></a>
                         </li>
+                        <li className="active">
+                            <a href="/tiec-nn" aria-expanded="true"><span>Quản lý Tiệc (Người nhận)</span></a>
+                        </li>
 	        		</ul>
 	      		</nav>
 	    	</div>

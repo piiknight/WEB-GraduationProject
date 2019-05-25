@@ -9,6 +9,7 @@ import AdminMon from "./Mon/AdminMon";
 import AdminMenu from "./Menu/AdminMenu";
 import AdminVatdung from "./Vatdung/AdminVatdung";
 import AdminTiecNN from "./TiecNN/AdminTiecNN";
+import AdminNNVDung from "./NNVDung/AdminNNVDung";
 
 class DashBoard extends Component {
 	constructor(props) {
@@ -29,6 +30,9 @@ class DashBoard extends Component {
                 break;
             case "vatdung":
                 this.content = <AdminVatdung />;
+                break;
+            case "nn-vd":
+                this.content = <AdminNNVDung />;
                 break;
             case "tiec-nn":
                 this.content = <AdminTiecNN />;

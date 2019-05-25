@@ -14,6 +14,7 @@ function App() {
 	      	<Route path="/mon" component={() => <DashBoard content="mon" />} />
 	      	<Route path="/menu" component={() => <DashBoard content="menu" />} />
 	      	<Route path="/vatdung" component={() => <DashBoard content="vatdung" />} />
+	      	<Route path="/nn-vd" component={() => <DashBoard content="nn-vd" />} />
 	      	<Route path="/tiec-nn" component={() => <DashBoard content="tiec-nn" />} />
 	      	<Route path="/login" component={Login} />
 	      	<Route path="/register" component={Register} />

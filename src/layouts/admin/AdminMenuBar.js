@@ -31,6 +31,9 @@ function AdminMenuBar() {
                             <a href="/vatdung" aria-expanded="true"><span>Vật dụng</span></a>
                         </li>
                         <li className="active">
+                            <a href="/nn-vd" aria-expanded="true"><span>Vật dụng (Người nhận)</span></a>
+                        </li>
+                        <li className="active">
                             <a href="/tiec-nn" aria-expanded="true"><span>Quản lý Tiệc (Người nhận)</span></a>
                         </li>
 	        		</ul>

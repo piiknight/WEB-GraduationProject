@@ -204,7 +204,8 @@ class AdminTiecNN extends Component {
 	         	onEdit={item => this.handleEdit(item)}
 				onDelete={item => this.handleDelete(item)}
 	          	data={listTiec.filter(item => this.filterByFullName(item))}
-	        />
+                numCustom={1}
+            />
 	        {/*<CongviecDialog*/}
 	            {/*congviec={objectToEdit}*/}
 	            {/*open={openObjectDialog}*/}

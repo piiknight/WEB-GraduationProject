@@ -11,7 +11,7 @@ import Search from "@material-ui/icons/Search";
 
 // core components
 import EnhancedTable from "components/Table/EnhancedTable";
-// import CongviecDialog from "./CongviecDialog";
+import NNVDungDialog from "./NNVDungDialog";
 
 // services or utilities
 import {search} from "utilities/Searching";
@@ -26,6 +26,7 @@ class AdminNNVDung extends Component {
             openDeleteConfirmDialog: false,
             objectToDelete: null,
             objectToEdit: null,
+            isAdd: false,
             displayedColumns: [
                 {
                     id: "idNNVD",
@@ -38,12 +39,6 @@ class AdminNNVDung extends Component {
                     numeric: false,
                     disablePadding: true,
                     label: "Vật dụng"
-                },
-                {
-                    id: "salary",
-                    numeric: false,
-                    disablePadding: true,
-                    label: "Salary"
                 },
                 {
                     id: "maxQuantity",
@@ -87,7 +82,7 @@ class AdminNNVDung extends Component {
     };
 
     handleEdit = item => {
-        this.setState({objectToEdit: item, openObjectDialog: true});
+        this.setState({objectToEdit: item, openObjectDialog: true, isAdd: false});
     };
 
     handleDelete = item => {
@@ -114,16 +109,16 @@ class AdminNNVDung extends Component {
     };
 
     newObject = () => {
-        let congviec: {
-            idCV: "",
-            name: "",
-            salary: "",
-            workTime: ""
+        let obj: {
+            idNNVD: "",
+            idVD: "",
+            maxQuantity: "",
+            curQuantity: ""
         };
-        return congviec;
+        return obj;
     };
     addNewObject = () => {
-        this.setState({objectToEdit: this.newObject, openObjectDialog: true});
+        this.setState({objectToEdit: this.newObject, openObjectDialog: true, isAdd: true});
     };
 
     closeAddObjectDialog = () => {
@@ -137,7 +132,8 @@ class AdminNNVDung extends Component {
             openDeleteConfirmDialog,
             displayedColumns,
             keyWords,
-            listData
+            listData,
+            isAdd
         } = this.state;
 
         return (
@@ -173,11 +169,12 @@ class AdminNNVDung extends Component {
                     onDelete={item => this.handleDelete(item)}
                     data={listData.filter(item => this.filterByFullName(item))}
                 />
-                {/*<CongviecDialog*/}
-                {/*congviec={objectToEdit}*/}
-                {/*open={openObjectDialog}*/}
-                {/*onClose={this.closeAddObjectDialog}*/}
-                {/*/>*/}
+                <NNVDungDialog
+                    obj={objectToEdit}
+                    open={openObjectDialog}
+                    onClose={this.closeAddObjectDialog}
+                    isAdd={isAdd}
+                />
                 <DeleteConfirmDialog
                     open={openDeleteConfirmDialog}
                     onClose={this.handleCloseConfirmDeleteDialog}

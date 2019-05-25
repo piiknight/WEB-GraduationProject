@@ -13,6 +13,7 @@ import IconButton from "@material-ui/core/IconButton";
 // @material-ui/icons
 import Edit from "@material-ui/icons/Edit";
 import Close from "@material-ui/icons/Close";
+import RemoveRedEye from "@material-ui/icons/RemoveRedEye";
 // Core components
 import EnhancedTableHead from "./EnhancedTableHead";
 import EnhancedTableToolbar from "./EnhancedTableToolbar";
@@ -104,7 +105,7 @@ class EnhancedTable extends React.Component {
   };
 
   render() {
-    const { classes, head, name, data } = this.props;
+    const { classes, head, name, data, numCustom } = this.props;
     const { order, orderBy, selected, rowsPerPage, page } = this.state;
     return (
       <Paper className={classes.root}>
@@ -142,48 +143,74 @@ class EnhancedTable extends React.Component {
                           </TableCell>
                         );
                       })}
-                      <TableCell padding="none">
-                        <Tooltip
-                          id="tooltip-top"
-                          title="Edit"
-                          placement="top"
-                          classes={{ tooltip: classes.tooltip }}
-                        >
-                          <IconButton
-                            aria-label="Edit"
-                            className={classes.tableActionButton}
-                            onClick={() => this.handleEdit(item)}
-                          >
-                            <Edit
-                              className={
-                                classes.tableActionButtonIcon +
-                                " " +
-                                classes.edit
-                              }
-                            />
-                          </IconButton>
-                        </Tooltip>
-                        <Tooltip
-                          id="tooltip-top-start"
-                          title="Remove"
-                          placement="top"
-                          classes={{ tooltip: classes.tooltip }}
-                        >
-                          <IconButton
-                            aria-label="Close"
-                            className={classes.tableActionButton}
-                            onClick={() => this.props.onDelete(item)}
-                          >
-                            <Close
-                              className={
-                                classes.tableActionButtonIcon +
-                                " " +
-                                classes.close
-                              }
-                            />
-                          </IconButton>
-                        </Tooltip>
-                      </TableCell>
+                        {
+                          numCustom === undefined ?
+                              <TableCell padding="none">
+                                  <Tooltip
+                                      id="tooltip-top"
+                                      title="Edit"
+                                      placement="top"
+                                      classes={{ tooltip: classes.tooltip }}
+                                  >
+                                      <IconButton
+                                          aria-label="Edit"
+                                          className={classes.tableActionButton}
+                                          onClick={() => this.handleEdit(item)}
+                                      >
+                                          <Edit
+                                              className={
+                                                  classes.tableActionButtonIcon +
+                                                  " " +
+                                                  classes.edit
+                                              }
+                                          />
+                                      </IconButton>
+                                  </Tooltip>
+                                  <Tooltip
+                                      id="tooltip-top-start"
+                                      title="Remove"
+                                      placement="top"
+                                      classes={{ tooltip: classes.tooltip }}
+                                  >
+                                      <IconButton
+                                          aria-label="Close"
+                                          className={classes.tableActionButton}
+                                          onClick={() => this.props.onDelete(item)}
+                                      >
+                                          <Close
+                                              className={
+                                                  classes.tableActionButtonIcon +
+                                                  " " +
+                                                  classes.close
+                                              }
+                                          />
+                                      </IconButton>
+                                  </Tooltip>
+                              </TableCell>
+                              :
+                              <TableCell padding="none">
+                                  <Tooltip
+                                      id="tooltip-top"
+                                      title="View"
+                                      placement="top"
+                                      classes={{ tooltip: classes.tooltip }}
+                                  >
+                                      <IconButton
+                                          aria-label="View"
+                                          className={classes.tableActionButton}
+                                          onClick={() => this.handleEdit(item)}
+                                      >
+                                          <RemoveRedEye
+                                              className={
+                                                  classes.tableActionButtonIcon +
+                                                  " " +
+                                                  classes.edit
+                                              }
+                                          />
+                                      </IconButton>
+                                  </Tooltip>
+                              </TableCell>
+                        }
                     </TableRow>
                   );
                 })}

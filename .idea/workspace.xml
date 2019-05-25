@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bdf40c8-49db-4625-9b96-b5586ab4f49c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/services/NNVDungService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/admin/NNVDung/AdminNNVDung.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/admin/NNVDung/CongviecDialog.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/admin/NNVDung/CongviecForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/admin/AdminMenuBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/admin/AdminMenuBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/DashBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/DashBoard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Table/EnhancedTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Table/EnhancedTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/NNVDung/AdminNNVDung.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/NNVDung/AdminNNVDung.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/NNVDung/CongviecDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/NNVDung/NNVDungDialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/NNVDung/CongviecForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/NNVDung/NNVDungForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/TiecNN/AdminTiecNN.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/TiecNN/AdminTiecNN.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,12 +37,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="8798" />
+          <entry key="js" value="9516" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="8798" />
+          <entry key="JavaScript" value="9516" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -55,15 +53,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="135" />
-          <entry key="jsx" value="1" />
+          <entry key="js" value="147" />
+          <entry key="jsx" value="2" />
           <entry key="ts" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSX Harmony" value="1" />
-          <entry key="JavaScript" value="135" />
+          <entry key="JSX Harmony" value="2" />
+          <entry key="JavaScript" value="147" />
           <entry key="TypeScript" value="9" />
         </counts>
       </usages-collector>
@@ -71,15 +69,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/views/admin/NNVDung/AdminNNVDung.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/admin/TiecNN/AdminTiecNN.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+            <state relative-caret-position="50">
+              <caret line="203" column="47" selection-start-line="203" selection-start-column="37" selection-end-line="203" selection-end-column="47" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#114#176#0" expanded="true" />
+                <element signature="e#512#571#0" expanded="true" />
                 <element signature="e#645#690#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Table/EnhancedTable.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="193" column="49" selection-start-line="193" selection-start-column="49" selection-end-line="193" selection-end-column="49" />
+              <folding>
+                <element signature="e#583#626#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Table/EnhancedTableExtend.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="e#752#804#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,8 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>objectToDelete</find>
-      <find>deleteOne</find>
       <find>handleCloseConfirmDeleteDialog</find>
       <find>DichvuService</find>
       <find>mapPropsObjectToValues</find>
@@ -119,6 +140,8 @@
       <find>idMVD</find>
       <find>handleChangeSelect</find>
       <find>quantity</find>
+      <find>NNVDungForm</find>
+      <find>handleEdit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,7 +162,6 @@
         <option value="$PROJECT_DIR$/src/views/admin/Menu/MonForm.js" />
         <option value="$PROJECT_DIR$/src/views/admin/Mon/MonForm.js" />
         <option value="$PROJECT_DIR$/src/views/admin/Menu/MonDialog.js" />
-        <option value="$PROJECT_DIR$/src/components/Table/EnhancedTableExtend.js" />
         <option value="$PROJECT_DIR$/src/services/MenuMonService.js" />
         <option value="$PROJECT_DIR$/src/services/MonService.js" />
         <option value="$PROJECT_DIR$/src/services/MenuService.js" />
@@ -154,18 +176,23 @@
         <option value="$PROJECT_DIR$/src/views/admin/Mon/AdminMon.js" />
         <option value="$PROJECT_DIR$/src/services/MonVatdungService.js" />
         <option value="$PROJECT_DIR$/src/views/admin/Mon/MonDialogSetQuantity.js" />
-        <option value="$PROJECT_DIR$/src/views/admin/Vatdung/VatdungForm.js" />
         <option value="$PROJECT_DIR$/src/views/admin/Vatdung/AdminVatdung.js" />
         <option value="$PROJECT_DIR$/src/views/admin/TiecNN/AdminCongviec.js" />
         <option value="$PROJECT_DIR$/src/services/TiecService.js" />
         <option value="$PROJECT_DIR$/src/utilities/ConvertTime.js" />
         <option value="$PROJECT_DIR$/src/utilities/TiecStatus.js" />
-        <option value="$PROJECT_DIR$/src/views/admin/TiecNN/AdminTiecNN.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/services/NNVDungService.js" />
         <option value="$PROJECT_DIR$/src/views/admin/DashBoard.js" />
         <option value="$PROJECT_DIR$/src/layouts/admin/AdminMenuBar.js" />
+        <option value="$PROJECT_DIR$/src/views/admin/NNVDung/CongviecDialog.js" />
+        <option value="$PROJECT_DIR$/src/views/admin/Vatdung/VatdungForm.js" />
+        <option value="$PROJECT_DIR$/src/views/admin/NNVDung/NNVDungDialog.js" />
+        <option value="$PROJECT_DIR$/src/views/admin/NNVDung/NNVDungForm.js" />
         <option value="$PROJECT_DIR$/src/views/admin/NNVDung/AdminNNVDung.js" />
+        <option value="$PROJECT_DIR$/src/views/admin/TiecNN/AdminTiecNN.js" />
+        <option value="$PROJECT_DIR$/src/components/Table/EnhancedTableExtend.js" />
+        <option value="$PROJECT_DIR$/src/components/Table/EnhancedTable.js" />
       </list>
     </option>
   </component>
@@ -216,6 +243,26 @@
               <item name="web" type="b2602c69:ProjectViewProjectNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Snackbar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Table" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -231,6 +278,14 @@
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="TiecNN" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -241,7 +296,7 @@
     <property name="SearchEverywhereHistoryKey" value="MenuFor&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Menu/MenuForm.js&#10;AdminCong&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Congviec/AdminCongviec.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558785167714" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558794406367" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -296,12 +351,12 @@
       <workItem from="1558527555471" duration="7132000" />
       <workItem from="1558749459105" duration="71000" />
       <workItem from="1558749544519" duration="5492000" />
-      <workItem from="1558781259835" duration="2219000" />
+      <workItem from="1558781259835" duration="5878000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73483000" />
+    <option name="totallyTimeSpent" value="77142000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -374,9 +429,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/views/admin/Congviec/CongviecDialog.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/formik/dist/withFormik.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -445,22 +497,8 @@
         <state relative-caret-position="-2291" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Table/EnhancedTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/icons/Edit.d.ts">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Table/EnhancedTableExtend.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="157" column="41" selection-start-line="157" selection-start-column="41" selection-end-line="157" selection-end-column="41" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/Dialog/Dialog.d.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -555,13 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Snackbar/Snackbar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="14" column="55" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/VatdungService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -573,13 +604,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/admin/Mon/MonDialogSetQuantity.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="140" column="42" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -607,27 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="100" column="13" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/admin/Vatdung/AdminVatdung.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-163">
-          <caret line="55" column="34" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/admin/Vatdung/VatdungForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1557">
-          <caret line="105" column="47" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/admin/Menu/MenuForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="172" column="17" selection-start-line="172" selection-start-column="17" selection-end-line="172" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -662,19 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/admin/TiecNN/AdminTiecNN.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="91" column="26" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#114#176#0" expanded="true" />
-            <element signature="e#512#571#0" expanded="true" />
-            <element signature="e#645#690#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utilities/TiecStatus.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -686,18 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/admin/NNVDung/CongviecForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#136#188#0" expanded="true" />
-            <element signature="e#268#325#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -722,14 +700,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/admin/Mon/MonDialogSetQuantity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-850">
+          <caret line="140" column="42" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/admin/Menu/MenuForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="687">
+          <caret line="172" column="17" selection-start-line="172" selection-start-column="17" selection-end-line="172" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/admin/Vatdung/VatdungForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="94" column="25" lean-forward="true" selection-start-line="75" selection-start-column="16" selection-end-line="94" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#149#201#0" expanded="true" />
+            <element signature="e#336#391#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/admin/NNVDung/NNVDungDialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding>
+            <element signature="e#72#118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/admin/Vatdung/AdminVatdung.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="55" column="34" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Snackbar/Snackbar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="55" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/admin/NNVDung/NNVDungForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="98" column="97" selection-start-line="98" selection-start-column="97" selection-end-line="98" selection-end-column="97" />
+          <folding>
+            <element signature="e#281#336#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/admin/NNVDung/AdminNNVDung.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+        <state relative-caret-position="188">
+          <caret line="170" selection-start-line="170" selection-end-line="170" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#114#176#0" expanded="true" />
+            <element signature="e#510#569#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Table/EnhancedTableExtend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#752#804#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/admin/TiecNN/AdminTiecNN.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="203" column="47" selection-start-line="203" selection-start-column="37" selection-end-line="203" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#114#176#0" expanded="true" />
+            <element signature="e#512#571#0" expanded="true" />
             <element signature="e#645#690#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Table/EnhancedTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="193" column="49" selection-start-line="193" selection-start-column="49" selection-end-line="193" selection-end-column="49" />
+          <folding>
+            <element signature="e#583#626#0" expanded="true" />
           </folding>
         </state>
       </provider>

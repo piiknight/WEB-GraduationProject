@@ -34,43 +34,57 @@ class CheckQuantityVDDialog extends Component {
                     label: "Số lượng cần (+ dự phòng)"
                 },
                 {
-                    id: "validQuantity",
+                    id: "maxQuantity",
                     numeric: false,
                     disablePadding: true,
                     label: "Hiện có"
-                },
-                {
-                    id: "enough",
-                    numeric: false,
-                    disablePadding: true,
-                    label: "Đủ điều kiện"
                 }
             ],
-            listData: [],
+            listDataByMenu: [],
+            listDataByTiec: [],
             isAllEnough: false
         };
     };
 
     loadDataList = () => {
-        // passCurUserId
-        NNVDungService.getCheckQuantityVDByTiec(1).then(res => {
+        const { tiec } = this.props;
+        console.log("tiec: " + JSON.stringify(tiec));
+        NNVDungService.getCheckQuantityVDByTiec(tiec).then(res => {
             if (!res.error) {
                 console.log("getCheckQuantityVDByTiec: " + JSON.stringify(res.data));
-                let countEnough = 0;
-                for (let i = 0; i < res.data.length; i++) {
-                    let obj = res.data[i];
-                    if (obj && obj.enough != null && obj.enough != undefined &&  obj.enough >= 0) {
-                        obj.enough = "OK";
-                        countEnough++;
-                    }
-                }
-                this.setState({ listData: res.data, isAllEnough: countEnough == res.data.length });
+                this.setState({ listDataByTiec: res.data });
+            }
+        });
+        NNVDungService.getCheckQuantityVDByMenu(tiec).then(res => {
+            if (!res.error) {
+                console.log("getCheckQuantityVDByMenu: " + JSON.stringify(res.data));
+                this.setState({ listDataByMenu: res.data });
             }
         });
     };
 
+    convertListData() {
+        const { listDataByTiec, listDataByMenu } = this.state;
+        if (listDataByTiec.length == 0 || listDataByMenu.length == 0)
+            return [...listDataByMenu, ...listDataByTiec];
+
+        console.log("random: " + _.random(1, 2));
+
+        // let result = [];
+        //
+        // for (let i = 0; i < listDataByTiec.length; i++) {
+        //     for (let j = 0; j < listDataByMenu.length; j++) {
+        //         if (listDataByTiec[i].idMon == listDataByMenu[j].idMon) {
+        //
+        //         }
+        //     }
+        // }
+
+        return [...listDataByMenu, ...listDataByTiec];
+    };
+
     componentDidMount() {
-        this.loadDataList();
+        // this.loadDataList();
     };
 
     handleEdit(item) {
@@ -79,7 +93,14 @@ class CheckQuantityVDDialog extends Component {
 
     render() {
         const { open, onClose, tiec } = this.props;
-        const { displayedColumns, listData, isAllEnough } = this.state;
+        const { displayedColumns, isAllEnough } = this.state;
+
+        let data = this.convertListData();
+
+        console.log("render: " + tiec);
+        if (data.length == 0 && tiec) {
+            this.loadDataList();
+        }
 
         return (
             <Dialog open={open} onClose={onClose} aria-labelledby="form-dialog-title" maxWidth={"lg"}>
@@ -100,7 +121,7 @@ class CheckQuantityVDDialog extends Component {
                         name={"Kiểm tra thông tin số lượng"}
                         head={displayedColumns}
                         onEdit={item => this.handleEdit(item)}
-                        data={listData}
+                        data={data}
                         numCustom={0}
                     />
                 </DialogContent>

@@ -3,9 +3,14 @@ import {myAxios} from "config/myAxios";
 export const NNVDungService = {
     myAPI: `${process.env.REACT_APP_API_URL}nn-vd`,
 
-    getCheckQuantityVDByTiec(id) {
-        const url = `${NNVDungService.myAPI}/check/${id}`;
-        return myAxios.get(url);
+    getCheckQuantityVDByTiec(obj) {
+        const url = `${NNVDungService.myAPI}/check1`;
+        return myAxios.post(url, obj);
+    },
+
+    getCheckQuantityVDByMenu(obj) {
+        const url = `${NNVDungService.myAPI}/check2`;
+        return myAxios.post(url, obj);
     },
 
     getAllByIdNN(id) {

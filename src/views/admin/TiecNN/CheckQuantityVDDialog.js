@@ -52,6 +52,7 @@ class CheckQuantityVDDialog extends Component {
     };
 
     loadDataList = () => {
+        // passCurUserId
         NNVDungService.getCheckQuantityVDByTiec(1).then(res => {
             if (!res.error) {
                 console.log("getCheckQuantityVDByTiec: " + JSON.stringify(res.data));

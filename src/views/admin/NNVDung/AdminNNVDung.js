@@ -59,6 +59,7 @@ class AdminNNVDung extends Component {
     };
 
     loadDataList = () => {
+        // passCurUserId
         NNVDungService.getAllByIdNN(1).then(res => {
             console.log("NNVDungService: " + JSON.stringify(res.data));
             if (!res.error) {

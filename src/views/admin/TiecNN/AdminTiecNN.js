@@ -90,6 +90,7 @@ class AdminTiecNN extends Component {
 	};
 
 	loadDataList = () => {
+        // passCurUserId
 	    TiecService.getAllByIdNN(1).then(res => {
 	      if (!res.error) {
 	      	console.log("getAllByIdNN: " + JSON.stringify(res.data));

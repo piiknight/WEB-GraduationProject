@@ -205,6 +205,7 @@ export const NNVDungValidatedForm = withFormik({
             values.onClose();
         };
 
+        // passCurUserId
         object.idNN = 1;
         if (object.idNNVD) {
             NNVDungService.updateOne(object).then(res => {

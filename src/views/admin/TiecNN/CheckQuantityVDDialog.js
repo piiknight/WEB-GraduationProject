@@ -68,19 +68,21 @@ class CheckQuantityVDDialog extends Component {
         if (listDataByTiec.length == 0 || listDataByMenu.length == 0)
             return [...listDataByMenu, ...listDataByTiec];
 
-        console.log("random: " + _.random(1, 2));
+        let result = [];
+        let data = [...listDataByMenu, ...listDataByTiec];
 
-        // let result = [];
-        //
-        // for (let i = 0; i < listDataByTiec.length; i++) {
-        //     for (let j = 0; j < listDataByMenu.length; j++) {
-        //         if (listDataByTiec[i].idMon == listDataByMenu[j].idMon) {
-        //
-        //         }
-        //     }
-        // }
+        data.forEach(function(o) {
+            let existing = result.filter(function(i) { return i.idVD === o.idVD })[0];
 
-        return [...listDataByMenu, ...listDataByTiec];
+            if (!existing)
+                result.push(o);
+            else {
+                existing.quantity += o.quantity;
+                existing.sum += o.sum;
+            }
+        });
+
+        return result;
     };
 
     componentDidMount() {

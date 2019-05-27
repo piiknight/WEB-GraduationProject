@@ -3,6 +3,11 @@ import {myAxios} from "config/myAxios";
 export const MenuService = {
     congviecAPI: `${process.env.REACT_APP_API_URL}menu`,
 
+    getTotalPrice(id) {
+        const url = `${MenuService.congviecAPI}/price/${id}`;
+        return myAxios.get(url);
+    },
+
     getAll() {
         const url = `${MenuService.congviecAPI}`;
         return myAxios.get(url);

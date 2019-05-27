@@ -9,6 +9,7 @@ import EnhancedTable from "components/Table/EnhancedTable";
 
 // services or utilities
 import { NNVDungService } from "services/NNVDungService";
+import { MenuService } from "services/MenuService";
 
 class CheckQuantityVDDialog extends Component {
     constructor(props) {
@@ -38,11 +39,18 @@ class CheckQuantityVDDialog extends Component {
                     numeric: false,
                     disablePadding: true,
                     label: "Hiện có"
+                },
+                {
+                    id: "enough",
+                    numeric: false,
+                    disablePadding: true,
+                    label: "Đủ điều kiện"
                 }
             ],
             listDataByMenu: [],
             listDataByTiec: [],
-            isAllEnough: false
+            isAllEnough: false,
+            totalPrice: 0
         };
     };
 
@@ -52,13 +60,22 @@ class CheckQuantityVDDialog extends Component {
         NNVDungService.getCheckQuantityVDByTiec(tiec).then(res => {
             if (!res.error) {
                 console.log("getCheckQuantityVDByTiec: " + JSON.stringify(res.data));
-                this.setState({ listDataByTiec: res.data });
+                // this.setState({ listDataByTiec: res.data });
+                this.state.listDataByTiec = res.data;
             }
         });
         NNVDungService.getCheckQuantityVDByMenu(tiec).then(res => {
             if (!res.error) {
                 console.log("getCheckQuantityVDByMenu: " + JSON.stringify(res.data));
-                this.setState({ listDataByMenu: res.data });
+                // this.setState({ listDataByMenu: res.data });
+                this.state.listDataByMenu = res.data;
+            }
+        });
+
+        MenuService.getTotalPrice(tiec.idMenu).then(res => {
+            if (!res.error) {
+                console.log("getTotalPrice: " + JSON.stringify(res.data));
+                this.setState({ totalPrice: res.data[0].totalPrice });
             }
         });
     };
@@ -71,16 +88,20 @@ class CheckQuantityVDDialog extends Component {
         let result = [];
         let data = [...listDataByMenu, ...listDataByTiec];
 
+        console.log("-------------------");
         data.forEach(function(o) {
             let existing = result.filter(function(i) { return i.idVD === o.idVD })[0];
 
-            if (!existing)
+            if (!existing) {
+                o.enough = o.maxQuantity - o.sum >= 0 ? "OK" : "Không đủ";
                 result.push(o);
-            else {
+            } else {
                 existing.quantity += o.quantity;
                 existing.sum += o.sum;
+                console.log("sumdasdsadsadsa: " + existing.sum);
             }
         });
+        console.log("-------------------");
 
         return result;
     };
@@ -95,11 +116,10 @@ class CheckQuantityVDDialog extends Component {
 
     render() {
         const { open, onClose, tiec } = this.props;
-        const { displayedColumns, isAllEnough } = this.state;
+        const { displayedColumns, isAllEnough, totalPrice } = this.state;
 
         let data = this.convertListData();
 
-        console.log("render: " + tiec);
         if (data.length == 0 && tiec) {
             this.loadDataList();
         }
@@ -108,11 +128,15 @@ class CheckQuantityVDDialog extends Component {
             <Dialog open={open} onClose={onClose} aria-labelledby="form-dialog-title" maxWidth={"lg"}>
                 <DialogTitle id="form-dialog-title">Số lượng vật dụng {(tiec && tiec.quantity) ? "[" + tiec.quantity + " bàn]" : ""}</DialogTitle>
                 <DialogContent>
+
+                    <h5>
+                        Tổng tiền thực đơn: {totalPrice} VND
+                    </h5>
                     {
                         isAllEnough ?
-                            <h4>
+                            <h5>
                                 Có thể nhận làm tiệc này
-                            </h4>
+                            </h5>
                             :
                             <h5>
                                 Không đủ vật dụng để nhận làm tiệc này =>

@@ -10,6 +10,7 @@ import {ResponseHandling} from "utilities/ResponseHandling";
 import {VatdungService} from "services/VatdungService";
 import Select from "@material-ui/core/Select/Select";
 import MenuItem from "@material-ui/core/MenuItem/MenuItem";
+import { LocalStorageManager } from "utilities/LocalStorageManager";
 
 class NNVDungForm extends Component {
     constructor(props) {
@@ -205,8 +206,7 @@ export const NNVDungValidatedForm = withFormik({
             values.onClose();
         };
 
-        // passCurUserId
-        object.idNN = 1;
+        object.idNN = LocalStorageManager.getCurrentIdUser();
         if (object.idNNVD) {
             NNVDungService.updateOne(object).then(res => {
                 snack.message = "Update";

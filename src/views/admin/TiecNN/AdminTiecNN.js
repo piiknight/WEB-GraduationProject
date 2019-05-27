@@ -15,6 +15,7 @@ import CheckQuantityVDDialog from "./CheckQuantityVDDialog";
 
 // services or utilities
 import { search } from "utilities/Searching";
+import { LocalStorageManager } from "utilities/LocalStorageManager";
 import { ConvertTime } from "utilities/ConvertTime";
 import { TiecStatus } from "utilities/TiecStatus";
 import { TiecService } from "services/TiecService";
@@ -90,8 +91,8 @@ class AdminTiecNN extends Component {
 	};
 
 	loadDataList = () => {
-        // passCurUserId
-	    TiecService.getAllByIdNN(1).then(res => {
+		let curId = LocalStorageManager.getCurrentIdUser();
+	    TiecService.getAllByIdNN(curId).then(res => {
 	      if (!res.error) {
 	      	console.log("getAllByIdNN: " + JSON.stringify(res.data));
 	      	for (let i = 0; i < res.data.length; i++) {

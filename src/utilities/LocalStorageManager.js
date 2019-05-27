@@ -1,14 +1,23 @@
 export const LocalStorageManager = {
-  item: "accessToken",
-  setAccessToken(token) {
-    localStorage.setItem(this.item, token);
-  },
+    item: "accessToken",
+    id: "UserId",
+    setAccessToken(token) {
+        localStorage.setItem(this.item, token);
+    },
 
-  getAccessToken() {
-    return localStorage.getItem(this.item);
-  },
+    getCurrentIdUser() {
+        return localStorage.getItem(this.id);
+    },
 
-  clearAccessToken() {
-    localStorage.clear();
-  }
+    setCurrentIdUser(id) {
+        localStorage.setItem(this.id, id);
+    },
+
+    getAccessToken() {
+        return localStorage.getItem(this.item);
+    },
+
+    clearAccessToken() {
+        localStorage.clear();
+    }
 };

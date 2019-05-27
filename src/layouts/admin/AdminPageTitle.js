@@ -1,32 +1,38 @@
 import React from "react";
 
-function AdminPageTitle() {
-  return (
-    <div className="page-title-area">
-	    <div className="row align-items-center">
-	      	<div className="col-sm-6">
-	        	<div className="breadcrumbs-area clearfix">
-	          	<h4 className="page-title pull-left">Dashboard</h4>
-	          	<ul className="breadcrumbs pull-left">
-	            	<li><a href="index.html">Home</a></li>
-	            	<li><span>Dashboard</span></li>
-	          	</ul>
-	        	</div>
-	      	</div>
-	      	<div className="col-sm-6 clearfix">
-	        	<div className="user-profile pull-right">
-	          	<img className="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar" />
-	          	<h4 className="user-name dropdown-toggle" data-toggle="dropdown">Kumkum Rai <i className="fa fa-angle-down" /></h4>
-	          	<div className="dropdown-menu">
-	           	 <a className="dropdown-item" href={null}>Message</a>
-	           	 <a className="dropdown-item" href={null}>Settings</a>
-	           	 <a className="dropdown-item" href={null}>Log Out</a>
-	          	</div>
-	       	 </div>
-	      	</div>
-	    </div>
-	 </div>
-  );
+class AdminPageTitle extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+
+  	render () {
+        return (
+            <div className="page-title-area">
+                <div className="row align-items-center">
+                    <div className="col-sm-6">
+                        <div className="breadcrumbs-area clearfix">
+                            <h4 className="page-title pull-left">Hệ thống quản lý</h4>
+                            <ul className="breadcrumbs pull-left">
+                                <li><a href="/home">Trang chính</a></li>
+                                <li><span>Dashboard</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-sm-6 clearfix">
+                        <div className="user-profile pull-right">
+                            <img className="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar" />
+                            <h4 className="user-name dropdown-toggle" data-toggle="dropdown">Kumkum Rai <i className="fa fa-angle-down" /></h4>
+                            <div className="dropdown-menu">
+                                <a className="dropdown-item" href={null}>Thông tin</a>
+                                <a className="dropdown-item" href={"/logout"}>Đăng xuất</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+	}
 }
 
 export default AdminPageTitle;

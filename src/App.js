@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Login from "./layouts/auth/Login";
+import Login from "./views/Login/Login";
+import Logout from "./views/Login/Logout";
 import Register from "./layouts/auth/Register";
 import DashBoard from "./views/admin/DashBoard";
 
@@ -17,6 +18,7 @@ function App() {
 	      	<Route path="/nn-vd" component={() => <DashBoard content="nn-vd" />} />
 	      	<Route path="/tiec-nn" component={() => <DashBoard content="tiec-nn" />} />
 	      	<Route path="/login" component={Login} />
+	      	<Route path="/logout" component={Logout} />
 	      	<Route path="/register" component={Register} />
       	</div>
     </Router>

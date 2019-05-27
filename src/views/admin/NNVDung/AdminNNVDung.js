@@ -16,6 +16,7 @@ import NNVDungDialog from "./NNVDungDialog";
 // services or utilities
 import {search} from "utilities/Searching";
 import {NNVDungService} from "services/NNVDungService";
+import { LocalStorageManager } from "utilities/LocalStorageManager";
 
 class AdminNNVDung extends Component {
     constructor(props) {
@@ -60,7 +61,8 @@ class AdminNNVDung extends Component {
 
     loadDataList = () => {
         // passCurUserId
-        NNVDungService.getAllByIdNN(1).then(res => {
+        let curId = LocalStorageManager.getCurrentIdUser();
+        NNVDungService.getAllByIdNN(curId).then(res => {
             console.log("NNVDungService: " + JSON.stringify(res.data));
             if (!res.error) {
                 this.setState({listData: res.data});

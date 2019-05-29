@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Login from "./views/Login/Login";
-import Logout from "./views/Login/Logout";
-import Register from "./layouts/auth/Register";
+import Login from "./views/Auth/Login";
+import Register from "./views/Auth/Register";
+import Logout from "./views/Auth/Logout";
 import DashBoard from "./views/admin/DashBoard";
 
 function App() {

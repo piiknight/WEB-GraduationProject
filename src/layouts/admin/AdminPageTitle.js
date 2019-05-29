@@ -1,9 +1,15 @@
 import React from "react";
+import { LocalStorageManager } from "utilities/LocalStorageManager";
 
 class AdminPageTitle extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+    }
+
+    getUserName() {
+        return LocalStorageManager.getCurrentUserName() +
+            "[" + LocalStorageManager.getMode() + "]";
     }
 
   	render () {
@@ -22,7 +28,7 @@ class AdminPageTitle extends React.Component {
                     <div className="col-sm-6 clearfix">
                         <div className="user-profile pull-right">
                             <img className="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar" />
-                            <h4 className="user-name dropdown-toggle" data-toggle="dropdown">Kumkum Rai <i className="fa fa-angle-down" /></h4>
+                            <h4 className="user-name dropdown-toggle" data-toggle="dropdown">{this.getUserName()}<i className="fa fa-angle-down" /></h4>
                             <div className="dropdown-menu">
                                 <a className="dropdown-item" href={null}>Thông tin</a>
                                 <a className="dropdown-item" href={"/logout"}>Đăng xuất</a>

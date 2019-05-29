@@ -1,16 +1,32 @@
 export const LocalStorageManager = {
     item: "accessToken",
-    id: "UserId",
+    user: "userInfo",
     setAccessToken(token) {
         localStorage.setItem(this.item, token);
     },
 
     getCurrentIdUser() {
-        return localStorage.getItem(this.id);
+        return this.getUserInfo().idU;
     },
 
-    setCurrentIdUser(id) {
-        localStorage.setItem(this.id, id);
+    // isCurrentUser() {
+    //     return localStorage.getItem(this.user);
+    // },
+
+    getUserInfo(){
+        return  JSON.parse(localStorage.getItem(this.user));
+    },
+
+    getMode() {
+        return this.getUserInfo().mode;
+    },
+
+    getCurrentUserName() {
+        return this.getUserInfo().name;
+    },
+
+    setCurrentUser(obj) {
+        localStorage.setItem(this.user, JSON.stringify(obj));
     },
 
     getAccessToken() {

@@ -10,6 +10,7 @@ import AdminMenu from "./Menu/AdminMenu";
 import AdminVatdung from "./Vatdung/AdminVatdung";
 import AdminTiecNN from "./TiecNN/AdminTiecNN";
 import AdminNNVDung from "./NNVDung/AdminNNVDung";
+import AdminUser from "./User/AdminUser";
 
 class DashBoard extends Component {
 	constructor(props) {
@@ -36,6 +37,9 @@ class DashBoard extends Component {
                 break;
             case "tiec-nn":
                 this.content = <AdminTiecNN />;
+                break;
+            case "user":
+                this.content = <AdminUser />;
                 break;
 			default:
                 this.content = <div>Default</div>;

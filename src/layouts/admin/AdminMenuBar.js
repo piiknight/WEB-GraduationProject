@@ -58,6 +58,9 @@ class AdminMenuBar extends Component {
                                 LocalStorageManager.getMode() == "ADMIN" ?
                                     <ul className="metismenu" id="menu">
                                         <li className="active">
+                                            <a href="/user" aria-expanded="true"><i className="ti-notepad"/><span>Người dùng</span></a>
+                                        </li>
+                                        <li className="active">
                                             <a href="/congviec" aria-expanded="true"><i className="ti-notepad"/><span>Công việc</span></a>
                                         </li>
                                         <li className="active">

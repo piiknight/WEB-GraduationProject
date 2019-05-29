@@ -6,6 +6,11 @@ export const AuthenticationService = {
         return !!LocalStorageManager.getAccessToken();
     },
 
+    getPermission: function () {
+        const url = `${process.env.REACT_APP_BASE_URL}api/permission`;
+        return myAxios.get(url);
+    },
+
     authenticate: function (user) {
         const url = `${process.env.REACT_APP_BASE_URL}api/login`;
         return myAxios.post(url, user);

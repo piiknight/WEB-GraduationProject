@@ -28,6 +28,7 @@ class CheckQuantityVDDialog extends Component {
                 <DialogContent>
                     <CheckQuantityVDTable
                         tiec={tiec}
+                        onClose={onClose}
                     >
                     </CheckQuantityVDTable>
                 </DialogContent>

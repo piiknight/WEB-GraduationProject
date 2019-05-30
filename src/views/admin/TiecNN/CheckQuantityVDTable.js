@@ -1,15 +1,16 @@
 import React, {Component} from "react";
 // @material-ui/core components
-import Dialog from "@material-ui/core/Dialog";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogTitle from "@material-ui/core/DialogTitle";
 import EnhancedTable from "components/Table/EnhancedTable";
+import Button from "../../../components/CustomButtons/Button";
 
 // core components
 
 // services or utilities
 import { NNVDungService } from "services/NNVDungService";
 import { MenuService } from "services/MenuService";
+import { TiecService } from "services/TiecService";
+import {TiecStatus} from "utilities/TiecStatus";
+import * as EventBus from "eventing-bus";
 
 class CheckQuantityVDTable extends Component {
     constructor(props) {
@@ -90,21 +91,25 @@ class CheckQuantityVDTable extends Component {
         let result = [];
         let data = [...listDataByMenu, ...listDataByTiec];
 
-        console.log("-------------------");
+        let countEnough = 0;
         data.forEach(function(o) {
             let existing = result.filter(function(i) { return i.idVD === o.idVD })[0];
 
             if (!existing) {
-                o.enough = o.maxQuantity - o.sum >= 0 ? "OK" : "Không đủ";
+                if (o.maxQuantity - o.sum >= 0) {
+                    o.enough = "OK";
+                    countEnough++;
+                } else {
+                    o.enough = "Không đủ";
+                }
                 result.push(o);
             } else {
                 existing.quantity += o.quantity;
                 existing.sum += o.sum;
-                console.log("sumdasdsadsadsa: " + existing.sum);
             }
         });
-        console.log("-------------------");
 
+        if (countEnough == result.length) this.state.isAllEnough = true;
         return result;
     };
 
@@ -114,6 +119,24 @@ class CheckQuantityVDTable extends Component {
 
     handleEdit(item) {
         console.log("handleEdit: " + JSON.stringify(item));
+    };
+
+    acceptRequest() {
+        const { tiec, onClose } = this.props;
+        tiec.status = TiecStatus.ACCEPT;
+        TiecService.updateStatus(tiec).then(res => {
+            if (!res.error) {
+                const snack = {
+                    open: true,
+                    place: "bc",
+                    color: "success",
+                    message: "Nhận tiệc thành công"
+                };
+                EventBus.publish("snack", snack);
+                EventBus.publish("updateDataList");
+                onClose();
+            }
+        });
     };
 
     render() {
@@ -126,9 +149,14 @@ class CheckQuantityVDTable extends Component {
                 </h5>
                 {
                     isAllEnough ?
-                        <h5>
-                            Có thể nhận làm tiệc này
-                        </h5>
+                        <div>
+                            <h5 style={{color: 'green'}}>
+                                Có thể nhận làm tiệc này
+                            </h5>
+                            <Button color="primary" onClick={this.acceptRequest.bind(this)}>
+                                Nhận
+                            </Button>
+                        </div>
                         :
                         <h5>
                             Không đủ vật dụng để nhận làm tiệc này =>

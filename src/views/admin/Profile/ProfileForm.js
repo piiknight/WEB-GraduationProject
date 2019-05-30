@@ -47,8 +47,6 @@ class ProfileForm extends Component {
             listType
         } = this.state;
 
-        console.log("render: " + JSON.stringify(values));
-
         return (
             <form onSubmit={handleSubmit}>
 

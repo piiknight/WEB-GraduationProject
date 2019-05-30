@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bdf40c8-49db-4625-9b96-b5586ab4f49c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/views/admin/Profile/AdminProfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/admin/Profile/ProfileForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/admin/AdminPageTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/admin/AdminPageTitle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/UserService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/admin/DashBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/DashBoard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/Profile/ProfileForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/Profile/ProfileForm.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,14 +33,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="16126" />
+          <entry key="js" value="16183" />
           <entry key="json" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="16126" />
+          <entry key="JavaScript" value="16183" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -59,7 +54,7 @@
           <entry key="Logout" value="1" />
           <entry key="css" value="2" />
           <entry key="env" value="3" />
-          <entry key="js" value="241" />
+          <entry key="js" value="245" />
           <entry key="json" value="1" />
           <entry key="jsx" value="4" />
           <entry key="md" value="1" />
@@ -71,7 +66,7 @@
           <entry key="CSS" value="2" />
           <entry key="JSON" value="1" />
           <entry key="JSX Harmony" value="4" />
-          <entry key="JavaScript" value="241" />
+          <entry key="JavaScript" value="245" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="TypeScript" value="12" />
@@ -81,20 +76,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/views/admin/Profile/AdminProfile.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/admin/DashBoard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+            <state relative-caret-position="-1241">
+              <caret line="11" column="53" lean-forward="true" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/admin/Profile/ProfileForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="267" lean-forward="true" selection-start-line="267" selection-end-line="267" />
+            <state relative-caret-position="409">
+              <caret line="250" column="51" selection-start-line="250" selection-start-column="51" selection-end-line="250" selection-end-column="51" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#149#201#0" expanded="true" />
@@ -104,41 +99,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/services/UserService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/TextField/TextField.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="35" column="6" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/admin/DashBoard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="57" column="51" lean-forward="true" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>openSnackbar</find>
       <find>MonVatdungService</find>
       <find>onClose</find>
       <find>listSelect</find>
@@ -168,6 +132,7 @@
       <find>mapPropsObjectToValues</find>
       <find>close</find>
       <find>snack</find>
+      <find>snack.message = `${snack.message} fail`</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -222,11 +187,11 @@
         <option value="$PROJECT_DIR$/src/views/admin/User/UserForm.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/layouts/admin/AdminPageTitle.js" />
-        <option value="$PROJECT_DIR$/src/views/admin/DashBoard.js" />
         <option value="$PROJECT_DIR$/src/views/admin/Profile/AdminProfile.js" />
         <option value="$PROJECT_DIR$/src/services/UserService.js" />
         <option value="$PROJECT_DIR$/src/views/Auth/Login.js" />
         <option value="$PROJECT_DIR$/src/views/admin/Profile/ProfileForm.js" />
+        <option value="$PROJECT_DIR$/src/views/admin/DashBoard.js" />
       </list>
     </option>
   </component>
@@ -340,10 +305,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="Logi&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Auth/Login.js&#10;menu&#9;FILE&#9;file://E:/DO-AN/react/web/src/layouts/admin/AdminMenuBar.js&#10;Local&#9;FILE&#9;file://E:/DO-AN/react/web/src/utilities/LocalStorageManager.js&#10;dash&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/DashBoard.js&#10;Log&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Login/Login.js&#10;MenuFor&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Menu/MenuForm.js&#10;AdminCong&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Congviec/AdminCongviec.js" />
+    <property name="SearchEverywhereHistoryKey" value="Dash&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/DashBoard.js&#10;Logi&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Auth/Login.js&#10;menu&#9;FILE&#9;file://E:/DO-AN/react/web/src/layouts/admin/AdminMenuBar.js&#10;Local&#9;FILE&#9;file://E:/DO-AN/react/web/src/utilities/LocalStorageManager.js&#10;dash&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/DashBoard.js&#10;Log&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Login/Login.js&#10;MenuFor&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Menu/MenuForm.js&#10;AdminCong&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Congviec/AdminCongviec.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559195290392" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559195870834" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -404,12 +369,12 @@
       <workItem from="1558886689401" duration="3868000" />
       <workItem from="1558960542111" duration="11712000" />
       <workItem from="1559135283846" duration="14260000" />
-      <workItem from="1559183972631" duration="9370000" />
+      <workItem from="1559183972631" duration="9948000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134765000" />
+    <option name="totallyTimeSpent" value="135343000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -820,16 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/admin/DashBoard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="57" column="51" lean-forward="true" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/TextField/TextField.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -854,22 +809,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/admin/Profile/AdminProfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-169">
+          <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/admin/DashBoard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1241">
+          <caret line="11" column="53" lean-forward="true" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/admin/Profile/ProfileForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="267" lean-forward="true" selection-start-line="267" selection-end-line="267" />
+        <state relative-caret-position="409">
+          <caret line="250" column="51" selection-start-line="250" selection-start-column="51" selection-end-line="250" selection-end-column="51" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#149#201#0" expanded="true" />
             <element signature="e#395#464#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/admin/Profile/AdminProfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
         </state>
       </provider>
     </entry>

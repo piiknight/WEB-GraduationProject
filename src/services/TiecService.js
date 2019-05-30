@@ -3,6 +3,9 @@ import {myAxios} from "config/myAxios";
 export const TiecService = {
     tiecAPI: `${process.env.REACT_APP_API_URL}tiec`,
 
+    ignoreResponsibility(idTiec) {
+        return myAxios.put(`${TiecService.tiecAPI}/ignore/${idTiec}`);
+    },
 
     updateStatus(tiec) {
         return myAxios.put(`${TiecService.tiecAPI}/status/${tiec.idTiec}`, tiec);

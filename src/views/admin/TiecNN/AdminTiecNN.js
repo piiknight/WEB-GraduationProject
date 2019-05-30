@@ -19,6 +19,7 @@ import { LocalStorageManager } from "utilities/LocalStorageManager";
 import { ConvertTime } from "utilities/ConvertTime";
 import { TiecStatus } from "utilities/TiecStatus";
 import { TiecService } from "services/TiecService";
+import SetEmployeeDialog from "./SetEmployeeDialog";
 
 class AdminTiecNN extends Component {
 	constructor(props) {
@@ -30,12 +31,12 @@ class AdminTiecNN extends Component {
 	      	objectToDelete: null,
 	      	objectToEdit: null,
 	      	displayedColumns: [
-	      		{
-		          id: "idTiec",
-		          numeric: false,
-		          disablePadding: true,
-		          label: "ID"
-		        },
+	      		// {
+		        //   id: "idTiec",
+		        //   numeric: false,
+		        //   disablePadding: true,
+		        //   label: "ID"
+		        // },
 		        {
 		          id: "address",
 		          numeric: false,
@@ -85,7 +86,8 @@ class AdminTiecNN extends Component {
                     label: "Thời gian kết thúc"
                 },
 		    ],
-		    listTiec: []
+		    listTiec: [],
+            openDialogSetEmployee: false
 	    };
 	    this.subscription = EventBus.on("updateDataList", this.loadDataList);
 	};
@@ -121,11 +123,30 @@ class AdminTiecNN extends Component {
 	};
 
 	handleEdit = item => {
-	    this.setState({ objectToEdit: item, openObjectDialog: true });
+		console.log("handleEdit");
+	    // this.setState({ objectToEdit: item, openObjectDialog: true });
+        this.setState({ objectToEdit: item, openDialogSetEmployee: true });
 	};
 
 	handleDelete = item => {
-	    this.setState({ objectToDelete: item, openDeleteConfirmDialog: true });
+        this.setState({ objectToDelete: item, openDeleteConfirmDialog: true });
+    };
+
+    deleteOne = item => {
+        const { objectToDelete } = this.state;
+        TiecService.ignoreResponsibility(objectToDelete.idTiec).then(res => {
+            if (!res.error) {
+                const snack = {
+                    open: true,
+                    place: "bc",
+                    color: "success",
+                    message: "Thao tác thành công"
+                };
+                EventBus.publish("snack", snack);
+                EventBus.publish("updateDataList");
+                this.setState({ openDeleteConfirmDialog: false });
+            }
+        });
     };
 
     handleCloseConfirmDeleteDialog = () => {
@@ -141,6 +162,10 @@ class AdminTiecNN extends Component {
 	    this.setState({ openObjectDialog: false });
 	};
 
+    closeDialogSetEmployee = () => {
+        this.setState({ openDialogSetEmployee: false });
+    };
+
   	render(){
   		const {
   			openObjectDialog,
@@ -148,7 +173,8 @@ class AdminTiecNN extends Component {
   			openDeleteConfirmDialog,
   			displayedColumns,
   			keyWords, 
-  			listTiec
+  			listTiec,
+            openDialogSetEmployee
   		} = this.state;
 
   		return (
@@ -176,13 +202,26 @@ class AdminTiecNN extends Component {
 	         	onEdit={item => this.handleEdit(item)}
 				onDelete={item => this.handleDelete(item)}
 	          	data={listTiec.filter(item => this.filterByFullName(item))}
-                numCustom={1}
+                numCustom={3}
             />
 	        <CheckQuantityVDDialog
 	            tiec={objectToEdit}
 	            open={openObjectDialog}
 	            onClose={this.closeAddObjectDialog}
 	        />
+            <SetEmployeeDialog
+                tiec={objectToEdit}
+                open={openDialogSetEmployee}
+                onClose={this.closeDialogSetEmployee}
+                currentList={[]}
+            />
+            <DeleteConfirmDialog
+                open={openDeleteConfirmDialog}
+                onClose={this.handleCloseConfirmDeleteDialog}
+                title="Không nhận tiệc này?"
+                message="Bạn có thật sự muốn tiếp tục?"
+                onYes={this.deleteOne}
+            />
         </div>
   	);
   	}

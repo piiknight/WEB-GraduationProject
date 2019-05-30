@@ -175,6 +175,69 @@ class EnhancedTable extends React.Component {
                         </IconButton>
                     </Tooltip>
                 </TableCell>
+            case 3:
+                return <TableCell padding="none">
+                    <Tooltip
+                        id="tooltip-top"
+                        title="View"
+                        placement="top"
+                        classes={{tooltip: classes.tooltip}}
+                    >
+                        <IconButton
+                            aria-label="View"
+                            className={classes.tableActionButton}
+                            onClick={() => this.handleEdit(item)}
+                        >
+                            <RemoveRedEye
+                                className={
+                                    classes.tableActionButtonIcon +
+                                    " " +
+                                    classes.edit
+                                }
+                            />
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip
+                        id="tooltip-top"
+                        title="Edit"
+                        placement="top"
+                        classes={{tooltip: classes.tooltip}}
+                    >
+                        <IconButton
+                            aria-label="Edit"
+                            className={classes.tableActionButton}
+                            onClick={() => this.handleEdit(item)}
+                        >
+                            <Edit
+                                className={
+                                    classes.tableActionButtonIcon +
+                                    " " +
+                                    classes.edit
+                                }
+                            />
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip
+                        id="tooltip-top-start"
+                        title="Remove"
+                        placement="top"
+                        classes={{tooltip: classes.tooltip}}
+                    >
+                        <IconButton
+                            aria-label="Close"
+                            className={classes.tableActionButton}
+                            onClick={() => this.props.onDelete(item)}
+                        >
+                            <Close
+                                className={
+                                    classes.tableActionButtonIcon +
+                                    " " +
+                                    classes.close
+                                }
+                            />
+                        </IconButton>
+                    </Tooltip>
+                </TableCell>
             case 0:
                 return "";
         }

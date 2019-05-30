@@ -3,6 +3,11 @@ import {myAxios} from "config/myAxios";
 export const UserService = {
     userAPI: `${process.env.REACT_APP_API_URL}user`,
 
+    getUserByMode(mode) {
+        const url = `${UserService.userAPI}Mode/${mode}`;
+        return myAxios.get(url);
+    },
+
     getAll() {
         const url = `${UserService.userAPI}`;
         return myAxios.get(url);

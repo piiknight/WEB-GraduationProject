@@ -30,7 +30,7 @@ class AdminPageTitle extends React.Component {
                             <img className="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar" />
                             <h4 className="user-name dropdown-toggle" data-toggle="dropdown">{this.getUserName()}<i className="fa fa-angle-down" /></h4>
                             <div className="dropdown-menu">
-                                <a className="dropdown-item" href={null}>Thông tin</a>
+                                <a className="dropdown-item" href={"/profile"}>Thông tin</a>
                                 <a className="dropdown-item" href={"/logout"}>Đăng xuất</a>
                             </div>
                         </div>

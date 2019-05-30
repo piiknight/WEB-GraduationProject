@@ -1,24 +1,32 @@
-import { myAxios } from "config/myAxios";
+import {myAxios} from "config/myAxios";
 
 export const UserService = {
-  userAPI: `${process.env.REACT_APP_API_URL}user`,
+    userAPI: `${process.env.REACT_APP_API_URL}user`,
 
-  getAll() {
-    const url = `${UserService.userAPI}`;
-    return myAxios.get(url);
-  },
+    getAll() {
+        const url = `${UserService.userAPI}`;
+        return myAxios.get(url);
+    },
 
-  deleteOne(id) {
-    const url = `${UserService.userAPI}/${id}`;
-    return myAxios.delete(url);
-  },
+    getUserById(id) {
+        const url = `${UserService.userAPI}/${id}`;
+        return myAxios.get(url);
+    },
 
-  addOne(object) {
-    return myAxios.post(`${UserService.userAPI}/`, object);
-  },
+    deleteOne(id) {
+        const url = `${UserService.userAPI}/${id}`;
+        return myAxios.delete(url);
+    },
 
-  updateOne(object) {
-    return myAxios.put(`${UserService.userAPI}/${object.idU}`, object);
-  }
+    addOne(object) {
+        return myAxios.post(`${UserService.userAPI}/`, object);
+    },
 
+    updateOne(object) {
+        return myAxios.put(`${UserService.userAPI}/${object.idU}`, object);
+    },
+
+    updateProfile(object) {
+        return myAxios.put(`${UserService.userAPI}/profile/${object.idU}`, object);
+    }
 };

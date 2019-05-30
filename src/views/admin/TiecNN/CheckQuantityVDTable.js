@@ -141,13 +141,16 @@ class CheckQuantityVDTable extends Component {
 
     render() {
         const { displayedColumns, isAllEnough, totalPrice, listData } = this.state;
+        const { tiec } = this.props;
 
         return (
             <div>
                 <h5>
                     Tổng tiền thực đơn: {totalPrice} VND
                 </h5>
+
                 {
+                    tiec.status == TiecStatus.getStatus(TiecStatus.REQUEST) ?
                     isAllEnough ?
                         <div>
                             <h5 style={{color: 'green'}}>
@@ -162,6 +165,7 @@ class CheckQuantityVDTable extends Component {
                             Không đủ vật dụng để nhận làm tiệc này =>
                             <a href="/nn-vd" aria-expanded="true"><span> Thêm vật dụng vào kho</span></a>
                         </h5>
+                    : <div></div>
                 }
                 <EnhancedTable
                     name={"Kiểm tra thông tin số lượng"}

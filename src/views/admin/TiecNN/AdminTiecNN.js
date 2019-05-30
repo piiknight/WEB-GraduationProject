@@ -137,16 +137,6 @@ class AdminTiecNN extends Component {
 	    return search(item.name, keyWords);
 	};
 
-	deleteOne = () => {
-	    const { objectToDelete } = this.state;
-        TiecService.deleteOne(objectToDelete.idTiec).then(res => {
-	      if (!res.error) {
-	        this.setState({ openDeleteConfirmDialog: false });
-	        this.loadDataList();
-	      }
-	    });
-	};
-
 	closeAddObjectDialog = () => {
 	    this.setState({ openObjectDialog: false });
 	};

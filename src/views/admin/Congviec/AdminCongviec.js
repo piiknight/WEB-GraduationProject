@@ -104,7 +104,15 @@ class AdminCongviec extends Component {
 	        this.loadDataList();
 	      }
 	    });
-	};
+
+        const snack = {
+            open: true,
+            place: "bc",
+            color: "success",
+            message: "Xóa thành công"
+        };
+        EventBus.publish("snack", snack);
+    };
 
 	newObject = () => {
 		let congviec: {

@@ -6,9 +6,9 @@ import Button from "../../../components/CustomButtons/Button";
 // core components
 
 // services or utilities
-import { NNVDungService } from "services/NNVDungService";
-import { MenuService } from "services/MenuService";
-import { TiecService } from "services/TiecService";
+import {NNVDungService} from "services/NNVDungService";
+import {MenuService} from "services/MenuService";
+import {TiecService} from "services/TiecService";
 import {TiecStatus} from "utilities/TiecStatus";
 import * as EventBus from "eventing-bus";
 
@@ -57,7 +57,7 @@ class CheckQuantityVDTable extends Component {
     };
 
     loadDataList = () => {
-        const { tiec } = this.props;
+        const {tiec} = this.props;
         console.log("tiec: " + JSON.stringify(tiec));
         NNVDungService.getCheckQuantityVDByTiec(tiec).then(res => {
             if (!res.error) {
@@ -78,13 +78,13 @@ class CheckQuantityVDTable extends Component {
         MenuService.getTotalPrice(tiec.idMenu).then(res => {
             if (!res.error) {
                 console.log("getTotalPrice: " + JSON.stringify(res.data));
-                this.setState({ totalPrice: res.data[0].totalPrice });
+                this.setState({totalPrice: res.data[0].totalPrice});
             }
         });
     };
 
     convertListData() {
-        const { listDataByTiec, listDataByMenu } = this.state;
+        const {listDataByTiec, listDataByMenu} = this.state;
         if (listDataByTiec.length == 0 || listDataByMenu.length == 0)
             return [...listDataByMenu, ...listDataByTiec];
 
@@ -92,8 +92,10 @@ class CheckQuantityVDTable extends Component {
         let data = [...listDataByMenu, ...listDataByTiec];
 
         let countEnough = 0;
-        data.forEach(function(o) {
-            let existing = result.filter(function(i) { return i.idVD === o.idVD })[0];
+        data.forEach(function (o) {
+            let existing = result.filter(function (i) {
+                return i.idVD === o.idVD
+            })[0];
 
             if (!existing) {
                 if (o.maxQuantity - o.sum >= 0) {
@@ -122,7 +124,7 @@ class CheckQuantityVDTable extends Component {
     };
 
     acceptRequest() {
-        const { tiec, onClose } = this.props;
+        const {tiec, onClose} = this.props;
         tiec.status = TiecStatus.ACCEPT;
         TiecService.updateStatus(tiec).then(res => {
             if (!res.error) {
@@ -139,9 +141,13 @@ class CheckQuantityVDTable extends Component {
         });
     };
 
+    handleSetEmployee() {
+        console.log("handleSetEmployee");
+    };
+
     render() {
-        const { displayedColumns, isAllEnough, totalPrice, listData } = this.state;
-        const { tiec } = this.props;
+        const {displayedColumns, isAllEnough, totalPrice, listData} = this.state;
+        const {tiec} = this.props;
 
         return (
             <div>
@@ -151,21 +157,25 @@ class CheckQuantityVDTable extends Component {
 
                 {
                     tiec.status == TiecStatus.getStatus(TiecStatus.REQUEST) ?
-                    isAllEnough ?
-                        <div>
-                            <h5 style={{color: 'green'}}>
-                                Có thể nhận làm tiệc này
+                        isAllEnough ?
+                            <div>
+                                <h5 style={{color: 'green'}}>
+                                    Có thể nhận làm tiệc này
+                                </h5>
+                                <Button color="primary" onClick={this.acceptRequest.bind(this)}>
+                                    Nhận
+                                </Button>
+                            </div>
+                            :
+                            <h5>
+                                Không đủ vật dụng để nhận làm tiệc này =>
+                                <a href="/nn-vd" aria-expanded="true"><span> Thêm vật dụng vào kho</span></a>
                             </h5>
-                            <Button color="primary" onClick={this.acceptRequest.bind(this)}>
-                                Nhận
+                        : <div>
+                            <Button color="primary" onClick={this.handleSetEmployee.bind(this)}>
+                                Chọn người phụ, làm
                             </Button>
                         </div>
-                        :
-                        <h5>
-                            Không đủ vật dụng để nhận làm tiệc này =>
-                            <a href="/nn-vd" aria-expanded="true"><span> Thêm vật dụng vào kho</span></a>
-                        </h5>
-                    : <div></div>
                 }
                 <EnhancedTable
                     name={"Kiểm tra thông tin số lượng"}

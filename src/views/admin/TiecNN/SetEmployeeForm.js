@@ -40,18 +40,21 @@ const styles = theme => ({
     },
     select: {
         width: 180,
-        marginTop: 12
+        marginTop: 12,
+        marginLeft: 20,
     },
     button1: {
         fontFamily: "arial",
         width: 200,
-        textAlign: "center"
+        textAlign: "center",
+        marginLeft: 20,
     },
     button2: {
         display: "inline",
         fontFamily: "arial",
         width: 10,
-        textAlign: "center"
+        textAlign: "center",
+        marginLeft: 20,
     },
 });
 
@@ -71,14 +74,14 @@ class SetEmployeeForm extends Component {
         CongviecService.getAll().then(res => {
             if (!res.error) {
                 console.log("CongviecService: " + JSON.stringify(res.data));
-                this.setState({listCongviec: res.data});
-            }
-        });
-
-        UserService.getUserByMode("ADMIN").then(res => {
-            if (!res.error) {
-                console.log("UserService: " + JSON.stringify(res.data));
-                this.setState({listNguoilam: res.data});
+                // this.setState({listCongviec: res.data});
+                this.state.listCongviec = res.data;
+                UserService.getUserByMode("EMPLOYEE").then(res => {
+                    if (!res.error) {
+                        console.log("UserService: " + JSON.stringify(res.data));
+                        this.setState({listNguoilam: res.data});
+                    }
+                });
             }
         });
     };
@@ -102,12 +105,20 @@ class SetEmployeeForm extends Component {
 
 
     handleButtonDone = (obj) => {
-        let idTNL = obj.idMVD;
+        const {currentList} = this.props;
+        let idTNL = obj.idTNL;
         obj.idNLNew = this.state["selectNL" + idTNL] || obj.idNL;
         obj.idCVNew = this.state["selectCV" + idTNL] || obj.idCV;
 
 
         if (obj.idNLNew != obj.idNL || obj.idCVNew != obj.idCV) {
+            for (let i = 0; i < currentList.length; i++) {
+                if (currentList[i].idNL === obj.idNLNew && currentList[i].idCV === obj.idCVNew) {
+                    alert("[Người làm + Công việc] đã tồn tại (có thể 1 người làm thực hiện nhiều việc)");
+                    return;
+                }
+            }
+
             obj.idNL = obj.idNLNew;
             obj.idCV = obj.idCVNew;
             TiecNLService.updateOne(obj).then(res => {
@@ -123,9 +134,9 @@ class SetEmployeeForm extends Component {
     };
 
     handleAddDone = () => {
-        const { currentList } = this.props;
-        const { selectNL, selectCV } = this.state;
-        const { tiec } = this.props;
+        const {currentList} = this.props;
+        const {selectNL, selectCV} = this.state;
+        const {tiec} = this.props;
         let object = {
             idTiec: tiec.idTiec,
             idNL: selectNL,
@@ -137,9 +148,9 @@ class SetEmployeeForm extends Component {
             return;
         }
 
-        for(let i = 0; i < currentList.length; i++){
-            if ( currentList[i].idTNL === object.idTNL) {
-                alert("Người làm đã tồn tại");
+        for (let i = 0; i < currentList.length; i++) {
+            if (currentList[i].idNL === object.idNL && currentList[i].idCV === object.idCV) {
+                alert("[Người làm + Công việc] đã tồn tại (có thể 1 người làm thực hiện nhiều việc)");
                 return;
             }
         }
@@ -155,13 +166,13 @@ class SetEmployeeForm extends Component {
     };
 
     handleButtonClose = (id) => {
-        const { currentList } = this.props;
+        const {currentList} = this.props;
         TiecNLService.deleteOne(id).then(res => {
             if (!res.error) {
                 alert("Xóa người làm thành công");
 
-                for(let i = 0; i < currentList.length; i++){
-                    if ( currentList[i].idTNL === id) {
+                for (let i = 0; i < currentList.length; i++) {
+                    if (currentList[i].idTNL === id) {
                         currentList.splice(i, 1);
                         break;
                     }
@@ -180,7 +191,7 @@ class SetEmployeeForm extends Component {
     };
 
     handleClose = () => {
-        const { onClose } = this.props;
+        const {onClose} = this.props;
         onClose();
         this.cleanUpBtnAdd();
     };
@@ -193,6 +204,8 @@ class SetEmployeeForm extends Component {
             listNguoilam,
             listCongviec
         } = this.state;
+
+        console.log("currentList: " + JSON.stringify(currentList));
         return (
             <form className={classes.root} autoComplete="off" style={{width: 650}}>
                 {currentList.map((obj, index) => (
@@ -203,14 +216,14 @@ class SetEmployeeForm extends Component {
                             onChange={this.handleChangeSelect}
                             inputProps={{
                                 name: "selectNL" + obj.idTNL,
-                                id: obj.idTNL,
+                                id: "selectNL" + obj.idTNL,
                             }}
                         >
                             <MenuItem value="">
                                 <em>None</em>
                             </MenuItem>
                             {listNguoilam.map((select, index) => (
-                                <MenuItem key={index} value={select.idNL}>{select.name}</MenuItem>
+                                <MenuItem key={index} value={select.idU}>{select.name}</MenuItem>
                             ))}
                         </Select>
 
@@ -220,7 +233,7 @@ class SetEmployeeForm extends Component {
                             onChange={this.handleChangeSelect}
                             inputProps={{
                                 name: "selectCV" + obj.idTNL,
-                                id: obj.idTNL,
+                                id: "selectCV" + obj.idTNL,
                             }}
                         >
                             <MenuItem value="">
@@ -267,13 +280,13 @@ class SetEmployeeForm extends Component {
                                     <em>None</em>
                                 </MenuItem>
                                 {listNguoilam.map((select, index) => (
-                                    <MenuItem key={index} value={select.idNL}>{select.name}</MenuItem>
+                                    <MenuItem key={index} value={select.idU}>{select.name}</MenuItem>
                                 ))}
                             </Select>
 
                             <Select
                                 className={classes.select}
-                                value={selectNL}
+                                value={selectCV}
                                 onChange={this.handleChangeSelect}
                                 inputProps={{
                                     name: 'selectCV'

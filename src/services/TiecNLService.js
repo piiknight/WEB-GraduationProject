@@ -3,6 +3,10 @@ import {myAxios} from "config/myAxios";
 export const TiecNLService = {
     tiecNLAPI: `${process.env.REACT_APP_API_URL}tiec-nl`,
 
+    getAllByIdTiec(id) {
+        const url = `${TiecNLService.tiecNLAPI}/tiec-id/${id}`;
+        return myAxios.get(url);
+    },
 
     getAll() {
         const url = `${TiecNLService.tiecNLAPI}`;

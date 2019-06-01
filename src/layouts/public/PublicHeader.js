@@ -68,7 +68,7 @@ class PublicHeader extends React.Component {
 
                                         {
                                             this.isLogin() ?
-                                                <div className="clearfix">
+                                                <div className="clearfix" style={{marginTop: "-15px"}}>
                                                     <div className="user-profile pull-right">
                                                         <img className="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar" />
                                                         <h4 className="user-name dropdown-toggle" data-toggle="dropdown">{this.getUserName()}<i className="fa fa-angle-down" /></h4>
@@ -79,7 +79,7 @@ class PublicHeader extends React.Component {
                                                     </div>
                                                 </div>
                                                 :
-                                                <div className="clearfix">
+                                                <div className="clearfix" style={{marginTop: "-5px"}}>
                                                     <div className="user-profile pull-right">
                                                         <h4 className="user-name dropdown-toggle">
                                                             <a style={{color: 'white'}} href="/login">Login</a>
@@ -103,14 +103,8 @@ class PublicHeader extends React.Component {
                                     <div className="dot">
                                         <div className="container">
                                             <div className="slider_banner_info_w3ls">
-                                                <h1 className="text-uppercase mb-3">Enjoy the greatest pleasure in our
-                                                    hotel </h1>
-                                                <p>Etiam vitae augue odio. Ut laoreet ipsum vel ultrices viverra. Donec
-                                                    nisl dolor, mollis vel libero id,
-                                                    tempor cursus lectus. Vestibulum eu ligula et pharetra efficitur.
-                                                    Maecenas eleifend.</p>
-                                                <a href="single.html" className="read" data-toggle="modal"
-                                                   data-target="#exampleModalCenter" role="button">Read more </a>
+                                                <h1 className="text-uppercase mb-3">Không gian hiện đại</h1>
+                                                <p>Một hình ảnh được chụp trong buổi tiệc cưới cách đây không lâu.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -121,14 +115,8 @@ class PublicHeader extends React.Component {
                                     <div className="dot">
                                         <div className="container">
                                             <div className="slider_banner_info_w3ls">
-                                                <h4 className="text-uppercase mb-3">Enjoy the food and rooms in our
-                                                    hotel</h4>
-                                                <p>Etiam vitae augue odio. Ut laoreet ipsum vel ultrices viverra. Donec
-                                                    nisl dolor, mollis vel libero id,
-                                                    tempor cursus lectus. Vestibulum eu ligula et pharetra efficitur.
-                                                    Maecenas eleifend.</p>
-                                                <a href="#" className="read" data-toggle="modal"
-                                                   data-target="#exampleModalCenter" role="button">Read more </a>
+                                                <h1 className="text-uppercase mb-3">Những món ăn ngon từ những đầu bếp giỏi</h1>
+                                                <p>Thực đơn, thức ăn luôn luôn cập nhật liên tục, đổi mới, luôn có rất nhiều sự lựa chọn cho khách hàng.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -139,14 +127,10 @@ class PublicHeader extends React.Component {
                                     <div className="dot">
                                         <div className="container">
                                             <div className="slider_banner_info_w3ls">
-                                                <h4 className="text-uppercase mb-3">Enjoy the best services in our
-                                                    hotel</h4>
-                                                <p>Etiam vitae augue odio. Ut laoreet ipsum vel ultrices viverra. Donec
-                                                    nisl dolor, mollis vel libero id,
-                                                    tempor cursus lectus. Vestibulum eu ligula et pharetra efficitur.
-                                                    Maecenas eleifend.</p>
-                                                <a href="#" className="read" data-toggle="modal"
-                                                   data-target="#exampleModalCenter" role="button">Read more </a>
+                                                <h4 className="text-uppercase mb-3">Tổng quan một buổi tiệc</h4>
+                                                <p>Không chỉ cung cấp vật dụng cơ bản, hệ thống còn hỗ trợ các vật dụng đi kèm theo yêu cầu:
+                                                   tivi, âm thanh, ánh sáng, ghế bọc,..
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -157,14 +141,8 @@ class PublicHeader extends React.Component {
                                     <div className="dot">
                                         <div className="container">
                                             <div className="slider_banner_info_w3ls">
-                                                <h4 className="text-uppercase mb-3">Enjoy the food and rooms in our
-                                                    hotel</h4>
-                                                <p>Etiam vitae augue odio. Ut laoreet ipsum vel ultrices viverra. Donec
-                                                    nisl dolor, mollis vel libero id,
-                                                    tempor cursus lectus. Vestibulum eu ligula et pharetra efficitur.
-                                                    Maecenas eleifend.</p>
-                                                <a href="#" className="read" data-toggle="modal"
-                                                   data-target="#exampleModalCenter" role="button">Read more </a>
+                                                <h4 className="text-uppercase mb-3">Cách trang trí phối màu</h4>
+                                                <p>Hiện đại, phù hợp, luôn hỗ trợ cho khách hàng lựa chọn không gian, vật liệu phù hợp nhất</p>
                                             </div>
                                         </div>
                                     </div>

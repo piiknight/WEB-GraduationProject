@@ -20,13 +20,14 @@ function App() {
 	      	<Route path="/admin/nn-vd" component={() => <DashBoard content="nn-vd" />} />
 	      	<Route path="/admin/tiec-nn" component={() => <DashBoard content="tiec-nn" />} />
 	      	<Route path="/admin/profile" component={() => <DashBoard content="profile" />} />
-	      	<Route path="/admin/login" component={Login} />
+	      	<Route path="/login" component={Login} />
 	      	<Route path="/logout" component={Logout} />
 	      	<Route path="/register" component={Register} />
 	      	<Route path="/public" component={() => <DashBoardPublic content="public" />} />
 	      	<Route path="/food" component={() => <DashBoardPublic content="food" />} />
 	      	<Route path="/service" component={() => <DashBoardPublic content="service" />} />
 	      	<Route path="/menu" component={() => <DashBoardPublic content="menu" />} />
+	      	<Route path="/booking" component={() => <DashBoardPublic content="booking" />} />
       	</div>
     </Router>
   );

@@ -29,6 +29,15 @@ export const LocalStorageManager = {
         localStorage.setItem(this.user, JSON.stringify(obj));
     },
 
+    isLogin() {
+        try {
+            this.getCurrentIdUser()
+            return true;
+        }  catch (e) {
+            return false;
+        }
+    },
+
     getAccessToken() {
         return localStorage.getItem(this.item);
     },

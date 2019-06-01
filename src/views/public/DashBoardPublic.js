@@ -10,6 +10,7 @@ import Home from "./Home";
 import Food from "./Food";
 import Service from "./Service";
 import Menu from "./Menu";
+import Booking from "./Booking";
 
 import * as EventBus from "eventing-bus";
 
@@ -39,6 +40,9 @@ class DashBoard extends Component {
                 break;
             case "menu":
                 this.content = <Menu/>;
+                break;
+            case "booking":
+                this.content = <Booking/>;
                 break;
 
             default:

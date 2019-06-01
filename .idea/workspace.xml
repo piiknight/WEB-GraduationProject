@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bdf40c8-49db-4625-9b96-b5586ab4f49c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/services/LoaiTiecService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/TiecDVService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/admin/AdminMenuBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/admin/AdminMenuBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilities/ConvertTime.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilities/ConvertTime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/TiecNN/AdminTiecNN.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/TiecNN/AdminTiecNN.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/public/Booking.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/public/Booking.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +37,7 @@
         <counts>
           <entry key="env" value="19" />
           <entry key="html" value="78" />
-          <entry key="js" value="21677" />
+          <entry key="js" value="22279" />
           <entry key="json" value="1" />
         </counts>
       </usages-collector>
@@ -52,7 +45,7 @@
         <counts>
           <entry key="HTML" value="78" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="21677" />
+          <entry key="JavaScript" value="22279" />
           <entry key="PLAIN_TEXT" value="19" />
         </counts>
       </usages-collector>
@@ -69,7 +62,7 @@
           <entry key="env" value="6" />
           <entry key="html" value="5" />
           <entry key="jpg" value="4" />
-          <entry key="js" value="419" />
+          <entry key="js" value="424" />
           <entry key="json" value="5" />
           <entry key="jsx" value="4" />
           <entry key="md" value="1" />
@@ -85,7 +78,7 @@
           <entry key="Image" value="5" />
           <entry key="JSON" value="5" />
           <entry key="JSX Harmony" value="4" />
-          <entry key="JavaScript" value="419" />
+          <entry key="JavaScript" value="424" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="TypeScript" value="14" />
@@ -95,11 +88,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/public/Booking.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="98" column="25" lean-forward="true" selection-start-line="98" selection-start-column="25" selection-end-line="98" selection-end-column="25" />
+            <state relative-caret-position="221">
+              <caret line="145" column="17" lean-forward="true" selection-start-line="145" selection-start-column="17" selection-end-line="145" selection-end-column="17" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#162#228#0" expanded="true" />
@@ -108,23 +101,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/views/Auth/Register.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/TiecDVService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="64" column="52" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="2" column="26" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/services/AuthenticationService.js">
+        <entry file="file://$PROJECT_DIR$/src/views/public/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+            <state relative-caret-position="177">
+              <caret line="620" column="39" selection-start-line="620" selection-start-column="33" selection-end-line="620" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -133,11 +123,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>EMP</find>
-      <find>listSelect</find>
-      <find>listCongviec</find>
-      <find>idTNL</find>
-      <find>handleClose</find>
       <find>/assets/css/slicknav.min.css</find>
       <find>index.html</find>
       <find>index</find>
@@ -163,6 +148,11 @@
       <find>handleChangeData</find>
       <find>LocalStorageManager</find>
       <find>toTop</find>
+      <find>3</find>
+      <find>numCustom={3}</find>
+      <find>openObjectDialog</find>
+      <find>button</find>
+      <find>listAddDV</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,7 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/views/admin/NNVDung/NNVDungForm.js" />
         <option value="$PROJECT_DIR$/src/layouts/admin/AdminHeader.js" />
         <option value="$PROJECT_DIR$/src/views/Login/Login.js" />
         <option value="$PROJECT_DIR$/src/views/Login/Logout.js" />
@@ -191,7 +180,6 @@
         <option value="$PROJECT_DIR$/src/views/admin/User/UserForm.js" />
         <option value="$PROJECT_DIR$/src/views/admin/TiecNN/CheckQuantityVDDialog.js" />
         <option value="$PROJECT_DIR$/src/views/admin/TiecNN/CheckQuantityVDTable.js" />
-        <option value="$PROJECT_DIR$/src/components/Table/EnhancedTable.js" />
         <option value="$PROJECT_DIR$/src/services/TiecService.js" />
         <option value="$PROJECT_DIR$/src/services/UserService.js" />
         <option value="$PROJECT_DIR$/src/views/admin/TiecNN/SetEmployeeDialog.js" />
@@ -215,13 +203,15 @@
         <option value="$PROJECT_DIR$/src/layouts/public/PublicHeader.js" />
         <option value="$PROJECT_DIR$/src/utilities/ConvertTime.js" />
         <option value="$PROJECT_DIR$/src/layouts/admin/AdminMenuBar.js" />
-        <option value="$PROJECT_DIR$/src/views/admin/TiecNN/AdminTiecNN.js" />
         <option value="$PROJECT_DIR$/src/services/LoaiTiecService.js" />
         <option value="$PROJECT_DIR$/src/views/admin/Menu/MenuForm.js" />
         <option value="$PROJECT_DIR$/src/views/Auth/Login.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/views/public/Booking.js" />
         <option value="$PROJECT_DIR$/src/views/Auth/Register.js" />
+        <option value="$PROJECT_DIR$/src/views/admin/TiecNN/AdminTiecNN.js" />
+        <option value="$PROJECT_DIR$/src/components/Table/EnhancedTable.js" />
+        <option value="$PROJECT_DIR$/src/services/TiecDVService.js" />
+        <option value="$PROJECT_DIR$/src/views/public/Booking.js" />
       </list>
     </option>
   </component>
@@ -340,10 +330,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="Regis&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Auth/Register.js&#10;move-top&#9;FILE&#9;file://E:/DO-AN/react/web/public/performance/js/move-top.js&#10;index&#9;FILE&#9;file://E:/DO-AN/react/web/public/index.html&#10;Logi&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Auth/Login.js&#10;Menu&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/public/Menu.js&#10;Admin&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/TiecNN/AdminTiecNN.js&#10;Book&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/public/Booking.js&#10;Login&#9;null&#9;null&#10;Home&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/public/Home.js&#10;UserS&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/UserService.js&#10;CongviecS&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/CongviecService.js&#10;TiecSer&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/TiecService.js&#10;TiecSe&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/TiecService.js&#10;Tiec&#9;FILE&#9;file://E:/DO-AN/react/web/src/utilities/TiecStatus.js&#10;Log&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Auth/Login.js&#10;For&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Congviec/CongviecForm.js&#10;Dash&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/DashBoard.js&#10;menu&#9;FILE&#9;file://E:/DO-AN/react/web/src/layouts/admin/AdminMenuBar.js&#10;Local&#9;FILE&#9;file://E:/DO-AN/react/web/src/utilities/LocalStorageManager.js&#10;dash&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/DashBoard.js&#10;MenuFor&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Menu/MenuForm.js&#10;AdminCong&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Congviec/AdminCongviec.js" />
+    <property name="SearchEverywhereHistoryKey" value="home&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/public/Home.js&#10;Enhan&#9;null&#9;null&#10;Regis&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Auth/Register.js&#10;move-top&#9;FILE&#9;file://E:/DO-AN/react/web/public/performance/js/move-top.js&#10;index&#9;FILE&#9;file://E:/DO-AN/react/web/public/index.html&#10;Logi&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Auth/Login.js&#10;Menu&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/public/Menu.js&#10;Admin&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/TiecNN/AdminTiecNN.js&#10;Book&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/public/Booking.js&#10;Login&#9;null&#9;null&#10;Home&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/public/Home.js&#10;UserS&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/UserService.js&#10;CongviecS&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/CongviecService.js&#10;TiecSer&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/TiecService.js&#10;TiecSe&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/TiecService.js&#10;Tiec&#9;FILE&#9;file://E:/DO-AN/react/web/src/utilities/TiecStatus.js&#10;Log&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Auth/Login.js&#10;For&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Congviec/CongviecForm.js&#10;Dash&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/DashBoard.js&#10;menu&#9;FILE&#9;file://E:/DO-AN/react/web/src/layouts/admin/AdminMenuBar.js&#10;Local&#9;FILE&#9;file://E:/DO-AN/react/web/src/utilities/LocalStorageManager.js&#10;dash&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/DashBoard.js&#10;MenuFor&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Menu/MenuForm.js&#10;AdminCong&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Congviec/AdminCongviec.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559399948649" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559403340331" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -408,12 +398,12 @@
       <workItem from="1559222528128" duration="21000" />
       <workItem from="1559222562365" duration="12866000" />
       <workItem from="1559361387151" duration="10157000" />
-      <workItem from="1559384310780" duration="13754000" />
+      <workItem from="1559384310780" duration="17098000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172896000" />
+    <option name="totallyTimeSpent" value="176240000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -449,7 +439,7 @@
       <window_info anchor="right" id="Database" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31543118" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23146747" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -457,7 +447,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -469,14 +459,14 @@
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.37213114" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3295082" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.32980332" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.32980332" />
+      <window_info anchor="right" id="Database" order="8" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -490,17 +480,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/views/admin/Mon/MonDialogSetQuantity.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="194" column="57" selection-start-line="194" selection-start-column="46" selection-end-line="194" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Test/SimpleReactFileUpload.js" />
     <entry file="file://$PROJECT_DIR$/public/assets/images/author/author-img1.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -636,13 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/public/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="444" column="26" lean-forward="true" selection-start-line="398" selection-start-column="16" selection-end-line="444" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/performance/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -745,16 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/admin/TiecNN/AdminTiecNN.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="150" column="49" lean-forward="true" selection-start-line="144" selection-start-column="16" selection-end-line="150" selection-end-column="49" />
-          <folding>
-            <element signature="e#657#700#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/LoaiTiecService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -813,6 +775,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Auth/Register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="64" column="52" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/AuthenticationService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -820,23 +792,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/public/Booking.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Table/EnhancedTable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="98" column="25" lean-forward="true" selection-start-line="98" selection-start-column="25" selection-end-line="98" selection-end-column="25" />
+        <state relative-caret-position="-714">
+          <caret line="220" column="3" selection-start-line="220" selection-start-column="3" selection-end-line="220" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/admin/TiecNN/AdminTiecNN.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="216" column="33" lean-forward="true" selection-start-line="216" selection-start-column="20" selection-end-line="216" selection-end-column="33" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#162#228#0" expanded="true" />
+            <element signature="e#657#700#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Auth/Register.js">
+    <entry file="file://$PROJECT_DIR$/src/views/public/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="64" column="52" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
+        <state relative-caret-position="177">
+          <caret line="620" column="39" selection-start-line="620" selection-start-column="33" selection-end-line="620" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/TiecDVService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/public/Booking.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="145" column="17" lean-forward="true" selection-start-line="145" selection-start-column="17" selection-end-line="145" selection-end-column="17" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#162#228#0" expanded="true" />
           </folding>
         </state>
       </provider>

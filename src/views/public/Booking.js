@@ -8,6 +8,7 @@ import {DichvuService} from "services/DichvuService";
 import {MenuService} from "services/MenuService";
 import {UserService} from "services/UserService";
 import {TiecService} from "services/TiecService";
+import {TiecDVService} from "services/TiecDVService";
 import {LoaiTiecService} from "services/LoaiTiecService";
 import * as EventBus from "eventing-bus";
 
@@ -41,6 +42,10 @@ class Booking extends Component {
                 idDV: "",
                 start: ""
             },
+            listAddDV: [{
+                name: "addDV_0",
+                value: ""
+            }]
         };
     };
 
@@ -82,6 +87,26 @@ class Booking extends Component {
         this.setState({formData});
     };
 
+    handleChangeDV = event => {
+        const {listAddDV} = this.state;
+        let split = event.target.name.split('_');
+        let id = split[1];
+        console.log("handleChangeDV: " + id);
+        console.log("event.target.value: " + event.target.value);
+        listAddDV[id].value = event.target.value;
+        this.setState({listAddDV});
+    };
+
+    handleAddService = () => {
+        console.log("handleAddService");
+        const {listAddDV} = this.state;
+        listAddDV.push({
+            name: "addDV_" + listAddDV.length,
+            value: ""
+        });
+        this.setState({listAddDV});
+    };
+
     handleSubmit = event => {
         if (this.state.isLogin) {
             this.state.formData.idND = LocalStorageManager.getCurrentIdUser();
@@ -89,9 +114,25 @@ class Booking extends Component {
             this.state.formData.idND = 0;
         }
         console.log("Booking_handleSubmit: " + JSON.stringify(this.state.formData));
+
         TiecService.addOne(this.state.formData)
             .then(res => {
                 if (res.data) {
+
+                    // listAddDV: [{"name":"addDV_0","value":"1"},{"name":"addDV_1","value":"3"},{"name":"addDV_2","value":"2"}]
+                    // {"fieldCount":0,"affectedRows":1,"insertId":12,"serverStatus":2,"warningCount":2,"message":"","protocol41":true,"changedRows":0}
+
+                    for (let i = 0; i < this.state.listAddDV.length; i++) {
+                        let obj = {
+                            idTiec: res.data.insertId,
+                            idDV: parseInt(this.state.listAddDV[i].value)
+                        };
+                        TiecDVService.addOne(obj).then(res => {
+                            if (!res.error) {
+
+                            }
+                        });
+                    }
 
                     this.state.formData = {
                         address: "",
@@ -104,6 +145,11 @@ class Booking extends Component {
                             start: new Date(),
                             idND: ""
                     };
+
+                    this.state.listAddDV = [{
+                        name: "addDV_0",
+                        value: ""
+                    }];
 
                     this.setState({});
 
@@ -129,7 +175,7 @@ class Booking extends Component {
         this.setState({
             formData
         });
-    }
+    };
 
     render() {
         const {
@@ -138,7 +184,8 @@ class Booking extends Component {
             listLT,
             listNN,
             listDV,
-            listMenu
+            listMenu,
+            listAddDV
         } = this.state;
 
         return (
@@ -235,19 +282,22 @@ class Booking extends Component {
                                             ))}
                                         </select>
                                     </div>
-                                    <div className="form-group">
-                                        <select
-                                            name="idDV"
-                                            alue={formData.idDV}
-                                            onChange={this.handleChange}
-                                            required
-                                        >
-                                            <option value="">Chọn Dịch vụ đi kèm</option>
-                                            {listDV.map((dv, index) => (
-                                                <option value={dv.idDV} key={index}>{dv.name}</option>
-                                            ))}
-                                        </select>
-                                    </div>
+
+                                    {listAddDV.map((addDV, index) => (
+                                        <div className="form-group">
+                                            <select
+                                                name={addDV.name}
+                                                value={addDV.value}
+                                                onChange={this.handleChangeDV}
+                                            >
+                                                <option value="">Chọn Dịch vụ đi kèm</option>
+                                                {listDV.map((dv, index) => (
+                                                    <option value={dv.idDV} key={index}>{dv.name}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                    ))}
+                                    <button type="button" className="btn btn-default" onClick={this.handleAddService}>Thêm dịch vụ</button>
                                     <div className="form-group">
                                         <DatePicker
                                             selected={this.state.formData.start}

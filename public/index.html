@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+<head>
+    <meta charset="utf-8"/>
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#000000"/>
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -19,20 +19,55 @@
     <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/metisMenu.css">
     <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/slicknav.min.css">
-      <!-- amchart css -->
-    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-      <!-- others css -->
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all"/>
+    <!-- others css -->
     <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/typography.css">
     <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/default-css.css">
     <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/styles.css">
     <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/responsive.css">
-      <!-- modernizr css -->
+    <!-- modernizr css -->
     <script src="%PUBLIC_URL%/assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <!--
       End MyLayouts
     -->
 
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      PUBLIC
+    -->
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!--//meta tags ends here-->
+    <!--booststrap-->
+    <link href="%PUBLIC_URL%/performance/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <!--//booststrap end-->
+    <!-- font-awesome icons -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/performance/css/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
+    <!-- //font-awesome icons -->
+    <link href="%PUBLIC_URL%/performance/css/simpleLightbox.css" rel='stylesheet' type='text/css'/>
+    <!--stylesheets-->
+    <link rel="stylesheet" href="%PUBLIC_URL%/performance/css/flexslider.css" type="text/css" media="screen" property=""/>
+    <link href="%PUBLIC_URL%/performance/css/style.css" rel='stylesheet' type='text/css' media="all">
+    <!--//stylesheets-->
+    <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+          rel="stylesheet">
+
+    <!--
+         END PUBLIC
+    -->
+
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -43,44 +78,167 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React Admin</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+<!--
+  This HTML file is a template.
+  If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  You can add webfonts, meta tags, or analytics to this file.
+  The build step will place the bundled scripts into the <body> tag.
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+  To begin the development, run `npm start` or `yarn start`.
+  To create a production bundle, use `npm run build` or `yarn build`.
+-->
 
-    <!--
-      My JS
-    -->
-      <!-- jquery latest version -->
-    <script src="%PUBLIC_URL%/assets/js/vendor/jquery-2.2.4.min.js"></script>
-      <!-- bootstrap 4 js -->
-    <script src="%PUBLIC_URL%/assets/js/popper.min.js"></script>
-    <script src="%PUBLIC_URL%/assets/js/bootstrap.min.js"></script>
-    <script src="%PUBLIC_URL%/assets/js/owl.carousel.min.js"></script>
-    <script src="%PUBLIC_URL%/assets/js/metisMenu.min.js"></script>
-    <script src="%PUBLIC_URL%/assets/js/jquery.slimscroll.min.js"></script>
-    <script src="%PUBLIC_URL%/assets/js/jquery.slicknav.min.js"></script>
+<!--
+  My JS
+-->
+<!-- jquery latest version -->
+<script src="%PUBLIC_URL%/assets/js/vendor/jquery-2.2.4.min.js"></script>
+<!-- bootstrap 4 js -->
+<script src="%PUBLIC_URL%/assets/js/popper.min.js"></script>
+<script src="%PUBLIC_URL%/assets/js/bootstrap.min.js"></script>
+<script src="%PUBLIC_URL%/assets/js/owl.carousel.min.js"></script>
+<script src="%PUBLIC_URL%/assets/js/metisMenu.min.js"></script>
+<script src="%PUBLIC_URL%/assets/js/jquery.slimscroll.min.js"></script>
+<script src="%PUBLIC_URL%/assets/js/jquery.slicknav.min.js"></script>
 
-      <!-- all line chart activation -->
-    <script src="%PUBLIC_URL%/assets/js/line-chart.js"></script>
-      <!-- all pie chart -->
-    <script src="%PUBLIC_URL%/assets/js/pie-chart.js"></script>
-      <!-- others plugins -->
-    <script src="%PUBLIC_URL%/assets/js/plugins.js"></script>
-    <script src="%PUBLIC_URL%/assets/js/scripts.js"></script>
+<!-- all line chart activation -->
+<script src="%PUBLIC_URL%/assets/js/line-chart.js"></script>
+<!-- all pie chart -->
+<script src="%PUBLIC_URL%/assets/js/pie-chart.js"></script>
+<!-- others plugins -->
+<script src="%PUBLIC_URL%/assets/js/plugins.js"></script>
+<script src="%PUBLIC_URL%/assets/js/scripts.js"></script>
 
-    <!--
-      End My JS
-    -->
-  </body>
+
+
+
+<!-- //Vertically centered Modal -->
+<script src='%PUBLIC_URL%/performance/js/jquery-2.2.3.min.js'></script>
+<!-- //js  working-->
+
+<!-- Banner Responsive slider -->
+<script src="%PUBLIC_URL%/performance/js/responsiveslides.min.js"></script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 4
+        $("#slider4").responsiveSlides({
+            auto: true,
+            pager: false,
+            nav: true,
+            speed: 500,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+
+    });
+</script>
+<!-- // Banner Responsive slider -->
+
+<!--// banner-->
+<!-- simpleLightbox -->
+<script src="%PUBLIC_URL%/performance/js/simpleLightbox.js"></script>
+<script>
+    $('.proj_gallery_grid a').simpleLightbox();
+</script>
+<!-- //simpleLightbox -->
+<!-- flexSlider -->
+<script defer src="%PUBLIC_URL%/performance/js/jquery.flexslider.js"></script>
+<script>
+    $(window).load(function () {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            start: function (slider) {
+                $('body').removeClass('loading');
+            }
+        });
+    });
+</script>
+
+<!-- //flexSlider -->
+<!-- Calendar -->
+<link rel="stylesheet" href="%PUBLIC_URL%/performance/css/jquery-ui.css" />
+<script src="%PUBLIC_URL%/performance/js/jquery-ui.js"></script>
+<script>
+    $(function() {
+        $( "#datepicker,#datepicker1,#datepicker2,#datepicker3" ).datepicker();
+    });
+</script>
+<!-- //Calendar -->
+<!-- odometer-script -->
+<script src="%PUBLIC_URL%/performance/js/odometer.js"></script>
+<script>
+    window.odometerOptions = {
+        format: '(ddd).dd'
+    };
+</script>
+<script>
+    setTimeout(function () {
+        jQuery('#w3l_stats1').html(25);
+    }, 1500);
+</script>
+<script>
+    setTimeout(function () {
+        jQuery('#w3l_stats2').html(330);
+    }, 1500);
+</script>
+<script>
+    setTimeout(function () {
+        jQuery('#w3l_stats3').html(542);
+    }, 1500);
+</script>
+<script>
+    setTimeout(function () {
+        jQuery('#w3l_stats4').html(222);
+    }, 1500);
+</script>
+<!-- //odometer-script -->
+
+<!-- start-smoth-scrolling -->
+<script  src="%PUBLIC_URL%/performance/js/move-top.js"></script>
+<script  src="%PUBLIC_URL%/performance/s/easing.js"></script>
+<script >
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+        });
+    });
+</script>
+<!-- start-smoth-scrolling -->
+<!-- here stars scrolling icon -->
+<script>
+    $(document).ready(function () {
+        /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+        */
+
+        $().UItoTop({ easingType: 'easeOutQuart' });
+
+    });
+</script>
+<!-- //here ends scrolling icon -->
+<!--bootstrap working-->
+<script src="%PUBLIC_URL%/performance/js/bootstrap.js"></script>
+<!-- //bootstrap working-->
+
+<!--
+  End My JS
+-->
+</body>
 </html>

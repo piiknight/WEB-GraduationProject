@@ -4,6 +4,7 @@ import Login from "./views/Auth/Login";
 import Register from "./views/Auth/Register";
 import Logout from "./views/Auth/Logout";
 import DashBoard from "./views/admin/DashBoard";
+import Home from "./views/public/Home";
 
 function Admin() {
   return (
@@ -22,6 +23,7 @@ function Admin() {
 	      	<Route path="/login" component={Login} />
 	      	<Route path="/logout" component={Logout} />
 	      	<Route path="/register" component={Register} />
+	      	<Route path="/public" component={Home} />
       	</div>
     </Router>
   );

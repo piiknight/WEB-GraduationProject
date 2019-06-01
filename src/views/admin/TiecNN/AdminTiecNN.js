@@ -134,6 +134,10 @@ class AdminTiecNN extends Component {
         // this.setState({objectToEdit: item, openDialogSetEmployee: true});
     };
 
+    handleExtend = item => {
+        this.setState({objectToEdit: item, openObjectDialog: true});
+    };
+
     handleDelete = item => {
         this.setState({objectToDelete: item, openDeleteConfirmDialog: true});
     };
@@ -206,6 +210,7 @@ class AdminTiecNN extends Component {
                 <EnhancedTable
                     name={"Thông tin tiệc"}
                     head={displayedColumns}
+                    onExtend={item => this.handleExtend(item)}
                     onEdit={item => this.handleEdit(item)}
                     onDelete={item => this.handleDelete(item)}
                     data={listTiec.filter(item => this.filterByFullName(item))}

@@ -104,6 +104,10 @@ class EnhancedTable extends React.Component {
         this.props.onEdit(item);
     };
 
+    handleExtend = item => {
+        this.props.onExtend(item);
+    };
+
     loadExtendFunc = (item) => {
         const {classes, numCustom} = this.props;
 
@@ -186,7 +190,7 @@ class EnhancedTable extends React.Component {
                         <IconButton
                             aria-label="View"
                             className={classes.tableActionButton}
-                            onClick={() => this.handleEdit(item)}
+                            onClick={() => this.handleExtend(item)}
                         >
                             <RemoveRedEye
                                 className={

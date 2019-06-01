@@ -50,7 +50,7 @@ class Food extends Component {
                         {
                             index == 0 ?
                                 <div className="w3-head-all mb-3">
-                                    <h3>Rooms And Rates</h3>
+                                    <h3>Danh sách món ăn hiện tại</h3>
                                 </div>
                                 :
                                 <div>

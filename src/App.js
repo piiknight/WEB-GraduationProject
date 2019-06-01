@@ -25,6 +25,7 @@ function App() {
 	      	<Route path="/register" component={Register} />
 	      	<Route path="/public" component={() => <DashBoardPublic content="public" />} />
 	      	<Route path="/food" component={() => <DashBoardPublic content="food" />} />
+	      	<Route path="/service" component={() => <DashBoardPublic content="service" />} />
       	</div>
     </Router>
   );

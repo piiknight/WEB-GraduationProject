@@ -26,7 +26,7 @@ class PublicHeader extends React.Component {
                     <div className="top-nav">
                         <div className="container-fluid">
                             <nav className="navbar navbar-expand-lg navbar-light">
-                                <a className="navbar-brand text-uppercase" href="index.html">Hotel zone</a>
+                                <a className="navbar-brand text-uppercase" href="/public">Trang chủ</a>
                                 <button className="navbar-toggler" type="button" data-toggle="collapse"
                                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                         aria-expanded="false" aria-label="Toggle navigation">
@@ -47,6 +47,11 @@ class PublicHeader extends React.Component {
                                         </li>
                                         <li className={url == "menu" ? "nav-item active" : "nav-item"}>
                                             <a className="nav-link" href="/menu">Menu
+                                                <span className="sr-only">current</span>
+                                            </a>
+                                        </li>
+                                        <li className={url == "owner" ? "nav-item active" : "nav-item"}>
+                                            <a className="nav-link" href="/owner">Người nhận
                                                 <span className="sr-only">current</span>
                                             </a>
                                         </li>

@@ -11,6 +11,7 @@ import Food from "./Food";
 import Service from "./Service";
 import Menu from "./Menu";
 import Booking from "./Booking";
+import Owner from "./Owner";
 
 import * as EventBus from "eventing-bus";
 
@@ -44,7 +45,9 @@ class DashBoard extends Component {
             case "booking":
                 this.content = <Booking/>;
                 break;
-
+            case "owner":
+                this.content = <Owner/>;
+                break;
             default:
                 this.content = <div>Default</div>;
                 break;

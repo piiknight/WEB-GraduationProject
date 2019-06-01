@@ -29,6 +29,7 @@ function App() {
 	      	<Route path="/service" component={() => <DashBoardPublic content="service" />} />
 	      	<Route path="/menu" component={() => <DashBoardPublic content="menu" />} />
 	      	<Route path="/booking" component={() => <DashBoardPublic content="booking" />} />
+	      	<Route path="/owner" component={() => <DashBoardPublic content="owner" />} />
       	</div>
     </Router>
   );

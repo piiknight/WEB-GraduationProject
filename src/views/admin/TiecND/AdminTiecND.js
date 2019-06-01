@@ -59,7 +59,8 @@ class AdminTiecND extends Component {
                     id: "nameNN",
                     numeric: false,
                     disablePadding: true,
-                    label: "Người nhận"
+                    label: "Người nhận",
+                    href: "/owner"
                 },
                 {
                     id: "status",

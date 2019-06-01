@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from "./views/Auth/Login";
 import Register from "./views/Auth/Register";
 import Logout from "./views/Auth/Logout";
+import Error from "./views/Auth/Error";
 import DashBoard from "./views/admin/DashBoard";
 import DashBoardPublic from "./views/public/DashBoardPublic";
 
@@ -24,6 +25,7 @@ function App() {
 			<Route path="/login" component={Login} />
 	      	<Route path="/logout" component={Logout} />
 	      	<Route path="/register" component={Register} />
+	      	<Route path="/error" component={Error} />
 	      	<Route path="/public" component={() => <DashBoardPublic content="public" />} />
 	      	<Route path="/food" component={() => <DashBoardPublic content="food" />} />
 	      	<Route path="/service" component={() => <DashBoardPublic content="service" />} />

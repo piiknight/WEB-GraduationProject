@@ -3,7 +3,6 @@ import React, {Component} from "react";
 // services or utilities
 import { AuthenticationService } from "services/AuthenticationService";
 import { LocalStorageManager } from "utilities/LocalStorageManager";
-import GridContainer from "../../components/Grid/GridContainer";
 
 class AdminMenuBar extends Component {
     constructor(props) {
@@ -11,57 +10,112 @@ class AdminMenuBar extends Component {
     };
 
     loadPermissionMenu = () => {
+        let permission = [];
         switch (LocalStorageManager.getMode()) {
             case "OWNER":
-                console.log("loadPermissionMenu");
-                return (
-                    <ul className="metismenu" id="menu">
-                        <li className="active">
-                            <a href="/admin/nn-vd" aria-expanded="true"><i className="ti-shield"/><span>Vật dụng</span></a>
-                        </li>
-                        <li className="active">
-                            <a href="/admin/tiec-nn" aria-expanded="true"><i className="ti-check-box"/><span>Quản lý Tiệc</span></a>
-                        </li>
-                    </ul>
-                )
+                permission = [
+                    {
+                        url: "profile",
+                        isHide: true
+                    },
+                    {
+                        url: "nn-vd",
+                        name: "Vật dụng",
+                        icon: "shield"
+                    },
+                    {
+                        url: "tiec-nn",
+                        name: "Quản lý Tiệc",
+                        icon: "check-box"
+                    },
+                ];
+                break;
             case "ADMIN":
-                return (
-                    <ul className="metismenu" id="menu">
-                        <li className="active">
-                            <a href="/admin/user" aria-expanded="true"><i className="ti-notepad"/><span>Người dùng</span></a>
-                        </li>
-                        <li className="active">
-                            <a href="/admin/congviec" aria-expanded="true"><i className="ti-notepad"/><span>Công việc</span></a>
-                        </li>
-                        <li className="active">
-                            <a href="/admin/dichvu" aria-expanded="true"><i className="ti-rss"/><span>Dịch vụ</span></a>
-                        </li>
-                        <li className="active">
-                            <a href="/admin/menu" aria-expanded="true"><i className="ti-book"/><span>Menu</span></a>
-                        </li>
-                        <li className="active">
-                            <a href="/admin/mon" aria-expanded="true"><i className="ti-na"/><span>Món ăn</span></a>
-                        </li>
-                        <li className="active">
-                            <a href="/admin/vatdung" aria-expanded="true"><i className="ti-shield"/><span>Vật dụng</span></a>
-                        </li>
-                    </ul>
-                )
+                permission = [
+                    {
+                        url: "profile",
+                        isHide: true
+                    },
+                    {
+                        url: "user",
+                        name: "Người dùng",
+                        icon: "notepad"
+                    },
+                    {
+                        url: "congviec",
+                        name: "Công việc",
+                        icon: "notepad"
+                    },
+                    {
+                        url: "dichvu",
+                        name: "Dịch vụ",
+                        icon: "rss"
+                    },
+                    {
+                        url: "menu",
+                        name: "Menu",
+                        icon: "book"
+                    },
+                    {
+                        url: "mon",
+                        name: "Món ăn",
+                        icon: "na"
+                    },
+                    {
+                        url: "vatdung",
+                        name: "Vật dụng",
+                        icon: "shield"
+                    },
+                ];
                 break;
             case "EMPLOYEE":
                 break;
             case "ORDERER":
-                return (
-                    <ul className="metismenu" id="menu">
-                        <li className="active">
-                            <a href="/admin/tiec-nd" aria-expanded="true"><i className="ti-check-box"/><span>Quản lý Tiệc</span></a>
-                        </li>
-                    </ul>
-                )
+                permission = [
+                    {
+                        url: "profile",
+                        isHide: true
+                    },
+                    {
+                        url: "tiec-nd",
+                        name: "Quản lý Tiệc",
+                        icon: "check-box"
+                    },
+                ];
                 break;
             default:
                 return <div>Not mode</div>
+
         }
+
+        console.log("adfsaf: " + window.location.href);
+        let split = window.location.href.split("/");
+        let curUrl = split[split.length - 1];
+        let isPass = false;
+        for (let i = 0; i < permission.length; i++) {
+            if (permission[i].url == curUrl) {
+                isPass = true;
+                break;
+            }
+        }
+
+        if (!isPass) {
+            window.location.replace("/error?msg=404");
+        }
+
+        return (
+            <ul className="metismenu" id="menu">
+                {permission.map((child, index) => (
+                    (child.name)
+                        ?
+                        <li className="active" key={index}>
+                            <a href={"/admin/" + child.url} aria-expanded="true"><i className={"ti-" + child.icon}/><span>{child.name}</span></a>
+                        </li>
+                        :
+                        <div></div>
+                ))}
+            </ul>
+        )
     };
 
     render() {
@@ -78,44 +132,6 @@ class AdminMenuBar extends Component {
                             {
                                 this.loadPermissionMenu()
                             }
-                            {/*{*/}
-                                {/*LocalStorageManager.getMode() == "OWNER" ?*/}
-                                    {/*<ul className="metismenu" id="menu">*/}
-                                        {/*<li className="active">*/}
-                                            {/*<a href="/admin/nn-vd" aria-expanded="true"><i className="ti-shield"/><span>Vật dụng</span></a>*/}
-                                        {/*</li>*/}
-                                        {/*<li className="active">*/}
-                                            {/*<a href="/admin/tiec-nn" aria-expanded="true"><i className="ti-check-box"/><span>Quản lý Tiệc</span></a>*/}
-                                        {/*</li>*/}
-                                    {/*</ul>*/}
-                                    {/*:*/}
-                                    {/*""*/}
-                            {/*}*/}
-                            {/*{*/}
-                                {/*LocalStorageManager.getMode() == "ADMIN" ?*/}
-                                    {/*<ul className="metismenu" id="menu">*/}
-                                        {/*<li className="active">*/}
-                                            {/*<a href="/admin/user" aria-expanded="true"><i className="ti-notepad"/><span>Người dùng</span></a>*/}
-                                        {/*</li>*/}
-                                        {/*<li className="active">*/}
-                                            {/*<a href="/admin/congviec" aria-expanded="true"><i className="ti-notepad"/><span>Công việc</span></a>*/}
-                                        {/*</li>*/}
-                                        {/*<li className="active">*/}
-                                            {/*<a href="/admin/dichvu" aria-expanded="true"><i className="ti-rss"/><span>Dịch vụ</span></a>*/}
-                                        {/*</li>*/}
-                                        {/*<li className="active">*/}
-                                            {/*<a href="/admin/menu" aria-expanded="true"><i className="ti-book"/><span>Menu</span></a>*/}
-                                        {/*</li>*/}
-                                        {/*<li className="active">*/}
-                                            {/*<a href="/admin/mon" aria-expanded="true"><i className="ti-na"/><span>Món ăn</span></a>*/}
-                                        {/*</li>*/}
-                                        {/*<li className="active">*/}
-                                            {/*<a href="/admin/vatdung" aria-expanded="true"><i className="ti-shield"/><span>Vật dụng</span></a>*/}
-                                        {/*</li>*/}
-                                    {/*</ul>*/}
-                                    {/*:*/}
-                                    {/*""*/}
-                            {/*}*/}
                         </nav>
                     </div>
                 </div>

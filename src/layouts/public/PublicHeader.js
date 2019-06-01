@@ -29,6 +29,11 @@ function PublicHeader() {
                                             <span className="sr-only">current</span>
                                         </a>
                                     </li>
+                                    <li className={url == "menu" ? "nav-item active" : "nav-item"}>
+                                        <a className="nav-link" href="/menu">Menu
+                                            <span className="sr-only">current</span>
+                                        </a>
+                                    </li>
                                     <li className={url == "service" ? "nav-item active" : "nav-item"}>
                                         <a className="nav-link" href="/service">Dịch vụ đi kèm
                                             <span className="sr-only">current</span>

@@ -20,7 +20,7 @@ class AdminPageTitle extends React.Component {
                         <div className="breadcrumbs-area clearfix">
                             <h4 className="page-title pull-left">Hệ thống quản lý</h4>
                             <ul className="breadcrumbs pull-left">
-                                <li><a href="/home">Trang chính</a></li>
+                                <li><a href="/admin/home">Trang chính</a></li>
                                 <li><span>Dashboard</span></li>
                             </ul>
                         </div>
@@ -30,7 +30,7 @@ class AdminPageTitle extends React.Component {
                             <img className="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar" />
                             <h4 className="user-name dropdown-toggle" data-toggle="dropdown">{this.getUserName()}<i className="fa fa-angle-down" /></h4>
                             <div className="dropdown-menu">
-                                <a className="dropdown-item" href={"/profile"}>Thông tin</a>
+                                <a className="dropdown-item" href={"/admin/profile"}>Thông tin</a>
                                 <a className="dropdown-item" href={"/logout"}>Đăng xuất</a>
                             </div>
                         </div>

@@ -9,6 +9,7 @@ import PublicHeader from "../../../src/layouts/public/PublicHeader";
 import Home from "./Home";
 import Food from "./Food";
 import Service from "./Service";
+import Menu from "./Menu";
 
 import * as EventBus from "eventing-bus";
 
@@ -35,6 +36,9 @@ class DashBoard extends Component {
                 break;
             case "service":
                 this.content = <Service/>;
+                break;
+            case "menu":
+                this.content = <Menu/>;
                 break;
 
             default:

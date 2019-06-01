@@ -4,9 +4,9 @@ import Login from "./views/Auth/Login";
 import Register from "./views/Auth/Register";
 import Logout from "./views/Auth/Logout";
 import DashBoard from "./views/admin/DashBoard";
-import Home from "./views/public/Home";
+import DashBoardPublic from "./views/public/DashBoardPublic";
 
-function Admin() {
+function App() {
   return (
     <Router>
       	<div>
@@ -23,10 +23,11 @@ function Admin() {
 	      	<Route path="/login" component={Login} />
 	      	<Route path="/logout" component={Logout} />
 	      	<Route path="/register" component={Register} />
-	      	<Route path="/public" component={Home} />
+	      	<Route path="/public" component={() => <DashBoardPublic content="public" />} />
+	      	<Route path="/food" component={() => <DashBoardPublic content="food" />} />
       	</div>
     </Router>
   );
 }
 
-export default Admin;
+export default App;

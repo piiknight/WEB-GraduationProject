@@ -41,7 +41,7 @@ class Login extends React.Component {
                     if (res.data.success) {
                         LocalStorageManager.setAccessToken(res.data.token);
                         LocalStorageManager.setCurrentUser(res.data.data[0]);
-                        this.props.history.push("/admin/home");
+                        this.props.history.push("/admin/profile");
                         window.location.reload();
                     } else {
                         this.state.formError.password = "Sai mật khẩu";

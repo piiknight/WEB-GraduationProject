@@ -11,6 +11,11 @@ export const TiecService = {
         return myAxios.put(`${TiecService.tiecAPI}/status/${tiec.idTiec}`, tiec);
     },
 
+    getAllByIdND(id) {
+        const url = `${TiecService.tiecAPI}/nd/${id}`;
+        return myAxios.get(url);
+    },
+
     getAllByIdNN(id) {
         const url = `${TiecService.tiecAPI}/nn/${id}`;
         return myAxios.get(url);

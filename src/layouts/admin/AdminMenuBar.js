@@ -15,15 +15,49 @@ class AdminMenuBar extends Component {
             case "OWNER":
                 console.log("loadPermissionMenu");
                 return (
-                    <GridContainer>
-
-                    </GridContainer>
+                    <ul className="metismenu" id="menu">
+                        <li className="active">
+                            <a href="/admin/nn-vd" aria-expanded="true"><i className="ti-shield"/><span>Vật dụng</span></a>
+                        </li>
+                        <li className="active">
+                            <a href="/admin/tiec-nn" aria-expanded="true"><i className="ti-check-box"/><span>Quản lý Tiệc</span></a>
+                        </li>
+                    </ul>
                 )
             case "ADMIN":
+                return (
+                    <ul className="metismenu" id="menu">
+                        <li className="active">
+                            <a href="/admin/user" aria-expanded="true"><i className="ti-notepad"/><span>Người dùng</span></a>
+                        </li>
+                        <li className="active">
+                            <a href="/admin/congviec" aria-expanded="true"><i className="ti-notepad"/><span>Công việc</span></a>
+                        </li>
+                        <li className="active">
+                            <a href="/admin/dichvu" aria-expanded="true"><i className="ti-rss"/><span>Dịch vụ</span></a>
+                        </li>
+                        <li className="active">
+                            <a href="/admin/menu" aria-expanded="true"><i className="ti-book"/><span>Menu</span></a>
+                        </li>
+                        <li className="active">
+                            <a href="/admin/mon" aria-expanded="true"><i className="ti-na"/><span>Món ăn</span></a>
+                        </li>
+                        <li className="active">
+                            <a href="/admin/vatdung" aria-expanded="true"><i className="ti-shield"/><span>Vật dụng</span></a>
+                        </li>
+                    </ul>
+                )
                 break;
             case "EMPLOYEE":
                 break;
             case "ORDERER":
+                return (
+                    <ul className="metismenu" id="menu">
+                        <li className="active">
+                            <a href="/admin/tiec-nd" aria-expanded="true"><i className="ti-check-box"/><span>Quản lý Tiệc</span></a>
+                        </li>
+                    </ul>
+                )
                 break;
             default:
                 return <div>Not mode</div>
@@ -42,43 +76,46 @@ class AdminMenuBar extends Component {
                     <div className="menu-inner">
                         <nav>
                             {
-                                LocalStorageManager.getMode() == "OWNER" ?
-                                    <ul className="metismenu" id="menu">
-                                        <li className="active">
-                                            <a href="/admin/nn-vd" aria-expanded="true"><i className="ti-shield"/><span>Vật dụng</span></a>
-                                        </li>
-                                        <li className="active">
-                                            <a href="/admin/tiec-nn" aria-expanded="true"><i className="ti-check-box"/><span>Quản lý Tiệc</span></a>
-                                        </li>
-                                    </ul>
-                                    :
-                                    ""
+                                this.loadPermissionMenu()
                             }
-                            {
-                                LocalStorageManager.getMode() == "ADMIN" ?
-                                    <ul className="metismenu" id="menu">
-                                        <li className="active">
-                                            <a href="/admin/user" aria-expanded="true"><i className="ti-notepad"/><span>Người dùng</span></a>
-                                        </li>
-                                        <li className="active">
-                                            <a href="/admin/congviec" aria-expanded="true"><i className="ti-notepad"/><span>Công việc</span></a>
-                                        </li>
-                                        <li className="active">
-                                            <a href="/admin/dichvu" aria-expanded="true"><i className="ti-rss"/><span>Dịch vụ</span></a>
-                                        </li>
-                                        <li className="active">
-                                            <a href="/admin/menu" aria-expanded="true"><i className="ti-book"/><span>Menu</span></a>
-                                        </li>
-                                        <li className="active">
-                                            <a href="/admin/mon" aria-expanded="true"><i className="ti-na"/><span>Món ăn</span></a>
-                                        </li>
-                                        <li className="active">
-                                            <a href="/admin/vatdung" aria-expanded="true"><i className="ti-shield"/><span>Vật dụng</span></a>
-                                        </li>
-                                    </ul>
-                                    :
-                                    ""
-                            }
+                            {/*{*/}
+                                {/*LocalStorageManager.getMode() == "OWNER" ?*/}
+                                    {/*<ul className="metismenu" id="menu">*/}
+                                        {/*<li className="active">*/}
+                                            {/*<a href="/admin/nn-vd" aria-expanded="true"><i className="ti-shield"/><span>Vật dụng</span></a>*/}
+                                        {/*</li>*/}
+                                        {/*<li className="active">*/}
+                                            {/*<a href="/admin/tiec-nn" aria-expanded="true"><i className="ti-check-box"/><span>Quản lý Tiệc</span></a>*/}
+                                        {/*</li>*/}
+                                    {/*</ul>*/}
+                                    {/*:*/}
+                                    {/*""*/}
+                            {/*}*/}
+                            {/*{*/}
+                                {/*LocalStorageManager.getMode() == "ADMIN" ?*/}
+                                    {/*<ul className="metismenu" id="menu">*/}
+                                        {/*<li className="active">*/}
+                                            {/*<a href="/admin/user" aria-expanded="true"><i className="ti-notepad"/><span>Người dùng</span></a>*/}
+                                        {/*</li>*/}
+                                        {/*<li className="active">*/}
+                                            {/*<a href="/admin/congviec" aria-expanded="true"><i className="ti-notepad"/><span>Công việc</span></a>*/}
+                                        {/*</li>*/}
+                                        {/*<li className="active">*/}
+                                            {/*<a href="/admin/dichvu" aria-expanded="true"><i className="ti-rss"/><span>Dịch vụ</span></a>*/}
+                                        {/*</li>*/}
+                                        {/*<li className="active">*/}
+                                            {/*<a href="/admin/menu" aria-expanded="true"><i className="ti-book"/><span>Menu</span></a>*/}
+                                        {/*</li>*/}
+                                        {/*<li className="active">*/}
+                                            {/*<a href="/admin/mon" aria-expanded="true"><i className="ti-na"/><span>Món ăn</span></a>*/}
+                                        {/*</li>*/}
+                                        {/*<li className="active">*/}
+                                            {/*<a href="/admin/vatdung" aria-expanded="true"><i className="ti-shield"/><span>Vật dụng</span></a>*/}
+                                        {/*</li>*/}
+                                    {/*</ul>*/}
+                                    {/*:*/}
+                                    {/*""*/}
+                            {/*}*/}
                         </nav>
                     </div>
                 </div>

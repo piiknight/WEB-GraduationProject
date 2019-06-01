@@ -20,7 +20,8 @@ function App() {
 	      	<Route path="/admin/nn-vd" component={() => <DashBoard content="nn-vd" />} />
 	      	<Route path="/admin/tiec-nn" component={() => <DashBoard content="tiec-nn" />} />
 	      	<Route path="/admin/profile" component={() => <DashBoard content="profile" />} />
-	      	<Route path="/login" component={Login} />
+            <Route path="/admin/tiec-nd" component={() => <DashBoard content="tiec-nd" />} />
+			<Route path="/login" component={Login} />
 	      	<Route path="/logout" component={Logout} />
 	      	<Route path="/register" component={Register} />
 	      	<Route path="/public" component={() => <DashBoardPublic content="public" />} />

@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bdf40c8-49db-4625-9b96-b5586ab4f49c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/views/admin/TiecND/AdminTiecND.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/admin/AdminMenuBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/admin/AdminMenuBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/TiecService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/TiecService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/DashBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/DashBoard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Table/EnhancedTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Table/EnhancedTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/TiecND/AdminTiecND.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/TiecND/AdminTiecND.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +36,7 @@
         <counts>
           <entry key="env" value="19" />
           <entry key="html" value="78" />
-          <entry key="js" value="22406" />
+          <entry key="js" value="22550" />
           <entry key="json" value="1" />
         </counts>
       </usages-collector>
@@ -49,7 +44,7 @@
         <counts>
           <entry key="HTML" value="78" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="22406" />
+          <entry key="JavaScript" value="22550" />
           <entry key="PLAIN_TEXT" value="19" />
         </counts>
       </usages-collector>
@@ -66,7 +61,7 @@
           <entry key="env" value="6" />
           <entry key="html" value="5" />
           <entry key="jpg" value="4" />
-          <entry key="js" value="437" />
+          <entry key="js" value="438" />
           <entry key="json" value="5" />
           <entry key="jsx" value="4" />
           <entry key="md" value="1" />
@@ -82,7 +77,7 @@
           <entry key="Image" value="5" />
           <entry key="JSON" value="5" />
           <entry key="JSX Harmony" value="4" />
-          <entry key="JavaScript" value="437" />
+          <entry key="JavaScript" value="438" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="TypeScript" value="14" />
@@ -95,8 +90,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/admin/TiecND/AdminTiecND.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
+            <state relative-caret-position="51">
+              <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
               <folding>
                 <element signature="e#114#176#0" expanded="true" />
                 <element signature="e#503#546#0" expanded="true" />
@@ -106,13 +101,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/admin/TiecNN/AdminTiecNN.js">
+        <entry file="file://$PROJECT_DIR$/src/components/Table/EnhancedTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="102" column="16" selection-start-line="102" selection-start-column="16" selection-end-line="106" selection-end-column="17" />
-              <folding>
-                <element signature="e#657#700#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2483">
+              <caret line="292" column="73" lean-forward="true" selection-start-line="292" selection-start-column="73" selection-end-line="292" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -121,7 +113,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>index.html</find>
       <find>index</find>
       <find>public</find>
       <find>ENJOY THE FOOD AND ROOMS IN OUR HOTEL</find>
@@ -151,6 +142,7 @@
       <find>button</find>
       <find>listAddDV</find>
       <find>loadPermissionMenu</find>
+      <find>link</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -200,7 +192,6 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/views/Auth/Register.js" />
         <option value="$PROJECT_DIR$/src/views/admin/TiecNN/AdminTiecNN.js" />
-        <option value="$PROJECT_DIR$/src/components/Table/EnhancedTable.js" />
         <option value="$PROJECT_DIR$/src/services/TiecDVService.js" />
         <option value="$PROJECT_DIR$/src/views/public/Booking.js" />
         <option value="$PROJECT_DIR$/src/views/Auth/Login.js" />
@@ -209,6 +200,7 @@
         <option value="$PROJECT_DIR$/src/views/admin/TiecND/AdminTiecNN.js" />
         <option value="$PROJECT_DIR$/src/layouts/admin/AdminMenuBar.js" />
         <option value="$PROJECT_DIR$/src/services/TiecService.js" />
+        <option value="$PROJECT_DIR$/src/components/Table/EnhancedTable.js" />
         <option value="$PROJECT_DIR$/src/views/admin/TiecND/AdminTiecND.js" />
       </list>
     </option>
@@ -330,10 +322,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="TiecS&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/TiecService.js&#10;TiecSer&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/TiecDVService.js&#10;Regis&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Auth/Register.js&#10;Login&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Auth/Login.js&#10;home&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/public/Home.js&#10;Enhan&#9;null&#9;null&#10;move-top&#9;FILE&#9;file://E:/DO-AN/react/web/public/performance/js/move-top.js&#10;index&#9;FILE&#9;file://E:/DO-AN/react/web/public/index.html&#10;Logi&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Auth/Login.js&#10;Menu&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/public/Menu.js&#10;Admin&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/TiecNN/AdminTiecNN.js&#10;Book&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/public/Booking.js&#10;Home&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/public/Home.js&#10;UserS&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/UserService.js&#10;CongviecS&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/CongviecService.js&#10;TiecSe&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/TiecService.js&#10;Tiec&#9;FILE&#9;file://E:/DO-AN/react/web/src/utilities/TiecStatus.js&#10;Log&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Auth/Login.js&#10;For&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Congviec/CongviecForm.js&#10;Dash&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/DashBoard.js&#10;menu&#9;FILE&#9;file://E:/DO-AN/react/web/src/layouts/admin/AdminMenuBar.js&#10;Local&#9;FILE&#9;file://E:/DO-AN/react/web/src/utilities/LocalStorageManager.js&#10;dash&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/DashBoard.js&#10;MenuFor&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Menu/MenuForm.js&#10;AdminCong&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Congviec/AdminCongviec.js" />
+    <property name="SearchEverywhereHistoryKey" value="Enha&#9;FILE&#9;file://E:/DO-AN/react/web/src/components/Table/EnhancedTable.js&#10;TiecS&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/TiecService.js&#10;TiecSer&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/TiecDVService.js&#10;Regis&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Auth/Register.js&#10;Login&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Auth/Login.js&#10;home&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/public/Home.js&#10;Enhan&#9;null&#9;null&#10;move-top&#9;FILE&#9;file://E:/DO-AN/react/web/public/performance/js/move-top.js&#10;index&#9;FILE&#9;file://E:/DO-AN/react/web/public/index.html&#10;Logi&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Auth/Login.js&#10;Menu&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/public/Menu.js&#10;Admin&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/TiecNN/AdminTiecNN.js&#10;Book&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/public/Booking.js&#10;Home&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/public/Home.js&#10;UserS&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/UserService.js&#10;CongviecS&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/CongviecService.js&#10;TiecSe&#9;FILE&#9;file://E:/DO-AN/react/web/src/services/TiecService.js&#10;Tiec&#9;FILE&#9;file://E:/DO-AN/react/web/src/utilities/TiecStatus.js&#10;Log&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/Auth/Login.js&#10;For&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Congviec/CongviecForm.js&#10;Dash&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/DashBoard.js&#10;menu&#9;FILE&#9;file://E:/DO-AN/react/web/src/layouts/admin/AdminMenuBar.js&#10;Local&#9;FILE&#9;file://E:/DO-AN/react/web/src/utilities/LocalStorageManager.js&#10;dash&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/DashBoard.js&#10;MenuFor&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Menu/MenuForm.js&#10;AdminCong&#9;FILE&#9;file://E:/DO-AN/react/web/src/views/admin/Congviec/AdminCongviec.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559405047809" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559406271224" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -398,12 +390,12 @@
       <workItem from="1559222528128" duration="21000" />
       <workItem from="1559222562365" duration="12866000" />
       <workItem from="1559361387151" duration="10157000" />
-      <workItem from="1559384310780" duration="18802000" />
+      <workItem from="1559384310780" duration="20023000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177944000" />
+    <option name="totallyTimeSpent" value="179165000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -739,13 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Table/EnhancedTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-714">
-          <caret line="220" column="3" selection-start-line="220" selection-start-column="3" selection-end-line="220" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/public/Home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -844,10 +829,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Table/EnhancedTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2483">
+          <caret line="292" column="73" lean-forward="true" selection-start-line="292" selection-start-column="73" selection-end-line="292" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/admin/TiecND/AdminTiecND.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
+        <state relative-caret-position="51">
+          <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
           <folding>
             <element signature="e#114#176#0" expanded="true" />
             <element signature="e#503#546#0" expanded="true" />

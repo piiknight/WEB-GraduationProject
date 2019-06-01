@@ -33,7 +33,8 @@ class AdminTiecND extends Component {
                     id: "address",
                     numeric: false,
                     disablePadding: true,
-                    label: "Địa chỉ"
+                    label: "Địa chỉ",
+                    href: "/public"
                 },
                 {
                     id: "name",
@@ -48,16 +49,17 @@ class AdminTiecND extends Component {
                     label: "Số điện thoại"
                 },
                 {
-                    id: "idMenu",
+                    id: "nameMenu",
                     numeric: false,
                     disablePadding: true,
-                    label: "ID Menu"
+                    label: "Menu",
+                    href: "/menu"
                 },
                 {
-                    id: "idNN",
+                    id: "nameNN",
                     numeric: false,
                     disablePadding: true,
-                    label: "ID Người đặt"
+                    label: "Người nhận"
                 },
                 {
                     id: "status",

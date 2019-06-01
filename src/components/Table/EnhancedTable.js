@@ -281,11 +281,19 @@ class EnhancedTable extends React.Component {
                                                     cellContent = item[h.id];
                                                 }
 
-                                                return (
-                                                    <TableCell padding="none" key={key}>
-                                                        {cellContent}
-                                                    </TableCell>
-                                                );
+                                                if (h.href) {
+                                                    return (
+                                                        <TableCell padding="none" key={key}>
+                                                            <a href={h.href}>{cellContent}</a>
+                                                        </TableCell>
+                                                    );
+                                                } else {
+                                                    return (
+                                                        <TableCell padding="none" key={key}>
+                                                            {cellContent}
+                                                        </TableCell>
+                                                    );
+                                                }
                                             })}
                                             {this.loadExtendFunc(item)}
                                         </TableRow>

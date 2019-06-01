@@ -5,7 +5,7 @@ import Register from "./views/Auth/Register";
 import Logout from "./views/Auth/Logout";
 import DashBoard from "./views/admin/DashBoard";
 
-function App() {
+function Admin() {
   return (
     <Router>
       	<div>
@@ -27,4 +27,4 @@ function App() {
   );
 }
 
-export default App;
+export default Admin;

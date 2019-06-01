@@ -52,6 +52,12 @@ class AdminTiecNN extends Component {
                     label: "Loại tiệc"
                 },
                 {
+                    id: "phone",
+                    numeric: false,
+                    disablePadding: true,
+                    label: "Số điện thoại"
+                },
+                {
                     id: "idMenu",
                     numeric: false,
                     disablePadding: true,
@@ -79,14 +85,8 @@ class AdminTiecNN extends Component {
                     id: "start",
                     numeric: false,
                     disablePadding: true,
-                    label: "Thời gian bắt đầu"
-                },
-                {
-                    id: "end",
-                    numeric: false,
-                    disablePadding: true,
-                    label: "Thời gian kết thúc"
-                },
+                    label: "Thời gian tổ chức"
+                }
             ],
             listTiec: [],
             openDialogSetEmployee: false,
@@ -103,8 +103,7 @@ class AdminTiecNN extends Component {
                 for (let i = 0; i < res.data.length; i++) {
                     let obj = res.data[i];
                     obj.status = TiecStatus.getStatus(obj.status);
-                    obj.start = ConvertTime.toString(obj.start);
-                    obj.end = ConvertTime.toString(obj.end);
+                    obj.start = ConvertTime.getDay(obj.start);
                 }
                 this.setState({listTiec: res.data});
             }

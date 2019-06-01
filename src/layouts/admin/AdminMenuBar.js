@@ -35,7 +35,7 @@ class AdminMenuBar extends Component {
             <div className="sidebar-menu">
                 <div className="sidebar-header">
                     <div className="logo">
-                        <a href="/admin/home" style={{fontSize:'15px'}}><i className="ti-dashboard"/><span>  Trang quản lý</span></a>
+                        <a href="/public" style={{fontSize:'15px'}}><i className="ti-dashboard"/><span>Trang chủ</span></a>
                     </div>
                 </div>
                 <div className="main-menu">

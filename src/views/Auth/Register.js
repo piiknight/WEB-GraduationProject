@@ -62,7 +62,7 @@ class Register extends React.Component {
                     console.log("datne:" + JSON.stringify(res.data));
                     LocalStorageManager.setAccessToken(res.data.token);
                     LocalStorageManager.setCurrentUser(res.data.data[0]);
-                    this.props.history.push("/home");
+                    this.props.history.push("/public");
                     window.location.reload();
                 }
             })

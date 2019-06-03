@@ -160,10 +160,10 @@ class ProfileForm extends Component {
                 )}
                 <div style={{marginTop:'45px'}}>
                     <Button type={"submit"} disabled={isSubmitting} color="primary">
-                        Save
+                        Lưu
                     </Button>
                     <Button onClick={values.onClose} color="primary">
-                        Cancel
+                        Hủy
                     </Button>
                 </div>
             </form>
@@ -242,11 +242,18 @@ export const ProfileValidatedForm = withFormik({
         console.log("handleSubmit: " + JSON.stringify(values));
 
         const handleResponse = res => {
+            console.log("handleResponse: " + JSON.stringify(res));
             if (res.error) {
                 snack.color = "warning";
                 snack.message = `${snack.message} fail`;
                 handleError(res.error);
             } else {
+                if (res.data.success == false) {
+                    snack.color = "warning";
+                    snack.message = `${snack.message} fail`;
+                    handleSuccess();
+                    return;
+                }
                 snack.color = "success";
                 snack.message = `${snack.message} successfully`;
                 handleSuccess();

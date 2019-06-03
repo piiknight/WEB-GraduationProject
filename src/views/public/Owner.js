@@ -14,7 +14,7 @@ class Owner extends Component {
     };
 
     loadDataList = () => {
-        UserService.getUserByMode("EMPLOYEE").then(res => {
+        UserService.getUserByMode("OWNER").then(res => {
             if (!res.error) {
                 let result = [];
                 let arrChild = [];

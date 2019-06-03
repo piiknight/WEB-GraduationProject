@@ -27,7 +27,7 @@ class AdminPageTitle extends React.Component {
                     </div>
                     <div className="col-sm-6 clearfix">
                         <div className="user-profile pull-right">
-                            <img className="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar" />
+                            {/*<img className="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar" />*/}
                             <h4 className="user-name dropdown-toggle" data-toggle="dropdown">{this.getUserName()}<i className="fa fa-angle-down" /></h4>
                             <div className="dropdown-menu">
                                 <a className="dropdown-item" href={"/admin/profile"}>Thông tin</a>

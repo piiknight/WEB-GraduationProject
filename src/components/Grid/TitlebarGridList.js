@@ -103,7 +103,7 @@ class TitlebarGridList extends React.Component {
                     </GridListTile>
                     {tileData.map(tile => (
                         <GridListTile key={tile.id}>
-                            <img src="assets/images/mon/mon_1.jpg" alt={tile.name} />
+                            <img src="/assets/images/mon/mon_1.jpg" alt={tile.name} />
                             <GridListTileBar className={classes.listTitle}
                                 title={tile.name}
                                 // subtitle={<span>by: {tile.author}</span>}

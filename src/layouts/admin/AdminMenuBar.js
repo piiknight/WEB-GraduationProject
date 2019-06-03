@@ -69,6 +69,17 @@ class AdminMenuBar extends Component {
                 ];
                 break;
             case "EMPLOYEE":
+                permission = [
+                    {
+                        url: "profile",
+                        isHide: true
+                    },
+                    {
+                        url: "tiec-nl",
+                        name: "Quản lý Tiệc",
+                        icon: "check-box"
+                    },
+                ]
                 break;
             case "ORDERER":
                 permission = [

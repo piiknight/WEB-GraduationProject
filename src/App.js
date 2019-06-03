@@ -22,6 +22,7 @@ function App() {
 	      	<Route path="/admin/tiec-nn" component={() => <DashBoard content="tiec-nn" />} />
 	      	<Route path="/admin/profile" component={() => <DashBoard content="profile" />} />
             <Route path="/admin/tiec-nd" component={() => <DashBoard content="tiec-nd" />} />
+            <Route path="/admin/tiec-nl" component={() => <DashBoard content="tiec-nl" />} />
 			<Route path="/login" component={Login} />
 	      	<Route path="/logout" component={Logout} />
 	      	<Route path="/register" component={Register} />

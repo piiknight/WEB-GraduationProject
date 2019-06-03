@@ -16,6 +16,12 @@ export const TiecService = {
         return myAxios.get(url);
     },
 
+    getAllByIdNL(id) {
+        const url = `${TiecService.tiecAPI}/nl/${id}`;
+        console.log("urL: " + url);
+        return myAxios.get(url);
+    },
+
     getAllByIdNN(id) {
         const url = `${TiecService.tiecAPI}/nn/${id}`;
         return myAxios.get(url);

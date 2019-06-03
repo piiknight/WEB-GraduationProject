@@ -19,6 +19,7 @@ import AdminNNVDung from "./NNVDung/AdminNNVDung";
 import AdminUser from "./User/AdminUser";
 import AdminProfile from "./Profile/AdminProfile";
 import AdminTiecND from "./TiecND/AdminTiecND";
+import AdminTiecNL from "./TiecNL/AdminTiecNL";
 
 
 import * as EventBus from "eventing-bus";
@@ -67,6 +68,9 @@ class DashBoard extends Component {
                 break;
             case "tiec-nd":
                 this.content = <AdminTiecND/>;
+                break;
+            case "tiec-nl":
+                this.content = <AdminTiecNL/>;
                 break;
             default:
                 this.content = <div>Default</div>;

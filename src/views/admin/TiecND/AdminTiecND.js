@@ -33,8 +33,7 @@ class AdminTiecND extends Component {
                     id: "address",
                     numeric: false,
                     disablePadding: true,
-                    label: "Địa chỉ",
-                    href: "/public"
+                    label: "Địa chỉ"
                 },
                 {
                     id: "name",

@@ -9,7 +9,7 @@ class AdminPageTitle extends React.Component {
 
     getUserName() {
         return LocalStorageManager.getCurrentUserName() +
-            "[" + LocalStorageManager.getMode() + "]";
+            " [" + LocalStorageManager.getModeName() + "]";
     }
 
   	render () {
@@ -19,10 +19,6 @@ class AdminPageTitle extends React.Component {
                     <div className="col-sm-6">
                         <div className="breadcrumbs-area clearfix">
                             <h4 className="page-title pull-left">Hệ thống quản lý</h4>
-                            <ul className="breadcrumbs pull-left">
-                                <li><a href="/admin/home">Trang chính</a></li>
-                                <li><span>Dashboard</span></li>
-                            </ul>
                         </div>
                     </div>
                     <div className="col-sm-6 clearfix">

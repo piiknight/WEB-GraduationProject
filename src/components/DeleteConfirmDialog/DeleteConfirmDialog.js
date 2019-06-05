@@ -23,10 +23,10 @@ export const DeleteConfirmDialog = props => {
       </DialogContent>
       <DialogActions>
         <Button onClick={onYes} color="primary">
-          Yes
+          Xác nhận
         </Button>
         <Button onClick={onClose} color="primary" autoFocus>
-          No
+          Hủy thao tác
         </Button>
       </DialogActions>
     </Dialog>

@@ -35,11 +35,6 @@ class PublicHeader extends React.Component {
                                 <div className="collapse navbar-collapse justify-content-center pr-md-4"
                                      id="navbarSupportedContent">
                                     <ul className="navbar-nav ml-auto">
-                                        <li className={url == "public" ? "nav-item active" : "nav-item"}>
-                                            <a className="nav-link" href="/public">Trang chủ
-                                                <span className="sr-only">current</span>
-                                            </a>
-                                        </li>
                                         <li className={url == "food" ? "nav-item active" : "nav-item"}>
                                             <a className="nav-link" href="/food">Món ăn
                                                 <span className="sr-only">current</span>

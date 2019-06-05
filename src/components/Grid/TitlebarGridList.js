@@ -13,6 +13,7 @@ import Chip from '@material-ui/core/Chip';
 import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
+var _ = require('underscore');
 
 const styles = theme => ({
     root: {
@@ -103,7 +104,7 @@ class TitlebarGridList extends React.Component {
                     </GridListTile>
                     {tileData.map(tile => (
                         <GridListTile key={tile.id}>
-                            <img src="/assets/images/mon/mon_1.jpg" alt={tile.name} />
+                            <img src={"/performance/images/mon/mon_" + _.random(1, 4) + ".jpg"} alt={tile.name} />
                             <GridListTileBar className={classes.listTitle}
                                 title={tile.name}
                                 // subtitle={<span>by: {tile.author}</span>}

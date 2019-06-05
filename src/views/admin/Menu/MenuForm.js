@@ -176,10 +176,10 @@ class MenuForm extends Component {
                     <p style={{color: "red"}}>{errors.responseError}</p>
                 )}
                 <Button type={"submit"} disabled={isSubmitting} color="primary">
-                    Save
+                    Lưu
                 </Button>
                 <Button onClick={values.onClose} color="primary">
-                    Cancel
+                    Hủy
                 </Button>
             </form>
         );

@@ -21,6 +21,10 @@ export const LocalStorageManager = {
         return this.getUserInfo().mode;
     },
 
+    getModeName() {
+        return this.getUserInfo().modeName;
+    },
+
     getCurrentUserName() {
         return this.getUserInfo().name;
     },

@@ -63,7 +63,7 @@ class Food extends Component {
                                     <div className="col-lg-3 col-md-6 col-sm-6 price-grid " key={index}>
                                         <div className="price-block agile">
                                             <div className="price-gd-top">
-                                                <img src="/performance/images/r1.jpg" alt=" "
+                                                <img src={"/performance/images/mon/mon_" + (index + 1) + ".jpg"} alt=" "
                                                      className="img-responsive img-fluid"/>
                                                 <h4>{obj.name}</h4>
                                             </div>

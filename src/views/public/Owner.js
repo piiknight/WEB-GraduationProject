@@ -59,7 +59,7 @@ class Owner extends Component {
                             {listChild.map((obj, index) => (
                                 <div className=" col-md-3 col-sm-6 col-6 mb-md-0 mb-5 profile" key={index}>
                                     <div className="img-box">
-                                        <img src="/performance/images/tm1.jpg" alt className="img-fluid"/>
+                                        <img style={{width: 300, height: 250}} src={"/performance/images/nn/nn_" + (index + 1) + ".jpg"} alt className="img-fluid"/>
                                         <ul className="text-center">
                                             {listRate.map(rate => (
                                                 rate <= obj.point

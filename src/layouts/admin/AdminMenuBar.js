@@ -39,7 +39,7 @@ class AdminMenuBar extends Component {
                     {
                         url: "user",
                         name: "Người dùng",
-                        icon: "notepad"
+                        icon: "user"
                     },
                     {
                         url: "congviec",

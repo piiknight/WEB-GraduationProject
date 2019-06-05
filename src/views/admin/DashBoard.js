@@ -116,8 +116,7 @@ class DashBoard extends Component {
                     {/* footer area start*/}
                     <footer>
                         <div className="footer-area">
-                            <p>© Copyright 2018. All right reserved. Template by <a
-                                href="https://colorlib.com/wp/">Colorlib</a>.</p>
+                            <p>© Copyright 2019. Quản lý dịch vụ nấu ăn lễ tiệc.</p>
                         </div>
                     </footer>
                     {/* footer area end*/}

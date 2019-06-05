@@ -60,7 +60,7 @@ class Service extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-6 col-xs-6 proj_gallery_grid" data-aos="zoom-in" key={index}>
                                     <div className="section_1_gallery_grid">
                                         <div className="section_1_gallery_grid1">
-                                            <img src="/performance/images/g1.jpg" alt=" " className="img-fluid"/>
+                                            <img src={"/performance/images/dv/" + (index + 1) + ".jpg"} alt=" " className="img-fluid"/>
                                             <div className="proj_gallery_grid1_pos">
                                                 <h3>{obj.name}</h3>
                                                 <p>Add some text</p>
